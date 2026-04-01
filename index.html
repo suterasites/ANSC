@@ -386,7 +386,7 @@
         </button>
 
         <!-- Bottom Content Overlay -->
-        <div class="absolute bottom-0 left-0 right-0 z-20 px-6 md:px-12 lg:px-16 pb-12 md:pb-16">
+        <div class="absolute bottom-0 left-0 right-0 z-20 px-6 md:px-12 lg:px-16 pb-28 md:pb-36">
             <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
                 <!-- Headline (left) -->
                 <div class="max-w-2xl">
@@ -414,6 +414,133 @@
             </div>
         </div>
     </header>
+
+    <!-- Matches & Standings - Overlapping Hero -->
+    <section class="relative z-30 -mt-20 md:-mt-28 pb-8 md:pb-12">
+        <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-lg overflow-hidden" style="box-shadow: 0 8px 40px rgba(0,0,0,0.25);">
+
+                <!-- MATCHES Card -->
+                <div class="bg-white p-8 md:p-10 lg:border-r border-gray-200">
+                    <h2 class="font-heading text-2xl md:text-3xl font-bold text-navy-950 text-center tracking-tight mb-1">MATCHES</h2>
+                    <div class="text-center mb-1">
+                        <span class="font-body text-xs text-gray-500 tracking-wider uppercase">State League 2 NW</span>
+                    </div>
+                    <div class="text-center mb-1">
+                        <span class="font-heading text-sm font-bold text-navy-950 tracking-wide">ROUND 8</span>
+                    </div>
+                    <div class="text-center mb-6">
+                        <span class="font-body text-xs text-gray-400">12 April 2026 - 15:00</span><br>
+                        <span class="font-body text-xs text-gray-400 italic">D.N. Duane Reserve</span>
+                    </div>
+
+                    <!-- Teams -->
+                    <div class="flex items-center justify-center gap-6 md:gap-10 mb-8">
+                        <!-- Home Team -->
+                        <div class="flex flex-col items-center gap-3">
+                            <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-navy-50 flex items-center justify-center overflow-hidden border border-gray-100">
+                                <img src="Assets/Logo.png" alt="Altona North SC" class="w-12 h-12 md:w-16 md:h-16 object-contain">
+                            </div>
+                            <span class="font-heading text-sm md:text-base font-bold text-navy-950 tracking-wide uppercase">ALTONA NORTH</span>
+                        </div>
+
+                        <!-- VS -->
+                        <span class="font-heading text-lg md:text-xl font-bold text-gray-300">VS</span>
+
+                        <!-- Away Team -->
+                        <div class="flex flex-col items-center gap-3">
+                            <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gray-50 flex items-center justify-center overflow-hidden border border-gray-100">
+                                <img src="Assets/Williamstown SC.webp" alt="Williamstown SC" class="w-12 h-12 md:w-16 md:h-16 object-contain">
+                            </div>
+                            <span class="font-heading text-sm md:text-base font-bold text-navy-950 tracking-wide uppercase">WILLIAMSTOWN</span>
+                        </div>
+                    </div>
+
+                    <!-- Arrow / See all -->
+                    <div class="text-center">
+                        <a href="#" class="font-body text-sm font-medium text-accent-500 hover:text-accent-700 transition-colors duration-200 underline underline-offset-4 decoration-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-500 rounded">See all matches</a>
+                    </div>
+                </div>
+
+                <!-- STANDINGS Card -->
+                <div class="bg-white p-8 md:p-10">
+                    <h2 class="font-heading text-2xl md:text-3xl font-bold text-navy-950 text-center tracking-tight mb-6">STANDINGS</h2>
+
+                    <!-- Table Header -->
+                    <div class="mb-2">
+                        <div class="grid grid-cols-[auto_1fr_60px_40px_50px] items-center gap-2 px-3 py-2">
+                            <span class="w-6"></span>
+                            <span class="font-body text-xs font-semibold text-gray-400 tracking-wider uppercase">State League 2 NW</span>
+                            <span class="font-body text-xs font-semibold text-gray-400 tracking-wider uppercase text-center">Pts</span>
+                            <span class="font-body text-xs font-semibold text-gray-400 tracking-wider uppercase text-center">P</span>
+                            <span class="font-body text-xs font-semibold text-gray-400 tracking-wider uppercase text-center">GD</span>
+                        </div>
+                    </div>
+
+                    <!-- Row 1 -->
+                    <div class="grid grid-cols-[auto_1fr_60px_40px_50px] items-center gap-2 px-3 py-3 border-t border-gray-100">
+                        <span class="font-heading text-sm font-bold text-gray-400 w-6 text-center">1</span>
+                        <div class="flex items-center gap-2.5">
+                            <div class="w-7 h-7 rounded-full bg-gray-50 flex items-center justify-center overflow-hidden shrink-0">
+                                <img src="Assets/Logo.png" alt="Altona North SC" class="w-5 h-5 object-contain">
+                            </div>
+                            <span class="font-heading text-sm font-bold text-navy-950 uppercase tracking-wide">Altona North</span>
+                        </div>
+                        <span class="font-heading text-sm font-bold text-accent-500 text-center">21</span>
+                        <span class="font-body text-sm text-gray-500 text-center">7</span>
+                        <span class="font-body text-sm text-gray-500 text-center">+14</span>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="grid grid-cols-[auto_1fr_60px_40px_50px] items-center gap-2 px-3 py-3 border-t border-gray-100">
+                        <span class="font-heading text-sm font-bold text-gray-400 w-6 text-center">2</span>
+                        <div class="flex items-center gap-2.5">
+                            <div class="w-7 h-7 rounded-full bg-gray-50 flex items-center justify-center overflow-hidden shrink-0">
+                                <img src="Assets/Williamstown SC.webp" alt="Williamstown SC" class="w-5 h-5 object-contain">
+                            </div>
+                            <span class="font-heading text-sm font-bold text-navy-950 uppercase tracking-wide">Williamstown</span>
+                        </div>
+                        <span class="font-heading text-sm font-bold text-gray-700 text-center">18</span>
+                        <span class="font-body text-sm text-gray-500 text-center">7</span>
+                        <span class="font-body text-sm text-gray-500 text-center">+10</span>
+                    </div>
+
+                    <!-- Row 3 -->
+                    <div class="grid grid-cols-[auto_1fr_60px_40px_50px] items-center gap-2 px-3 py-3 border-t border-gray-100">
+                        <span class="font-heading text-sm font-bold text-gray-400 w-6 text-center">3</span>
+                        <div class="flex items-center gap-2.5">
+                            <div class="w-7 h-7 rounded-full bg-gray-50 flex items-center justify-center overflow-hidden shrink-0">
+                                <div class="w-5 h-5 bg-gray-200 rounded-full"></div>
+                            </div>
+                            <span class="font-heading text-sm font-bold text-navy-950 uppercase tracking-wide">Keilor Park</span>
+                        </div>
+                        <span class="font-heading text-sm font-bold text-gray-700 text-center">15</span>
+                        <span class="font-body text-sm text-gray-500 text-center">7</span>
+                        <span class="font-body text-sm text-gray-500 text-center">+8</span>
+                    </div>
+
+                    <!-- Row 4 -->
+                    <div class="grid grid-cols-[auto_1fr_60px_40px_50px] items-center gap-2 px-3 py-3 border-t border-gray-100 mb-6">
+                        <span class="font-heading text-sm font-bold text-gray-400 w-6 text-center">4</span>
+                        <div class="flex items-center gap-2.5">
+                            <div class="w-7 h-7 rounded-full bg-gray-50 flex items-center justify-center overflow-hidden shrink-0">
+                                <div class="w-5 h-5 bg-gray-200 rounded-full"></div>
+                            </div>
+                            <span class="font-heading text-sm font-bold text-navy-950 uppercase tracking-wide">Sunshine George Cross</span>
+                        </div>
+                        <span class="font-heading text-sm font-bold text-gray-700 text-center">13</span>
+                        <span class="font-body text-sm text-gray-500 text-center">7</span>
+                        <span class="font-body text-sm text-gray-500 text-center">+5</span>
+                    </div>
+
+                    <!-- See standings -->
+                    <div class="text-center">
+                        <a href="#" class="font-body text-sm font-medium text-accent-500 hover:text-accent-700 transition-colors duration-200 underline underline-offset-4 decoration-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-500 rounded">See the standings</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- About Section -->
     <section id="about" class="relative py-20 md:py-28 bg-navy-950 noise-texture">
