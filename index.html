@@ -415,127 +415,50 @@
         </div>
     </header>
 
-    <!-- Matches & Standings - Overlapping Hero -->
-    <section class="relative z-30 -mt-20 md:-mt-28 pb-8 md:pb-12">
+    <!-- Matches - Overlapping Hero -->
+    <section class="relative z-30 -mt-8 md:-mt-12 pb-8 md:pb-12">
         <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-lg overflow-hidden" style="box-shadow: 0 8px 40px rgba(0,0,0,0.25);">
 
-                <!-- MATCHES Card -->
+                <!-- NEXT MATCH Card -->
                 <div class="bg-white p-8 md:p-10 lg:border-r border-gray-200">
                     <h2 class="font-heading text-2xl md:text-3xl font-bold text-navy-950 text-center tracking-tight mb-1">MATCHES</h2>
                     <div class="text-center mb-1">
                         <span class="font-body text-xs text-gray-500 tracking-wider uppercase">State League 2 NW</span>
                     </div>
                     <div class="text-center mb-1">
-                        <span class="font-heading text-sm font-bold text-navy-950 tracking-wide">ROUND 8</span>
+                        <span id="matchRound" class="font-heading text-sm font-bold text-navy-950 tracking-wide">ROUND 3</span>
                     </div>
                     <div class="text-center mb-6">
-                        <span class="font-body text-xs text-gray-400">12 April 2026 - 15:00</span><br>
-                        <span class="font-body text-xs text-gray-400 italic">D.N. Duane Reserve</span>
+                        <span id="matchDateTime" class="font-body text-xs text-gray-400">11 April 2026 - 18:00</span><br>
+                        <span id="matchVenue" class="font-body text-xs text-gray-400 italic">JT Gray Reserve</span>
                     </div>
 
                     <!-- Teams -->
                     <div class="flex items-center justify-center gap-6 md:gap-10 mb-8">
-                        <!-- Home Team -->
                         <div class="flex flex-col items-center gap-3">
                             <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-navy-50 flex items-center justify-center overflow-hidden border border-gray-100">
-                                <img src="Assets/Logo.png" alt="Altona North SC" class="w-12 h-12 md:w-16 md:h-16 object-contain">
+                                <img id="homeTeamLogo" src="Assets/Other Team Logos/Williamstown SC.webp" alt="Williamstown" class="w-12 h-12 md:w-16 md:h-16 object-contain">
                             </div>
-                            <span class="font-heading text-sm md:text-base font-bold text-navy-950 tracking-wide uppercase">ALTONA NORTH</span>
+                            <span id="homeTeamName" class="font-heading text-sm md:text-base font-bold text-navy-950 tracking-wide uppercase">Williamstown</span>
                         </div>
 
-                        <!-- VS -->
                         <span class="font-heading text-lg md:text-xl font-bold text-gray-300">VS</span>
 
-                        <!-- Away Team -->
                         <div class="flex flex-col items-center gap-3">
                             <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gray-50 flex items-center justify-center overflow-hidden border border-gray-100">
-                                <img src="Assets/Williamstown SC.webp" alt="Williamstown SC" class="w-12 h-12 md:w-16 md:h-16 object-contain">
+                                <img id="awayTeamLogo" src="Assets/Logo.png" alt="Altona North" class="w-12 h-12 md:w-16 md:h-16 object-contain">
                             </div>
-                            <span class="font-heading text-sm md:text-base font-bold text-navy-950 tracking-wide uppercase">WILLIAMSTOWN</span>
+                            <span id="awayTeamName" class="font-heading text-sm md:text-base font-bold text-navy-950 tracking-wide uppercase">Altona North</span>
                         </div>
-                    </div>
-
-                    <!-- Arrow / See all -->
-                    <div class="text-center">
-                        <a href="#" class="font-body text-sm font-medium text-accent-500 hover:text-accent-700 transition-colors duration-200 underline underline-offset-4 decoration-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-500 rounded">See all matches</a>
                     </div>
                 </div>
 
-                <!-- STANDINGS Card -->
+                <!-- NEXT 5 Card -->
                 <div class="bg-white p-8 md:p-10">
-                    <h2 class="font-heading text-2xl md:text-3xl font-bold text-navy-950 text-center tracking-tight mb-6">STANDINGS</h2>
-
-                    <!-- Table Header -->
-                    <div class="mb-2">
-                        <div class="grid grid-cols-[auto_1fr_60px_40px_50px] items-center gap-2 px-3 py-2">
-                            <span class="w-6"></span>
-                            <span class="font-body text-xs font-semibold text-gray-400 tracking-wider uppercase">State League 2 NW</span>
-                            <span class="font-body text-xs font-semibold text-gray-400 tracking-wider uppercase text-center">Pts</span>
-                            <span class="font-body text-xs font-semibold text-gray-400 tracking-wider uppercase text-center">P</span>
-                            <span class="font-body text-xs font-semibold text-gray-400 tracking-wider uppercase text-center">GD</span>
-                        </div>
-                    </div>
-
-                    <!-- Row 1 -->
-                    <div class="grid grid-cols-[auto_1fr_60px_40px_50px] items-center gap-2 px-3 py-3 border-t border-gray-100">
-                        <span class="font-heading text-sm font-bold text-gray-400 w-6 text-center">1</span>
-                        <div class="flex items-center gap-2.5">
-                            <div class="w-7 h-7 rounded-full bg-gray-50 flex items-center justify-center overflow-hidden shrink-0">
-                                <img src="Assets/Logo.png" alt="Altona North SC" class="w-5 h-5 object-contain">
-                            </div>
-                            <span class="font-heading text-sm font-bold text-navy-950 uppercase tracking-wide">Altona North</span>
-                        </div>
-                        <span class="font-heading text-sm font-bold text-accent-500 text-center">21</span>
-                        <span class="font-body text-sm text-gray-500 text-center">7</span>
-                        <span class="font-body text-sm text-gray-500 text-center">+14</span>
-                    </div>
-
-                    <!-- Row 2 -->
-                    <div class="grid grid-cols-[auto_1fr_60px_40px_50px] items-center gap-2 px-3 py-3 border-t border-gray-100">
-                        <span class="font-heading text-sm font-bold text-gray-400 w-6 text-center">2</span>
-                        <div class="flex items-center gap-2.5">
-                            <div class="w-7 h-7 rounded-full bg-gray-50 flex items-center justify-center overflow-hidden shrink-0">
-                                <img src="Assets/Williamstown SC.webp" alt="Williamstown SC" class="w-5 h-5 object-contain">
-                            </div>
-                            <span class="font-heading text-sm font-bold text-navy-950 uppercase tracking-wide">Williamstown</span>
-                        </div>
-                        <span class="font-heading text-sm font-bold text-gray-700 text-center">18</span>
-                        <span class="font-body text-sm text-gray-500 text-center">7</span>
-                        <span class="font-body text-sm text-gray-500 text-center">+10</span>
-                    </div>
-
-                    <!-- Row 3 -->
-                    <div class="grid grid-cols-[auto_1fr_60px_40px_50px] items-center gap-2 px-3 py-3 border-t border-gray-100">
-                        <span class="font-heading text-sm font-bold text-gray-400 w-6 text-center">3</span>
-                        <div class="flex items-center gap-2.5">
-                            <div class="w-7 h-7 rounded-full bg-gray-50 flex items-center justify-center overflow-hidden shrink-0">
-                                <div class="w-5 h-5 bg-gray-200 rounded-full"></div>
-                            </div>
-                            <span class="font-heading text-sm font-bold text-navy-950 uppercase tracking-wide">Keilor Park</span>
-                        </div>
-                        <span class="font-heading text-sm font-bold text-gray-700 text-center">15</span>
-                        <span class="font-body text-sm text-gray-500 text-center">7</span>
-                        <span class="font-body text-sm text-gray-500 text-center">+8</span>
-                    </div>
-
-                    <!-- Row 4 -->
-                    <div class="grid grid-cols-[auto_1fr_60px_40px_50px] items-center gap-2 px-3 py-3 border-t border-gray-100 mb-6">
-                        <span class="font-heading text-sm font-bold text-gray-400 w-6 text-center">4</span>
-                        <div class="flex items-center gap-2.5">
-                            <div class="w-7 h-7 rounded-full bg-gray-50 flex items-center justify-center overflow-hidden shrink-0">
-                                <div class="w-5 h-5 bg-gray-200 rounded-full"></div>
-                            </div>
-                            <span class="font-heading text-sm font-bold text-navy-950 uppercase tracking-wide">Sunshine George Cross</span>
-                        </div>
-                        <span class="font-heading text-sm font-bold text-gray-700 text-center">13</span>
-                        <span class="font-body text-sm text-gray-500 text-center">7</span>
-                        <span class="font-body text-sm text-gray-500 text-center">+5</span>
-                    </div>
-
-                    <!-- See standings -->
-                    <div class="text-center">
-                        <a href="#" class="font-body text-sm font-medium text-accent-500 hover:text-accent-700 transition-colors duration-200 underline underline-offset-4 decoration-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-500 rounded">See the standings</a>
+                    <h2 class="font-heading text-2xl md:text-3xl font-bold text-navy-950 text-center tracking-tight mb-6">NEXT 5</h2>
+                    <div id="next5List" class="divide-y divide-gray-100">
+                        <!-- Populated by JS -->
                     </div>
                 </div>
             </div>
@@ -987,6 +910,88 @@
         });
 
         startAutoplay();
+
+
+        // Fixture data & auto-update
+        const fixtures = [
+            { round: 3, dateISO: '2026-04-11T18:00:00', dateDisplay: '11 April 2026', dateShort: 'Sat 11 Apr', time: '18:00', home: 'Williamstown', homeLogo: 'Assets/Other Team Logos/Williamstown SC.webp', away: 'Altona North', awayLogo: 'Assets/Logo.png', venue: 'JT Gray Reserve' },
+            { round: 4, dateISO: '2026-04-18T15:00:00', dateDisplay: '18 April 2026', dateShort: 'Sat 18 Apr', time: '15:00', home: 'Altona North', homeLogo: 'Assets/Logo.png', away: 'Albion Rovers', awayLogo: 'Assets/Other Team Logos/Albion Rovers.png', venue: 'Duane Reserve' },
+            { round: 5, dateISO: '2026-04-24T20:30:00', dateDisplay: '24 April 2026', dateShort: 'Fri 24 Apr', time: '20:30', home: 'Mill Park', homeLogo: 'Assets/Other Team Logos/Mill Park.png', away: 'Altona North', awayLogo: 'Assets/Logo.png', venue: 'Partridge St Reserve' },
+            { round: 6, dateISO: '2026-05-02T15:00:00', dateDisplay: '2 May 2026', dateShort: 'Sat 2 May', time: '15:00', home: 'Altona North', homeLogo: 'Assets/Logo.png', away: 'FC Strathmore', awayLogo: 'Assets/Other Team Logos/FC Strathmore.png', venue: 'Duane Reserve' },
+            { round: 7, dateISO: '2026-05-08T20:30:00', dateDisplay: '8 May 2026', dateShort: 'Fri 8 May', time: '20:30', home: 'Whittlesea Ranges', homeLogo: 'Assets/Other Team Logos/Whittlesea Rangers.png', away: 'Altona North', awayLogo: 'Assets/Logo.png', venue: 'Epping Stadium' },
+            { round: 8, dateISO: '2026-05-16T15:00:00', dateDisplay: '16 May 2026', dateShort: 'Sat 16 May', time: '15:00', home: 'Altona North', homeLogo: 'Assets/Logo.png', away: 'Surf Coast', awayLogo: 'Assets/Other Team Logos/Surf Coast.png', venue: 'Duane Reserve' },
+            { round: 9, dateISO: '2026-05-23T15:00:00', dateDisplay: '23 May 2026', dateShort: 'Sat 23 May', time: '15:00', home: 'Corio', homeLogo: 'Assets/Other Team Logos/Corio.png', away: 'Altona North', awayLogo: 'Assets/Logo.png', venue: 'Hume Reserve' },
+            { round: 10, dateISO: '2026-05-30T15:00:00', dateDisplay: '30 May 2026', dateShort: 'Sat 30 May', time: '15:00', home: 'Altona North', homeLogo: 'Assets/Logo.png', away: 'Brimbank Stallions', awayLogo: 'Assets/Other Team Logos/Brimbank.png', venue: 'Duane Reserve' },
+            { round: 11, dateISO: '2026-06-13T15:00:00', dateDisplay: '13 June 2026', dateShort: 'Sat 13 Jun', time: '15:00', home: 'Geelong Rangers', homeLogo: 'Assets/Other Team Logos/Geelong Rangers.png', away: 'Altona North', awayLogo: 'Assets/Logo.png', venue: 'Myers Reserve' },
+            { round: 12, dateISO: '2026-06-20T15:00:00', dateDisplay: '20 June 2026', dateShort: 'Sat 20 Jun', time: '15:00', home: 'Altona North', homeLogo: 'Assets/Logo.png', away: 'Western Eagles', awayLogo: 'Assets/Other Team Logos/Western Eagles.png', venue: 'Duane Reserve' },
+            { round: 13, dateISO: '2026-06-27T15:00:00', dateDisplay: '27 June 2026', dateShort: 'Sat 27 Jun', time: '15:00', home: 'Uni Hill Eagles', homeLogo: 'Assets/Other Team Logos/Uni Hill Eagles.png', away: 'Altona North', awayLogo: 'Assets/Logo.png', venue: 'Findon Reserve' },
+            { round: 14, dateISO: '2026-07-04T15:00:00', dateDisplay: '4 July 2026', dateShort: 'Sat 4 Jul', time: '15:00', home: 'Altona North', homeLogo: 'Assets/Logo.png', away: 'Williamstown', awayLogo: 'Assets/Other Team Logos/Williamstown SC.webp', venue: 'Duane Reserve' },
+            { round: 15, dateISO: '2026-07-11T15:00:00', dateDisplay: '11 July 2026', dateShort: 'Sat 11 Jul', time: '15:00', home: 'Albion Rovers', homeLogo: 'Assets/Other Team Logos/Albion Rovers.png', away: 'Altona North', awayLogo: 'Assets/Logo.png', venue: 'Kevin Flint Reserve' },
+            { round: 16, dateISO: '2026-07-18T15:00:00', dateDisplay: '18 July 2026', dateShort: 'Sat 18 Jul', time: '15:00', home: 'Altona North', homeLogo: 'Assets/Logo.png', away: 'Mill Park', awayLogo: 'Assets/Other Team Logos/Mill Park.png', venue: 'Duane Reserve' },
+            { round: 17, dateISO: '2026-07-24T20:15:00', dateDisplay: '24 July 2026', dateShort: 'Fri 24 Jul', time: '20:15', home: 'FC Strathmore', homeLogo: 'Assets/Other Team Logos/FC Strathmore.png', away: 'Altona North', awayLogo: 'Assets/Logo.png', venue: 'Strathnaver Reserve' },
+            { round: 18, dateISO: '2026-08-01T15:00:00', dateDisplay: '1 August 2026', dateShort: 'Sat 1 Aug', time: '15:00', home: 'Altona North', homeLogo: 'Assets/Logo.png', away: 'Whittlesea Ranges', awayLogo: 'Assets/Other Team Logos/Whittlesea Rangers.png', venue: 'Duane Reserve' },
+            { round: 19, dateISO: '2026-08-15T17:00:00', dateDisplay: '15 August 2026', dateShort: 'Sat 15 Aug', time: '17:00', home: 'Surf Coast', homeLogo: 'Assets/Other Team Logos/Surf Coast.png', away: 'Altona North', awayLogo: 'Assets/Logo.png', venue: 'NewFlo Stadium' },
+            { round: 20, dateISO: '2026-08-22T15:00:00', dateDisplay: '22 August 2026', dateShort: 'Sat 22 Aug', time: '15:00', home: 'Altona North', homeLogo: 'Assets/Logo.png', away: 'Corio', awayLogo: 'Assets/Other Team Logos/Corio.png', venue: 'Duane Reserve' },
+            { round: 21, dateISO: '2026-08-28T20:30:00', dateDisplay: '28 August 2026', dateShort: 'Fri 28 Aug', time: '20:30', home: 'Brimbank Stallions', homeLogo: 'Assets/Other Team Logos/Brimbank.png', away: 'Altona North', awayLogo: 'Assets/Logo.png', venue: 'Club Italia SC' },
+            { round: 22, dateISO: '2026-09-05T15:00:00', dateDisplay: '5 September 2026', dateShort: 'Sat 5 Sep', time: '15:00', home: 'Altona North', homeLogo: 'Assets/Logo.png', away: 'Geelong Rangers', awayLogo: 'Assets/Other Team Logos/Geelong Rangers.png', venue: 'Duane Reserve' }
+        ];
+
+        function renderFixtures() {
+            const now = new Date();
+            const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+            const upcoming = fixtures.filter(f => {
+                const md = new Date(f.dateISO);
+                return new Date(md.getFullYear(), md.getMonth(), md.getDate()) >= today;
+            });
+
+            if (upcoming.length === 0) {
+                document.getElementById('matchRound').textContent = 'SEASON COMPLETE';
+                document.getElementById('matchDateTime').textContent = '2026 Season';
+                document.getElementById('matchVenue').textContent = '';
+                document.getElementById('next5List').innerHTML = '<p class="font-body text-sm text-gray-400 text-center py-8">Season complete</p>';
+                return;
+            }
+
+            const next = upcoming[0];
+            document.getElementById('matchRound').textContent = 'ROUND ' + next.round;
+            document.getElementById('matchDateTime').textContent = next.dateDisplay + ' - ' + next.time;
+            document.getElementById('matchVenue').textContent = next.venue;
+            document.getElementById('homeTeamLogo').src = next.homeLogo;
+            document.getElementById('homeTeamLogo').alt = next.home;
+            document.getElementById('homeTeamName').textContent = next.home;
+            document.getElementById('awayTeamLogo').src = next.awayLogo;
+            document.getElementById('awayTeamLogo').alt = next.away;
+            document.getElementById('awayTeamName').textContent = next.away;
+
+            const next5 = upcoming.slice(1, 6);
+            const list = document.getElementById('next5List');
+
+            if (next5.length === 0) {
+                list.innerHTML = '<p class="font-body text-sm text-gray-400 text-center py-8">Last match of the season</p>';
+                return;
+            }
+
+            list.innerHTML = next5.map(f => `
+                <div class="py-3.5 flex items-center gap-2">
+                    <span class="font-heading text-[11px] font-bold text-gray-400 w-7 text-center shrink-0">R${f.round}</span>
+                    <div class="flex items-center gap-1.5 justify-end flex-1 min-w-0">
+                        <span class="font-heading text-xs font-bold text-navy-950 uppercase tracking-wide text-right truncate">${f.home}</span>
+                        <img src="${f.homeLogo}" alt="${f.home}" class="w-7 h-7 object-contain shrink-0 rounded-full">
+                    </div>
+                    <span class="font-heading text-[10px] font-bold text-gray-300 shrink-0">v</span>
+                    <div class="flex items-center gap-1.5 flex-1 min-w-0">
+                        <img src="${f.awayLogo}" alt="${f.away}" class="w-7 h-7 object-contain shrink-0 rounded-full">
+                        <span class="font-heading text-xs font-bold text-navy-950 uppercase tracking-wide truncate">${f.away}</span>
+                    </div>
+                    <div class="shrink-0 w-[68px] text-right leading-tight">
+                        <span class="font-body text-[11px] text-gray-500 block">${f.dateShort}</span>
+                        <span class="font-body text-[10px] text-gray-300">${f.time}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        renderFixtures();
     </script>
 </body>
 </html>
