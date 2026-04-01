@@ -204,39 +204,45 @@
 <body class="bg-navy-950 text-white font-body">
 
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-navy-950/90 backdrop-blur-md border-b border-white/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16 md:h-20">
-                <!-- Logo -->
-                <a href="index.html" class="flex items-center gap-3 group" aria-label="Altona North SC Home">
-                    <img src="Assets/Logo.png" alt="Altona North Soccer Club crest" class="w-10 h-10 md:w-12 md:h-12" width="48" height="48">
-                    <div class="hidden sm:block">
-                        <span class="font-heading text-lg font-bold tracking-wide text-white leading-none block">ALTONA NORTH</span>
-                        <span class="font-heading text-xs font-medium tracking-[0.2em] text-gold-400 leading-none block mt-0.5">SOCCER CLUB</span>
-                    </div>
+    <nav id="mainNav" class="fixed top-0 left-0 right-0 z-50 transition-colors duration-300">
+        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-14">
+                <!-- Desktop Nav Links (left) -->
+                <div class="hidden lg:flex items-center gap-6">
+                    <a href="index.html" class="nav-link font-heading text-[13px] font-medium tracking-[0.15em] text-white uppercase underline underline-offset-4 decoration-1">Home</a>
+                    <a href="#about" class="nav-link font-heading text-[13px] font-medium tracking-[0.15em] text-white/80 uppercase hover:text-white focus-visible:text-white">About</a>
+                    <a href="#programs" class="nav-link font-heading text-[13px] font-medium tracking-[0.15em] text-white/80 uppercase hover:text-white focus-visible:text-white">Programs</a>
+                    <a href="#history" class="nav-link font-heading text-[13px] font-medium tracking-[0.15em] text-white/80 uppercase hover:text-white focus-visible:text-white">History</a>
+                    <a href="#contact" class="nav-link font-heading text-[13px] font-medium tracking-[0.15em] text-white/80 uppercase hover:text-white focus-visible:text-white">Contact</a>
+                </div>
+
+                <!-- Mobile: Logo left -->
+                <a href="index.html" class="lg:hidden flex items-center gap-2" aria-label="Altona North SC Home">
+                    <img src="Assets/Logo.png" alt="Altona North Soccer Club crest" class="w-9 h-9" width="36" height="36">
+                    <span class="font-heading text-sm font-bold tracking-wide text-white">ANSC</span>
                 </a>
 
-                <!-- Desktop Nav -->
-                <div class="hidden md:flex items-center gap-8">
-                    <a href="index.html" class="nav-link font-heading text-sm font-medium tracking-wider text-gold-400 uppercase">Home</a>
-                    <a href="#about" class="nav-link font-heading text-sm font-medium tracking-wider text-white/80 uppercase hover:text-white focus-visible:text-white">About</a>
-                    <a href="#programs" class="nav-link font-heading text-sm font-medium tracking-wider text-white/80 uppercase hover:text-white focus-visible:text-white">Programs</a>
-                    <a href="#history" class="nav-link font-heading text-sm font-medium tracking-wider text-white/80 uppercase hover:text-white focus-visible:text-white">History</a>
-                    <a href="#contact" class="nav-link font-heading text-sm font-medium tracking-wider text-white/80 uppercase hover:text-white focus-visible:text-white">Contact</a>
-                    <a href="#contact" class="btn-primary inline-flex items-center gap-2 bg-gold-500 text-navy-950 px-5 py-2.5 rounded font-heading text-sm font-bold tracking-wider uppercase focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-400 focus-visible:outline-offset-2">
-                        Join the Club
+                <!-- Social Icons (right) -->
+                <div class="hidden lg:flex items-center gap-4">
+                    <!-- Facebook -->
+                    <a href="#" class="text-white/70 hover:text-white focus-visible:text-white transition-colors duration-200" aria-label="Facebook">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <!-- Instagram -->
+                    <a href="#" class="text-white/70 hover:text-white focus-visible:text-white transition-colors duration-200" aria-label="Instagram">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                     </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button id="mobileMenuBtn" class="md:hidden p-2 text-white/80 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-400 rounded" aria-label="Open menu" aria-expanded="false">
+                <button id="mobileMenuBtn" class="lg:hidden p-2 text-white/80 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-400 rounded" aria-label="Open menu" aria-expanded="false">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
                 </button>
             </div>
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-72 h-full bg-navy-950 border-l border-white/10 p-6 md:hidden z-50">
+        <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-72 h-full bg-navy-950 border-l border-white/10 p-6 lg:hidden z-50">
             <button id="mobileMenuClose" class="absolute top-4 right-4 p-2 text-white/80 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-400 rounded" aria-label="Close menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
@@ -246,22 +252,21 @@
                 <a href="#programs" class="font-heading text-lg font-semibold tracking-wider text-white/80 uppercase hover:text-white">Programs</a>
                 <a href="#history" class="font-heading text-lg font-semibold tracking-wider text-white/80 uppercase hover:text-white">History</a>
                 <a href="#contact" class="font-heading text-lg font-semibold tracking-wider text-white/80 uppercase hover:text-white">Contact</a>
-                <a href="#contact" class="btn-primary inline-flex items-center justify-center gap-2 bg-gold-500 text-navy-950 px-5 py-3 rounded font-heading text-sm font-bold tracking-wider uppercase mt-4">
-                    Join the Club
-                </a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="relative min-h-[100vh] overflow-hidden">
+    <header class="relative h-[85vh] min-h-[500px] overflow-hidden">
         <!-- Background Image - no overlay -->
         <div class="absolute inset-0">
             <img src="Assets/Senior Players.JPG" alt="Altona North SC senior squad in team huddle before a match" class="w-full h-full object-cover object-center" loading="eager">
         </div>
 
-        <!-- Decorative Accent Line -->
-        <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent z-10"></div>
+        <!-- Centered Logo -->
+        <div class="absolute inset-0 flex items-center justify-center z-10">
+            <img src="Assets/Logo.png" alt="Altona North Soccer Club crest" class="w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 drop-shadow-[0_4px_24px_rgba(0,0,0,0.5)]" loading="eager" width="288" height="288">
+        </div>
     </header>
 
     <!-- Stats Bar -->
@@ -696,15 +701,15 @@
 
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-        // Navbar background on scroll
-        const nav = document.querySelector('nav');
+        // Navbar: transparent over hero, solid when scrolled past
+        const nav = document.getElementById('mainNav');
+        const hero = document.querySelector('header');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                nav.classList.add('bg-navy-950/95');
-                nav.classList.remove('bg-navy-950/90');
+            const heroBottom = hero.offsetTop + hero.offsetHeight;
+            if (window.scrollY > heroBottom - 60) {
+                nav.classList.add('bg-navy-950', 'shadow-lg', 'shadow-navy-950/50');
             } else {
-                nav.classList.remove('bg-navy-950/95');
-                nav.classList.add('bg-navy-950/90');
+                nav.classList.remove('bg-navy-950', 'shadow-lg', 'shadow-navy-950/50');
             }
         }, { passive: true });
     </script>
