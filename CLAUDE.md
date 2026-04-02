@@ -3,7 +3,7 @@
 ## Club Overview
 
 - **Club Name:** Altona North Soccer Club (Altona North SC / ANSC)
-- **Nickname:** The Aya Blues
+- **Nickname:** ANSC
 - **Established:** 1975
 - **Location:** D.N. Duane Reserve, Primula Avenue, Brooklyn, Victoria, Australia
 - **Municipality:** City of Hobsons Bay, Melbourne's western suburbs
@@ -45,7 +45,6 @@
 ## Key Selling Points (for website copy)
 
 - **Est. 1975** - nearly 50 years of community football history
-- **Back-to-back promotions** - winning culture with State League 4 (2020) and State League 3 (2025) titles
 - **Family-friendly** - welcoming environment for all ages and skill levels
 - **Junior pathway** - structured development from Miniroos through U7-U14 elite teams to senior football
 - **Community club** - strong emphasis on camaraderie and belonging
