@@ -66,6 +66,27 @@
             height: 1px;
         }
 
+        .stripe-band {
+            background: #ffffff;
+            padding: 10px 0;
+            position: relative;
+        }
+        .stripe-band::before,
+        .stripe-band::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #dc2626;
+        }
+        .stripe-band::before {
+            top: 6px;
+        }
+        .stripe-band::after {
+            bottom: 6px;
+        }
+
         .card-hover {
             transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
         }
@@ -465,6 +486,9 @@
         </div>
     </section>
 
+    <!-- Stripe Band Divider -->
+    <div class="stripe-band" aria-hidden="true"></div>
+
     <!-- About Section -->
     <section id="about" class="relative py-20 md:py-28 bg-navy-950 noise-texture">
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -478,15 +502,15 @@
                 <div class="fade-in">
                     <span class="font-heading text-xs font-semibold tracking-[0.3em] text-gold-500 uppercase mb-4 block">About the Club</span>
                     <h2 class="font-heading text-3xl md:text-4xl font-bold text-white leading-tight tracking-[-0.03em] mb-6">
-                        Welcome to the<br><span class="text-gold-400">Aya Blues</span>
+                        Home of the<br><span class="text-gold-400">Aya Blues</span>
                     </h2>
 
                     <p class="font-body text-base text-white/65 mb-5" style="line-height: 1.7;">
-                        Altona North Soccer Club has been a cornerstone of football in Melbourne's western suburbs since 1975. Based at D.N. Duane Reserve in Brooklyn, within the City of Hobsons Bay, we are a family-oriented club that welcomes players of all ages and skill levels.
+                        Founded in 1975 and based at D.N. Duane Reserve in Brooklyn, Altona North Soccer Club is a family-oriented club proudly representing Melbourne's western suburbs. After winning back-to-back league titles in 2020 and 2025, we now compete at the highest level in our history - Football Victoria State League 2 North/West.
                     </p>
 
                     <p class="font-body text-base text-white/65 mb-8" style="line-height: 1.7;">
-                        Our club prides itself on building community through the game. Whether you are a seasoned player stepping onto the pitch in State League 2 or a young footballer taking your first touch in our Miniroos program, you will find a place at Altona North. We value camaraderie, development, and the shared love of football that brings us together every week.
+                        From our senior men's squad to our junior and Miniroos programs, we offer a pathway for players of all ages and abilities. The Aya Blues are built on community, player development, and a shared love of the game that has brought people together at Duane Reserve for over 50 years.
                     </p>
 
                     <div class="flex flex-wrap gap-4">
@@ -509,6 +533,9 @@
             </div>
         </div>
     </section>
+
+    <!-- Stripe Band Divider -->
+    <div class="stripe-band" aria-hidden="true"></div>
 
     <!-- Achievements Section -->
     <section class="relative py-20 md:py-28 bg-navy-900 noise-texture overflow-hidden" aria-label="Recent achievements">
@@ -546,6 +573,9 @@
             </div>
         </div>
     </section>
+
+    <!-- Stripe Band Divider -->
+    <div class="stripe-band" aria-hidden="true"></div>
 
     <!-- Programs Section -->
     <section id="programs" class="relative py-20 md:py-28 bg-navy-950 noise-texture">
@@ -619,6 +649,9 @@
         </div>
     </section>
 
+    <!-- Stripe Band Divider -->
+    <div class="stripe-band" aria-hidden="true"></div>
+
     <!-- History Section -->
     <section id="history" class="relative py-20 md:py-28 bg-navy-900 noise-texture overflow-hidden">
         <!-- Decorative -->
@@ -667,6 +700,9 @@
         </div>
     </section>
 
+    <!-- Stripe Band Divider -->
+    <div class="stripe-band" aria-hidden="true"></div>
+
     <!-- Junior Success Gallery -->
     <section class="relative py-20 md:py-28 bg-navy-950 noise-texture" aria-label="Junior teams gallery">
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -691,6 +727,9 @@
             </div>
         </div>
     </section>
+
+    <!-- Stripe Band Divider -->
+    <div class="stripe-band" aria-hidden="true"></div>
 
     <!-- CTA Section -->
     <section class="relative py-20 md:py-28 overflow-hidden noise-texture" style="background: linear-gradient(135deg, #1a224e 0%, #0f1535 50%, #1a224e 100%);">
@@ -717,6 +756,9 @@
             </div>
         </div>
     </section>
+
+    <!-- Stripe Band Divider -->
+    <div class="stripe-band" aria-hidden="true"></div>
 
     <!-- Contact / Location Section -->
     <section id="contact" class="relative py-20 md:py-28 bg-navy-900 noise-texture">
@@ -782,6 +824,9 @@
             </div>
         </div>
     </section>
+
+    <!-- Stripe Band Divider -->
+    <div class="stripe-band" aria-hidden="true"></div>
 
     <!-- Footer -->
     <footer class="bg-navy-950 border-t border-white/5 py-12">
