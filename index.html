@@ -256,6 +256,10 @@
         .main-nav-bar {
             background: rgba(35, 38, 80, 0.97);
             backdrop-filter: blur(12px);
+            transition: transform 0.3s ease;
+        }
+        .main-nav-bar.nav-hidden {
+            transform: translateY(-100%);
         }
 
         /* Nav logo overlap */
@@ -767,6 +771,19 @@
         }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Hide navbar on scroll down, show on scroll up
+        let lastScrollY = window.scrollY;
+        const nav = document.getElementById('mainNav');
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                nav.classList.add('nav-hidden');
+            } else {
+                nav.classList.remove('nav-hidden');
+            }
+            lastScrollY = currentScrollY;
+        });
 
         // Hero Carousel
         const slides = document.querySelectorAll('.hero-slide');
