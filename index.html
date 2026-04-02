@@ -87,6 +87,27 @@
             bottom: 6px;
         }
 
+        .stripe-band-navy {
+            background: #232650;
+            padding: 10px 0;
+            position: relative;
+        }
+        .stripe-band-navy::before,
+        .stripe-band-navy::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #c8102e;
+        }
+        .stripe-band-navy::before {
+            top: 6px;
+        }
+        .stripe-band-navy::after {
+            bottom: 6px;
+        }
+
         .card-hover {
             transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
         }
@@ -637,6 +658,7 @@
 
     <!-- Footer -->
     <footer class="bg-navy-950 text-white relative">
+        <div class="stripe-band-navy"></div>
         <!-- Upper Footer: Logo, Hashtags, Social -->
         <div class="pt-28 sm:pt-32 pb-12 px-4 sm:px-6 lg:px-8">
             <div class="max-w-5xl mx-auto">
