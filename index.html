@@ -467,21 +467,21 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-lg overflow-hidden">
 
                 <!-- NEXT MATCH Card -->
-                <div id="matchCard" class="bg-white p-8 md:p-10 lg:border-r border-gray-200 transition-colors duration-300">
-                    <h2 class="font-heading text-2xl md:text-3xl font-bold text-navy-950 text-center tracking-tight mb-1">MATCHES</h2>
+                <div id="matchCard" class="bg-white p-5 pb-4 md:p-10 lg:border-r border-gray-200 transition-colors duration-300">
+                    <h2 class="font-heading text-2xl md:text-3xl font-bold text-navy-950 text-center tracking-tight mb-1">NEXT MATCH</h2>
                     <div class="text-center mb-1">
                         <span class="font-body text-xs text-gray-500 tracking-wider uppercase">State League 2 NW</span>
                     </div>
                     <div class="text-center mb-1">
                         <span id="matchRound" class="font-heading text-sm font-bold text-navy-950 tracking-wide">ROUND 3</span>
                     </div>
-                    <div class="text-center mb-6">
+                    <div class="text-center mb-4 md:mb-6">
                         <span id="matchDateTime" class="font-body text-xs text-gray-400">11 April 2026 - 18:00</span><br>
                         <span id="matchVenue" class="font-body text-xs text-gray-400 italic">JT Gray Reserve</span>
                     </div>
 
                     <!-- Teams -->
-                    <div class="flex items-center justify-center gap-6 md:gap-10 mb-8">
+                    <div class="flex items-center justify-center gap-6 md:gap-10 mb-4 md:mb-8">
                         <div class="flex flex-col items-center gap-3">
                             <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-navy-50 flex items-center justify-center overflow-hidden border border-gray-100">
                                 <img id="homeTeamLogo" src="Assets/Other Team Logos/Williamstown SC.webp" alt="Williamstown" class="w-12 h-12 md:w-16 md:h-16 object-contain">
@@ -500,8 +500,13 @@
                     </div>
                 </div>
 
+                <!-- Mobile separator -->
+                <div class="lg:hidden mx-6">
+                    <div class="border-t border-gray-200"></div>
+                </div>
+
                 <!-- NEXT 5 Card -->
-                <div class="bg-white p-8 md:p-10">
+                <div class="bg-white p-5 pt-4 md:p-10">
                     <h2 class="font-heading text-2xl md:text-3xl font-bold text-navy-950 text-center tracking-tight mb-6">NEXT 5</h2>
                     <div id="next5List" class="space-y-1">
                         <!-- Populated by JS -->
@@ -572,10 +577,15 @@
                     </div>
                     <div class="p-6 md:p-8 bg-navy-950 flex-1 flex flex-col">
                         <p class="font-body text-sm text-white/55 mb-6" style="line-height: 1.7;">Competing in Football Victoria State League 2 North/West. Training and match days at Duane Reserve for dedicated senior players.</p>
-                        <a href="#contact" class="btn-primary mt-auto inline-flex items-center justify-center gap-2 bg-accent-500 text-white px-6 py-3 rounded font-heading text-sm font-bold tracking-[0.12em] uppercase self-start focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-500 focus-visible:outline-offset-2">
-                            Register Interest
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                        </a>
+                        <div class="mt-auto flex items-center gap-3">
+                            <a href="#contact" class="btn-primary inline-flex items-center justify-center gap-2 bg-accent-500 text-white px-6 py-3 rounded font-heading text-sm font-bold tracking-[0.12em] uppercase focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-500 focus-visible:outline-offset-2">
+                                Register
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                            </a>
+                            <a href="seniors.html" class="inline-flex items-center justify-center gap-2 border border-white/30 text-white px-6 py-3 rounded font-heading text-sm font-bold tracking-[0.12em] uppercase transition-colors duration-200 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+                                Learn More
+                            </a>
+                        </div>
                     </div>
                 </article>
 
@@ -588,10 +598,15 @@
                     </div>
                     <div class="p-6 md:p-8 bg-navy-950 flex-1 flex flex-col">
                         <p class="font-body text-sm text-white/55 mb-6" style="line-height: 1.7;">Competitive teams from U7 through to U14, developing the next generation of footballers in a structured, supportive environment.</p>
-                        <a href="#contact" class="btn-primary mt-auto inline-flex items-center justify-center gap-2 bg-accent-500 text-white px-6 py-3 rounded font-heading text-sm font-bold tracking-[0.12em] uppercase self-start focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-500 focus-visible:outline-offset-2">
-                            Register Interest
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                        </a>
+                        <div class="mt-auto flex items-center gap-3">
+                            <a href="#contact" class="btn-primary inline-flex items-center justify-center gap-2 bg-accent-500 text-white px-6 py-3 rounded font-heading text-sm font-bold tracking-[0.12em] uppercase focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-500 focus-visible:outline-offset-2">
+                                Register
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                            </a>
+                            <a href="juniors.html" class="inline-flex items-center justify-center gap-2 border border-white/30 text-white px-6 py-3 rounded font-heading text-sm font-bold tracking-[0.12em] uppercase transition-colors duration-200 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
+                                Learn More
+                            </a>
+                        </div>
                     </div>
                 </article>
 
