@@ -383,6 +383,8 @@
             </div>
         </div>
 
+        <!-- Mobile Menu Backdrop -->
+        <div id="mobileMenuBackdrop" class="fixed inset-0 bg-black/60 opacity-0 pointer-events-none lg:hidden z-40" style="transition: opacity 0.3s ease;"></div>
         <!-- Mobile Menu -->
         <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-72 h-full bg-navy-950 border-l border-white/10 p-6 lg:hidden z-50">
             <button id="mobileMenuClose" class="absolute top-4 right-4 p-2 text-white/80 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-400 rounded" aria-label="Close menu">
@@ -672,10 +674,10 @@
                     <img src="Assets/Logo.png" alt="Altona North Soccer Club crest" class="w-32 h-32 sm:w-40 sm:h-40 object-contain drop-shadow-[0_4px_24px_rgba(0,0,0,0.5)]" loading="lazy">
                 </div>
                 <!-- Hashtags Row -->
-                <div class="flex items-center justify-center mb-12">
-                    <span class="font-heading text-lg sm:text-xl font-bold tracking-[0.15em] text-white/90 flex-1 text-right pr-8 sm:pr-16">#ALTONANORTHSC</span>
-                    <div class="w-32 sm:w-40 shrink-0"></div>
-                    <span class="font-heading text-lg sm:text-xl font-bold tracking-[0.15em] text-white/90 flex-1 text-left pl-8 sm:pl-16">#ANSC</span>
+                <div class="flex flex-col sm:flex-row items-center justify-center mb-12 gap-2 sm:gap-0">
+                    <span class="font-heading text-lg sm:text-xl font-bold tracking-[0.15em] text-white/90 sm:flex-1 sm:text-right sm:pr-16">#ALTONANORTHSC</span>
+                    <div class="hidden sm:block w-32 sm:w-40 shrink-0"></div>
+                    <span class="font-heading text-lg sm:text-xl font-bold tracking-[0.15em] text-white/90 sm:flex-1 sm:text-left sm:pl-16">#ANSC</span>
                 </div>
 
                 <!-- Social Media -->
@@ -743,23 +745,29 @@
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const mobileMenuBackdrop = document.getElementById('mobileMenuBackdrop');
 
-        mobileMenuBtn.addEventListener('click', () => {
+        function openMobileMenu() {
             mobileMenu.classList.add('open');
+            mobileMenuBackdrop.style.opacity = '1';
+            mobileMenuBackdrop.style.pointerEvents = 'auto';
             mobileMenuBtn.setAttribute('aria-expanded', 'true');
-        });
+        }
 
-        mobileMenuClose.addEventListener('click', () => {
+        function closeMobileMenu() {
             mobileMenu.classList.remove('open');
+            mobileMenuBackdrop.style.opacity = '0';
+            mobileMenuBackdrop.style.pointerEvents = 'none';
             mobileMenuBtn.setAttribute('aria-expanded', 'false');
-        });
+        }
+
+        mobileMenuBtn.addEventListener('click', openMobileMenu);
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+        mobileMenuBackdrop.addEventListener('click', closeMobileMenu);
 
         // Close mobile menu on link click
         mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('open');
-                mobileMenuBtn.setAttribute('aria-expanded', 'false');
-            });
+            link.addEventListener('click', closeMobileMenu);
         });
 
         // Scroll animations
