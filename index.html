@@ -677,30 +677,40 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="relative py-20 md:py-28 overflow-hidden">
+    <section class="relative py-24 md:py-32 overflow-hidden">
         <!-- Background image -->
         <div class="absolute inset-0">
-            <img src="Assets/Hero Images/Junior Team.jpg" alt="" class="w-full h-full object-cover" loading="lazy">
-            <div class="absolute inset-0 bg-black/80"></div>
+            <img src="Assets/Hero Images/Junior Team.jpg" alt="" class="w-full h-full object-cover object-top" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/70"></div>
+            <div class="absolute inset-0 bg-navy-950/40"></div>
         </div>
 
-        <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in">
-            <h2 class="font-heading text-3xl md:text-5xl font-bold text-white tracking-[-0.03em] mb-6">
-                Be Part of<br><span class="text-gold-400">Something Special</span>
+        <!-- Top accent line -->
+        <div class="absolute top-0 left-0 right-0 h-[3px] bg-accent-500 z-10"></div>
+
+        <div class="relative z-10 max-w-3xl mx-auto px-6 sm:px-8 lg:px-8 text-center fade-in">
+            <!-- Small label -->
+            <span class="font-heading text-xs font-semibold tracking-[0.3em] text-accent-500 uppercase mb-4 block">Join the Family</span>
+
+            <h2 class="font-heading text-3xl md:text-5xl font-bold text-white tracking-[-0.03em] mb-6" style="text-shadow: 0 2px 16px rgba(0,0,0,0.4);">
+                Be Part of<br><span class="text-gold-400 italic">Something Special</span>
             </h2>
-            <p class="font-body text-lg text-white/60 max-w-lg mx-auto mb-10" style="line-height: 1.7;">
+            <p class="font-body text-base md:text-lg text-white/85 max-w-lg mx-auto mb-10" style="line-height: 1.7; text-shadow: 0 1px 6px rgba(0,0,0,0.3);">
                 Whether you are a player, parent, or supporter, there is a place for you at Altona North Soccer Club. Join the ANSC family today.
             </p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="#contact" class="btn-primary inline-flex items-center gap-2 bg-gold-500 text-white px-8 py-4 font-heading text-sm font-bold tracking-wider uppercase focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-400 focus-visible:outline-offset-2">
+                <a href="#contact" class="btn-primary inline-flex items-center gap-2 bg-gold-500 text-white px-8 py-4 font-heading text-sm font-bold tracking-wider uppercase focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-400 focus-visible:outline-offset-2" style="box-shadow: 0 4px 20px rgba(200,16,46,0.35);">
                     <span>Register to Play</span>
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                 </a>
-                <a href="#contact" class="btn-secondary inline-flex items-center gap-2 border border-white/25 text-white px-8 py-4 font-heading text-sm font-medium tracking-wider uppercase focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-400 focus-visible:outline-offset-2">
+                <a href="#contact" class="btn-secondary inline-flex items-center gap-2 border border-white/30 bg-white/10 backdrop-blur-sm text-white px-8 py-4 font-heading text-sm font-medium tracking-wider uppercase focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-400 focus-visible:outline-offset-2">
                     Get in Touch
                 </a>
             </div>
         </div>
+
+        <!-- Bottom accent line -->
+        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-accent-500 z-10"></div>
     </section>
 
     <!-- Sponsors -->
