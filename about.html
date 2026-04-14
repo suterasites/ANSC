@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Altona North Soccer Club - Est. 1975 | Brooklyn, Melbourne</title>
-    <meta name="description" content="Altona North Soccer Club - a family-oriented football club based in Brooklyn, Melbourne since 1975. FV State League 2. Senior and junior programs. Join ANSC today.">
-    <link rel="canonical" href="https://altonanorthsc.com.au/">
-    <meta property="og:title" content="Altona North Soccer Club - Est. 1975 | Brooklyn, Melbourne">
-    <meta property="og:description" content="Family-oriented football club in Melbourne's west since 1975. FV State League 2. Senior and junior programs for all ages. Join ANSC.">
+    <title>About Altona North SC - Our Story Since 1975 | ANSC</title>
+    <meta name="description" content="The Altona North Soccer Club story. Founded in 1975 in Brooklyn, Melbourne, ANSC is a family-oriented community football club with senior and junior programs.">
+    <link rel="canonical" href="https://altonanorthsc.com.au/about.html">
+    <meta property="og:title" content="About Altona North SC - Our Story Since 1975">
+    <meta property="og:description" content="A community football club in Melbourne's west since 1975. Discover our history, values, and what makes ANSC home.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://altonanorthsc.com.au/">
+    <meta property="og:url" content="https://altonanorthsc.com.au/about.html">
     <link rel="icon" type="image/png" href="Assets/Logo.png">
     <link rel="apple-touch-icon" href="Assets/Logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -60,10 +60,6 @@
         html { scroll-behavior: smooth; }
         body { font-family: 'Inter', sans-serif; }
 
-        .hero-gradient {
-            background: linear-gradient(135deg, rgba(35, 38, 80, 0.92) 0%, rgba(42, 45, 97, 0.85) 40%, rgba(80, 83, 130, 0.75) 100%);
-        }
-
         .section-divider {
             background: linear-gradient(90deg, transparent, rgba(200, 16, 46, 0.4), transparent);
             height: 1px;
@@ -83,12 +79,8 @@
             height: 3px;
             background: #c8102e;
         }
-        .stripe-band::before {
-            top: 6px;
-        }
-        .stripe-band::after {
-            bottom: 6px;
-        }
+        .stripe-band::before { top: 6px; }
+        .stripe-band::after { bottom: 6px; }
 
         .stripe-band-navy {
             background: #232650;
@@ -104,19 +96,8 @@
             height: 3px;
             background: #c8102e;
         }
-        .stripe-band-navy::before {
-            top: 6px;
-        }
-        .stripe-band-navy::after {
-            bottom: 6px;
-        }
-
-        .card-hover {
-            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
-        }
-        .card-hover:hover {
-            transform: translateY(-6px);
-        }
+        .stripe-band-navy::before { top: 6px; }
+        .stripe-band-navy::after { bottom: 6px; }
 
         .btn-primary {
             transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease, color 0.2s ease;
@@ -126,9 +107,7 @@
             background-color: #ffffff !important;
             color: #c8102e !important;
         }
-        .btn-primary:active {
-            transform: translateY(0);
-        }
+        .btn-primary:active { transform: translateY(0); }
 
         .btn-secondary {
             transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease;
@@ -137,13 +116,9 @@
             transform: translateY(-2px);
             background-color: rgba(255, 255, 255, 0.15);
         }
-        .btn-secondary:active {
-            transform: translateY(0);
-        }
+        .btn-secondary:active { transform: translateY(0); }
 
-        .noise-texture {
-            position: relative;
-        }
+        .noise-texture { position: relative; }
         .noise-texture::before {
             content: '';
             position: absolute;
@@ -152,18 +127,6 @@
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
             pointer-events: none;
             z-index: 1;
-        }
-
-        .img-overlay {
-            position: relative;
-            overflow: hidden;
-        }
-        .img-overlay::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(35, 38, 80, 0.6) 0%, transparent 50%);
-            pointer-events: none;
         }
 
         .fade-in {
@@ -181,9 +144,7 @@
             transform: translateX(100%);
             transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
-        .mobile-menu.open {
-            transform: translateX(0);
-        }
+        .mobile-menu.open { transform: translateX(0); }
 
         .nav-link {
             position: relative;
@@ -200,7 +161,8 @@
             transition: width 0.3s ease;
         }
         .nav-link:hover::after,
-        .nav-link:focus-visible::after {
+        .nav-link:focus-visible::after,
+        .nav-link.active::after {
             width: 100%;
         }
 
@@ -283,9 +245,7 @@
             opacity: 0.5;
             flex-shrink: 0;
         }
-        .mega-link:hover svg {
-            opacity: 0.8;
-        }
+        .mega-link:hover svg { opacity: 0.8; }
         .mega-featured {
             background: rgba(200, 16, 46, 0.08);
             border: 1px solid rgba(200, 16, 46, 0.15);
@@ -322,9 +282,7 @@
             text-decoration: none;
             transition: color 0.2s ease;
         }
-        .mega-featured-btn:hover {
-            color: #e8485a;
-        }
+        .mega-featured-btn:hover { color: #e8485a; }
 
         /* Mobile mega menu accordion */
         .mobile-accordion-content {
@@ -332,79 +290,13 @@
             overflow: hidden;
             transition: max-height 0.3s ease;
         }
-        .mobile-accordion-content.open {
-            max-height: 500px;
-        }
+        .mobile-accordion-content.open { max-height: 500px; }
         .mobile-accordion-btn .chevron-icon {
             transition: transform 0.2s ease;
         }
         .mobile-accordion-btn.open .chevron-icon {
             transform: rotate(180deg);
         }
-
-        /* Hero carousel */
-        .hero-slide {
-            position: absolute;
-            inset: 0;
-            opacity: 0;
-            transition: opacity 1.2s ease;
-        }
-        .hero-slide.active {
-            opacity: 1;
-        }
-        .hero-slide img {
-            transition: transform 8s ease;
-        }
-        .hero-slide.active img {
-            transform: scale(1.05);
-        }
-
-        .carousel-dot {
-            width: 32px;
-            height: 3px;
-            background: rgba(255,255,255,0.25);
-            border: none;
-            cursor: pointer;
-            transition: background 0.3s ease, width 0.3s ease;
-            padding: 0;
-        }
-        .carousel-dot.active {
-            background: #c8102e;
-            width: 48px;
-        }
-        .carousel-dot:hover {
-            background: rgba(255,255,255,0.5);
-        }
-
-        .hero-arrow {
-            width: 48px;
-            height: 48px;
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.15);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: background 0.2s ease;
-            backdrop-filter: blur(8px);
-        }
-        .hero-arrow:hover {
-            background: rgba(200,16,46,0.6);
-        }
-
-        @keyframes hero-fade-up {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .hero-animate {
-            animation: hero-fade-up 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-        }
-        .hero-animate-delay-1 { animation-delay: 0.15s; opacity: 0; }
-        .hero-animate-delay-2 { animation-delay: 0.3s; opacity: 0; }
-        .hero-animate-delay-3 { animation-delay: 0.45s; opacity: 0; }
-        .hero-animate-delay-4 { animation-delay: 0.6s; opacity: 0; }
-        .hero-animate-delay-5 { animation-delay: 0.75s; opacity: 0; }
 
         /* Top utility bar */
         .top-bar {
@@ -418,9 +310,7 @@
             backdrop-filter: blur(12px);
             transition: transform 0.3s ease;
         }
-        .main-nav-bar.nav-hidden {
-            transform: translateY(-100%);
-        }
+        .main-nav-bar.nav-hidden { transform: translateY(-100%); }
 
         /* Nav logo overlap */
         .nav-logo-wrapper {
@@ -430,18 +320,46 @@
             z-index: 60;
         }
         @media (min-width: 1024px) {
-            .nav-logo-wrapper {
-                left: 2.5rem;
-            }
+            .nav-logo-wrapper { left: 2.5rem; }
+        }
+
+        /* Page header */
+        .page-header {
+            background: linear-gradient(135deg, rgba(35, 38, 80, 0.92) 0%, rgba(42, 45, 97, 0.85) 40%, rgba(80, 83, 130, 0.78) 100%), url('Assets/2022 Senior Team Pic.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Timeline */
+        .timeline-line {
+            background: linear-gradient(180deg, rgba(200,16,46,0) 0%, rgba(200,16,46,0.7) 12%, rgba(200,16,46,0.7) 88%, rgba(200,16,46,0) 100%);
+        }
+        .timeline-dot {
+            box-shadow: 0 0 0 6px rgba(200,16,46,0.15), 0 0 0 12px rgba(200,16,46,0.06);
+        }
+
+        /* Value card */
+        .value-card {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.3s ease;
+        }
+        .value-card:hover {
+            transform: translateY(-6px);
+            border-color: #c8102e;
+        }
+
+        /* Stat number */
+        .stat-num {
+            background: linear-gradient(180deg, #ffffff 0%, rgba(255,255,255,0.65) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
         @media (max-width: 768px) {
-            .hero-title { font-size: 3rem !important; }
-            .hero-subtitle { font-size: 1.25rem !important; }
+            .page-title { font-size: 2.75rem !important; }
         }
         @media (max-width: 480px) {
-            .hero-title { font-size: 2.25rem !important; }
-            .hero-subtitle { font-size: 1rem !important; }
+            .page-title { font-size: 2.25rem !important; }
         }
     </style>
 
@@ -449,36 +367,40 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "SportsOrganization",
-        "name": "Altona North Soccer Club",
-        "alternateName": ["Altona North SC", "ANSC"],
-        "url": "https://altonanorthsc.com.au",
-        "logo": "https://altonanorthsc.com.au/Assets/Logo.png",
-        "foundingDate": "1975",
-        "sport": "Soccer",
-        "description": "A family-oriented football club based in Brooklyn, Melbourne since 1975. Competing in Football Victoria State League 2 North/West with senior and junior programs.",
-        "location": {
-            "@type": "Place",
-            "name": "D.N. Duane Reserve",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Primula Avenue",
-                "addressLocality": "Brooklyn",
-                "addressRegion": "VIC",
-                "addressCountry": "AU"
-            }
-        },
-        "memberOf": {
+        "@type": "AboutPage",
+        "name": "About Altona North Soccer Club",
+        "url": "https://altonanorthsc.com.au/about.html",
+        "mainEntity": {
             "@type": "SportsOrganization",
-            "name": "Football Victoria"
-        },
-        "areaServed": {
-            "@type": "City",
-            "name": "Melbourne",
-            "containedInPlace": {
-                "@type": "AdministrativeArea",
-                "name": "City of Hobsons Bay"
+            "name": "Altona North Soccer Club",
+            "alternateName": ["Altona North SC", "ANSC"],
+            "url": "https://altonanorthsc.com.au",
+            "logo": "https://altonanorthsc.com.au/Assets/Logo.png",
+            "foundingDate": "1975",
+            "sport": "Soccer",
+            "description": "A family-oriented football club based in Brooklyn, Melbourne since 1975. Competing in Football Victoria State League 2 North/West with senior and junior programs.",
+            "location": {
+                "@type": "Place",
+                "name": "D.N. Duane Reserve",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Primula Avenue",
+                    "addressLocality": "Brooklyn",
+                    "addressRegion": "VIC",
+                    "addressCountry": "AU"
+                }
+            },
+            "memberOf": {
+                "@type": "SportsOrganization",
+                "name": "Football Victoria"
             }
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://altonanorthsc.com.au/" },
+                { "@type": "ListItem", "position": 2, "name": "About", "item": "https://altonanorthsc.com.au/about.html" }
+            ]
         }
     }
     </script>
@@ -505,7 +427,6 @@
     <!-- Navigation - Main Nav Bar -->
     <nav id="mainNav" class="main-nav-bar sticky top-0 z-50">
         <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 relative">
-            <!-- Logo (overlapping bars on desktop) -->
             <div class="nav-logo-wrapper hidden lg:block">
                 <a href="index.html" aria-label="Altona North SC Home">
                     <img src="Assets/Logo.png" alt="Altona North Soccer Club crest" class="w-24 h-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]">
@@ -513,24 +434,20 @@
             </div>
 
             <div class="flex items-center justify-between h-16 lg:h-16">
-                <!-- Mobile: Logo left -->
                 <a href="index.html" class="lg:hidden flex items-center" aria-label="Altona North SC Home">
                     <img src="Assets/Logo.png" alt="Altona North Soccer Club crest" class="w-11 h-auto">
                 </a>
 
-                <!-- Desktop Nav Links (centered) with Mega Menu -->
                 <div class="hidden lg:flex items-center justify-center gap-8 flex-1 ml-24">
-                    <a href="index.html" class="nav-link font-heading text-[13px] font-semibold tracking-[0.15em] text-white uppercase">Home</a>
+                    <a href="index.html" class="nav-link font-heading text-[13px] font-medium tracking-[0.15em] text-white/75 uppercase hover:text-white focus-visible:text-white">Home</a>
 
-                    <!-- About dropdown -->
                     <div class="mega-menu-trigger" data-mega="about">
-                        <button class="nav-link font-heading text-[13px] font-medium tracking-[0.15em] text-white/75 uppercase hover:text-white focus-visible:text-white flex items-center gap-1.5" aria-expanded="false" aria-haspopup="true">
+                        <button class="nav-link active font-heading text-[13px] font-semibold tracking-[0.15em] text-white uppercase flex items-center gap-1.5" aria-expanded="false" aria-haspopup="true">
                             About
                             <svg class="chevron-icon w-3 h-3 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
                         </button>
                     </div>
 
-                    <!-- Teams dropdown -->
                     <div class="mega-menu-trigger" data-mega="teams">
                         <button class="nav-link font-heading text-[13px] font-medium tracking-[0.15em] text-white/75 uppercase hover:text-white focus-visible:text-white flex items-center gap-1.5" aria-expanded="false" aria-haspopup="true">
                             Teams
@@ -538,7 +455,6 @@
                         </button>
                     </div>
 
-                    <!-- Fixtures dropdown -->
                     <div class="mega-menu-trigger" data-mega="fixtures">
                         <button class="nav-link font-heading text-[13px] font-medium tracking-[0.15em] text-white/75 uppercase hover:text-white focus-visible:text-white flex items-center gap-1.5" aria-expanded="false" aria-haspopup="true">
                             Fixtures
@@ -546,7 +462,6 @@
                         </button>
                     </div>
 
-                    <!-- News & Media dropdown -->
                     <div class="mega-menu-trigger" data-mega="news">
                         <button class="nav-link font-heading text-[13px] font-medium tracking-[0.15em] text-white/75 uppercase hover:text-white focus-visible:text-white flex items-center gap-1.5" aria-expanded="false" aria-haspopup="true">
                             News
@@ -554,19 +469,17 @@
                         </button>
                     </div>
 
-                    <a href="#sponsors" class="nav-link font-heading text-[13px] font-medium tracking-[0.15em] text-white/75 uppercase hover:text-white focus-visible:text-white">Sponsors</a>
-                    <a href="#contact" class="nav-link font-heading text-[13px] font-medium tracking-[0.15em] text-white/75 uppercase hover:text-white focus-visible:text-white">Contact</a>
+                    <a href="index.html#sponsors" class="nav-link font-heading text-[13px] font-medium tracking-[0.15em] text-white/75 uppercase hover:text-white focus-visible:text-white">Sponsors</a>
+                    <a href="index.html#contact" class="nav-link font-heading text-[13px] font-medium tracking-[0.15em] text-white/75 uppercase hover:text-white focus-visible:text-white">Contact</a>
                 </div>
 
-                <!-- CTA button (right) -->
                 <div class="hidden lg:flex items-center gap-4">
-                    <a href="#contact" class="btn-primary inline-flex items-center gap-2 bg-accent-500 text-white px-5 py-2 font-heading text-[12px] font-bold tracking-[0.15em] uppercase focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-500 focus-visible:outline-offset-2">
+                    <a href="index.html#contact" class="btn-primary inline-flex items-center gap-2 bg-accent-500 text-white px-5 py-2 font-heading text-[12px] font-bold tracking-[0.15em] uppercase focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-500 focus-visible:outline-offset-2">
                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
                         Join Us
                     </a>
                 </div>
 
-                <!-- Mobile Menu Button -->
                 <button id="mobileMenuBtn" class="lg:hidden p-2 text-white/80 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-400" aria-label="Open menu" aria-expanded="false">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
                 </button>
@@ -574,7 +487,6 @@
         </div>
 
         <!-- Mega Menu Panels -->
-        <!-- About Panel -->
         <div class="mega-menu-panel" data-panel="about">
             <div class="max-w-[1400px] mx-auto px-10 py-8">
                 <div class="grid grid-cols-4 gap-8">
@@ -606,11 +518,11 @@
                     </div>
                     <div>
                         <div class="mega-col-title">Get Involved</div>
-                        <a href="#" class="mega-link">
+                        <a href="index.html#contact" class="mega-link">
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/></svg>
                             Membership
                         </a>
-                        <a href="#" class="mega-link">
+                        <a href="index.html#contact" class="mega-link">
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
                             Contact Us
                         </a>
@@ -629,35 +541,34 @@
             </div>
         </div>
 
-        <!-- Teams Panel -->
         <div class="mega-menu-panel" data-panel="teams">
             <div class="max-w-[1400px] mx-auto px-10 py-8">
                 <div class="grid grid-cols-4 gap-8">
                     <div>
                         <div class="mega-col-title">Senior Football</div>
-                        <a href="#" class="mega-link">
+                        <a href="index.html#programs" class="mega-link">
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
                             Senior Men's Squad
                         </a>
-                        <a href="#" class="mega-link">
+                        <a href="index.html#programs" class="mega-link">
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
                             Reserves Squad
                         </a>
                     </div>
                     <div>
                         <div class="mega-col-title">Junior Football</div>
-                        <a href="#" class="mega-link">
+                        <a href="index.html#programs" class="mega-link">
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg>
                             Elite Juniors (U7-U14)
                         </a>
-                        <a href="#" class="mega-link">
+                        <a href="index.html#programs" class="mega-link">
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342"/></svg>
                             Junior Development Pathway
                         </a>
                     </div>
                     <div>
                         <div class="mega-col-title">Join a Team</div>
-                        <a href="#" class="mega-link">
+                        <a href="index.html#contact" class="mega-link">
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"/></svg>
                             FAQs
                         </a>
@@ -666,7 +577,7 @@
                         <div class="mega-featured">
                             <div class="mega-featured-title">2026 Season</div>
                             <p class="mega-featured-text">FV State League 2 North/West. Registrations open for all age groups - from Miniroos through to senior men's football.</p>
-                            <a href="#" class="mega-featured-btn">
+                            <a href="index.html#contact" class="mega-featured-btn">
                                 Register Now
                                 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
                             </a>
@@ -676,17 +587,16 @@
             </div>
         </div>
 
-        <!-- Fixtures Panel -->
         <div class="mega-menu-panel" data-panel="fixtures">
             <div class="max-w-[1400px] mx-auto px-10 py-8">
                 <div class="grid grid-cols-2 gap-8">
                     <div>
                         <div class="mega-col-title">Season 2026</div>
-                        <a href="#" class="mega-link">
+                        <a href="index.html#fixtures" class="mega-link">
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>
                             Full Season Fixture
                         </a>
-                        <a href="#" class="mega-link">
+                        <a href="index.html#fixtures" class="mega-link">
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605"/></svg>
                             Results & Ladder
                         </a>
@@ -695,7 +605,7 @@
                         <div class="mega-featured">
                             <div class="mega-featured-title">State League 2</div>
                             <p class="mega-featured-text">Follow our senior men's campaign in FV State League 2 North/West. Match previews, live updates, and post-match reports all season.</p>
-                            <a href="#" class="mega-featured-btn">
+                            <a href="index.html#fixtures" class="mega-featured-btn">
                                 View Fixtures
                                 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
                             </a>
@@ -705,7 +615,6 @@
             </div>
         </div>
 
-        <!-- News Panel -->
         <div class="mega-menu-panel" data-panel="news">
             <div class="max-w-[1400px] mx-auto px-10 py-8">
                 <div class="grid grid-cols-4 gap-8">
@@ -729,10 +638,6 @@
                         <a href="#" class="mega-link">
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z"/></svg>
                             Match Day Videos
-                        </a>
-                        <a href="#" class="mega-link">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0z"/></svg>
-                            Match Day Photos
                         </a>
                     </div>
                     <div>
@@ -770,12 +675,11 @@
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
         </button>
         <div class="flex flex-col gap-1 mt-16 overflow-y-auto" style="max-height: calc(100vh - 100px);">
-            <a href="index.html" class="font-heading text-base font-semibold tracking-wider text-accent-500 uppercase py-2">Home</a>
+            <a href="index.html" class="font-heading text-base font-semibold tracking-wider text-navy-950/80 uppercase py-2">Home</a>
 
-            <!-- About Accordion -->
             <div>
                 <button class="mobile-accordion-btn w-full flex items-center justify-between py-2" data-accordion="about-mobile">
-                    <span class="font-heading text-base font-semibold tracking-wider text-navy-950/80 uppercase">About</span>
+                    <span class="font-heading text-base font-semibold tracking-wider text-accent-500 uppercase">About</span>
                     <svg class="chevron-icon w-4 h-4 text-navy-950/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
                 </button>
                 <div class="mobile-accordion-content" data-accordion-content="about-mobile">
@@ -789,7 +693,6 @@
                 </div>
             </div>
 
-            <!-- Teams Accordion -->
             <div>
                 <button class="mobile-accordion-btn w-full flex items-center justify-between py-2" data-accordion="teams-mobile">
                     <span class="font-heading text-base font-semibold tracking-wider text-navy-950/80 uppercase">Teams</span>
@@ -797,15 +700,14 @@
                 </button>
                 <div class="mobile-accordion-content" data-accordion-content="teams-mobile">
                     <div class="pl-3 pb-2 flex flex-col gap-1 border-l-2 border-accent-500/20 ml-1">
-                        <a href="#" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">Senior Men's Squad</a>
-                        <a href="#" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">Reserves Squad</a>
-                        <a href="#" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">Elite Juniors (U7-U14)</a>
-                        <a href="#" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">Junior Development Pathway</a>
+                        <a href="index.html#programs" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">Senior Men's Squad</a>
+                        <a href="index.html#programs" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">Reserves Squad</a>
+                        <a href="index.html#programs" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">Elite Juniors (U7-U14)</a>
+                        <a href="index.html#programs" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">Junior Development Pathway</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Fixtures Accordion -->
             <div>
                 <button class="mobile-accordion-btn w-full flex items-center justify-between py-2" data-accordion="fixtures-mobile">
                     <span class="font-heading text-base font-semibold tracking-wider text-navy-950/80 uppercase">Fixtures</span>
@@ -813,13 +715,12 @@
                 </button>
                 <div class="mobile-accordion-content" data-accordion-content="fixtures-mobile">
                     <div class="pl-3 pb-2 flex flex-col gap-1 border-l-2 border-accent-500/20 ml-1">
-                        <a href="#" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">Full Season Fixture</a>
-                        <a href="#" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">Results & Ladder</a>
+                        <a href="index.html#fixtures" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">Full Season Fixture</a>
+                        <a href="index.html#fixtures" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">Results & Ladder</a>
                     </div>
                 </div>
             </div>
 
-            <!-- News Accordion -->
             <div>
                 <button class="mobile-accordion-btn w-full flex items-center justify-between py-2" data-accordion="news-mobile">
                     <span class="font-heading text-base font-semibold tracking-wider text-navy-950/80 uppercase">News</span>
@@ -830,334 +731,481 @@
                         <a href="#" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">Latest News</a>
                         <a href="#" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">Announcements</a>
                         <a href="#" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">Photo Gallery</a>
-                        <a href="#" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">Match Day Videos</a>
-                        <a href="#" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">Match Day Photos</a>
                     </div>
                 </div>
             </div>
 
-            <a href="#sponsors" class="font-heading text-base font-semibold tracking-wider text-navy-950/80 uppercase py-2 hover:text-navy-950">Sponsors</a>
-            <a href="#contact" class="font-heading text-base font-semibold tracking-wider text-navy-950/80 uppercase py-2 hover:text-navy-950">Contact</a>
+            <a href="index.html#sponsors" class="font-heading text-base font-semibold tracking-wider text-navy-950/80 uppercase py-2 hover:text-navy-950">Sponsors</a>
+            <a href="index.html#contact" class="font-heading text-base font-semibold tracking-wider text-navy-950/80 uppercase py-2 hover:text-navy-950">Contact</a>
 
-            <!-- Mobile CTA -->
-            <a href="#contact" class="mt-4 btn-primary inline-flex items-center justify-center gap-2 bg-accent-500 text-white px-5 py-3 font-heading text-[12px] font-bold tracking-[0.15em] uppercase">
+            <a href="index.html#contact" class="mt-4 btn-primary inline-flex items-center justify-center gap-2 bg-accent-500 text-white px-5 py-3 font-heading text-[12px] font-bold tracking-[0.15em] uppercase">
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
                 Join Us
             </a>
         </div>
     </div>
 
-    <!-- Hero Section -->
-    <header class="relative h-[calc(100vh-60px)] min-h-[600px] max-h-[1000px] overflow-hidden">
-        <!-- Carousel Slides -->
-        <div class="hero-slide active" data-slide="0">
-            <img src="Assets/Hero Images/Pitch.jpg" alt="Altona North SC home ground pitch at D.N. Duane Reserve" class="w-full h-full object-cover object-center" loading="eager">
-        </div>
-        <div class="hero-slide" data-slide="1">
-            <img src="Assets/Hero Images/Senior Players.JPG" alt="Altona North SC senior players in a team huddle" class="w-full h-full object-cover object-center" loading="eager">
-        </div>
-        <div class="hero-slide" data-slide="2">
-            <img src="Assets/Hero Images/Junior Players2.jpg" alt="Altona North SC junior players during a game" class="w-full h-full object-cover object-center" loading="lazy">
-        </div>
+    <!-- Page Header -->
+    <header class="page-header relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/40 to-transparent pointer-events-none"></div>
+        <div class="absolute left-0 top-[20%] bottom-[20%] w-[3px] bg-accent-500 hidden lg:block" style="box-shadow: 0 0 20px rgba(200,16,46,0.4);"></div>
 
-        <!-- Gradient overlays -->
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/20 pointer-events-none z-10"></div>
-        <div class="absolute inset-0 bg-gradient-to-r from-black/55 via-black/15 to-transparent pointer-events-none z-10"></div>
+        <div class="relative max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 py-24 md:py-32 lg:py-40">
+            <!-- Breadcrumb -->
+            <nav aria-label="Breadcrumb" class="mb-6">
+                <ol class="flex items-center gap-2 font-body text-xs tracking-wider uppercase text-white/60">
+                    <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+                    <li class="text-white/30">/</li>
+                    <li class="text-accent-500 font-semibold">About</li>
+                </ol>
+            </nav>
 
-        <!-- Red accent line - left edge -->
-        <div class="absolute left-0 top-[15%] bottom-[15%] w-[3px] bg-accent-500 z-20 hidden lg:block" style="box-shadow: 0 0 20px rgba(200,16,46,0.4);"></div>
-
-        <!-- Carousel Arrows -->
-        <button class="hero-arrow absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 hidden md:flex" id="heroPrev" aria-label="Previous slide">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-        </button>
-        <button class="hero-arrow absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 hidden md:flex" id="heroNext" aria-label="Next slide">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-        </button>
-
-        <!-- Hero Content -->
-        <div class="absolute inset-0 z-20 flex items-end pb-24 md:pb-28 lg:items-center lg:pb-0">
-            <div class="w-full max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
-                <div class="max-w-3xl">
-                    <!-- Main headline -->
-                    <h1 class="hero-animate hero-animate-delay-2">
-                        <span class="hero-title block font-heading text-4xl md:text-6xl lg:text-[5rem] font-bold text-white uppercase tracking-[-0.03em] leading-[0.95] whitespace-nowrap" style="text-shadow: 0 4px 30px rgba(0,0,0,0.6), 0 2px 8px rgba(0,0,0,0.4);">
-                            Altona North SC
-                        </span>
-                    </h1>
-
-                    <!-- Red divider -->
-                    <div class="hero-animate hero-animate-delay-3 w-20 h-[3px] bg-accent-500 mt-6 mb-6" style="box-shadow: 0 0 16px rgba(200,16,46,0.5);"></div>
-
-                    <!-- Tagline -->
-                    <p class="hero-animate hero-animate-delay-3 font-body text-sm md:text-base text-white/90 max-w-md mb-8" style="line-height: 1.7; text-shadow: 0 1px 8px rgba(0,0,0,0.5);">
-                        A community club in Melbourne's Inner West since 1975
-                    </p>
-
-                    <!-- CTAs -->
-                    <div class="hero-animate hero-animate-delay-4 flex flex-wrap items-center gap-4">
-                        <a href="#contact" class="btn-primary inline-flex items-center gap-2.5 bg-accent-500 text-white px-8 py-3.5 font-heading text-[13px] font-bold tracking-[0.15em] uppercase focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-500 focus-visible:outline-offset-2" style="box-shadow: 0 4px 20px rgba(200,16,46,0.35);">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-                            Join the Club
-                        </a>
-                        <a href="#about" class="btn-secondary inline-flex items-center gap-2.5 border border-white/30 bg-white/10 backdrop-blur-sm text-white px-8 py-3.5 font-heading text-[13px] font-medium tracking-[0.15em] uppercase focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
-                            Learn More
-                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Carousel dots -->
-        <div class="absolute bottom-6 left-0 right-0 z-20">
-            <div class="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
-                <div class="flex items-center gap-2" id="carouselDots">
-                    <button class="carousel-dot active" data-dot="0" aria-label="Go to slide 1"></button>
-                    <button class="carousel-dot" data-dot="1" aria-label="Go to slide 2"></button>
-                    <button class="carousel-dot" data-dot="2" aria-label="Go to slide 3"></button>
-                </div>
-            </div>
+            <span class="font-heading text-xs font-semibold tracking-[0.3em] text-accent-500 uppercase block mb-4">Our Story Since 1975</span>
+            <h1 class="page-title font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-white uppercase tracking-[-0.03em] leading-[0.95] mb-6" style="text-shadow: 0 4px 30px rgba(0,0,0,0.6);">
+                More Than<br><span class="text-accent-500">A Football Club</span>
+            </h1>
+            <div class="w-20 h-[3px] bg-accent-500 mb-6" style="box-shadow: 0 0 16px rgba(200,16,46,0.5);"></div>
+            <p class="font-body text-base md:text-lg text-white/80 max-w-2xl" style="line-height: 1.7;">
+                Half a century of community football in Melbourne's west. From a small group of local families in 1975 to a thriving club with senior and junior pathways, this is the story of Altona North SC.
+            </p>
         </div>
     </header>
 
-    <!-- Matches - Overlapping Hero -->
-    <section class="relative z-30 -mt-8 md:-mt-12 pb-8 md:pb-12">
-        <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden">
-
-                <!-- NEXT MATCH Card -->
-                <div id="matchCard" class="bg-white p-5 pb-4 md:p-10 lg:border-r border-gray-200 transition-colors duration-300">
-                    <h2 class="font-heading text-2xl md:text-3xl font-bold text-navy-950 text-center tracking-tight mb-1">NEXT MATCH</h2>
-                    <div class="text-center mb-1">
-                        <span class="font-body text-xs text-gray-500 tracking-wider uppercase">State League 2 NW</span>
-                    </div>
-                    <div class="text-center mb-1">
-                        <span id="matchRound" class="font-heading text-sm font-bold text-navy-950 tracking-wide">ROUND 3</span>
-                    </div>
-                    <div class="text-center mb-4 md:mb-6">
-                        <span id="matchDateTime" class="font-body text-xs text-gray-400">11 April 2026 - 18:00</span><br>
-                        <span id="matchVenue" class="font-body text-xs text-gray-400 italic">JT Gray Reserve</span>
-                    </div>
-
-                    <!-- Teams -->
-                    <div class="flex items-center justify-center gap-6 md:gap-10 mb-4 md:mb-8">
-                        <div class="flex flex-col items-center gap-3">
-                            <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-navy-50 flex items-center justify-center overflow-hidden border border-gray-100">
-                                <img id="homeTeamLogo" src="Assets/Other Team Logos/Williamstown SC.webp" alt="Williamstown" class="w-12 h-12 md:w-16 md:h-16 object-contain">
-                            </div>
-                            <span id="homeTeamName" class="font-heading text-sm md:text-base font-bold text-navy-950 tracking-wide uppercase">Williamstown</span>
-                        </div>
-
-                        <span class="font-heading text-lg md:text-xl font-bold text-gray-300">VS</span>
-
-                        <div class="flex flex-col items-center gap-3">
-                            <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gray-50 flex items-center justify-center overflow-hidden border border-gray-100">
-                                <img id="awayTeamLogo" src="Assets/Logo.png" alt="Altona North" class="w-12 h-12 md:w-16 md:h-16 object-contain">
-                            </div>
-                            <span id="awayTeamName" class="font-heading text-sm md:text-base font-bold text-navy-950 tracking-wide uppercase">Altona North</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Mobile separator -->
-                <div class="hidden lg:hidden md:block mx-6">
-                    <div class="border-t border-gray-200"></div>
-                </div>
-
-                <!-- NEXT 5 Card -->
-                <div class="hidden md:block bg-white p-5 pt-4 md:p-10">
-                    <h2 class="font-heading text-2xl md:text-3xl font-bold text-navy-950 text-center tracking-tight mb-6">NEXT 5</h2>
-                    <div id="next5List" class="space-y-1">
-                        <!-- Populated by JS -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stripe Band Divider -->
     <div class="stripe-band" aria-hidden="true"></div>
 
-    <!-- About Section -->
-    <section id="about" class="relative py-20 md:py-28 bg-white">
+    <!-- Welcome Section -->
+    <section id="welcome" class="relative py-20 md:py-28 bg-white">
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-                <!-- Image -->
-                <div class="overflow-hidden fade-in">
-                    <img src="Assets/Senior Players 2.jpg" alt="Altona North SC senior squad walking onto the pitch at Duane Reserve" class="w-full h-[400px] md:h-[500px] object-cover" loading="lazy">
+                <div class="overflow-hidden fade-in order-2 md:order-1">
+                    <img src="Assets/2022 Senior Team Pic.jpg" alt="Altona North SC senior squad team photograph from the 2022 season" class="w-full h-[400px] md:h-[540px] object-cover" loading="lazy">
                 </div>
-
-                <!-- Content -->
-                <div class="fade-in">
-                    <span class="font-heading text-xs font-semibold tracking-[0.3em] text-accent-500 uppercase mb-4 block">About the Club</span>
+                <div class="fade-in order-1 md:order-2">
+                    <span class="font-heading text-xs font-semibold tracking-[0.3em] text-accent-500 uppercase mb-4 block">Welcome</span>
                     <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy-950 leading-tight tracking-[-0.03em] mb-6">
-                        Welcome to<br><span class="text-accent-500">Altona North SC</span>
+                        A community built on<br><span class="text-accent-500">football and family</span>
                     </h2>
-
                     <p class="font-body text-base text-gray-600 mb-5" style="line-height: 1.7;">
-                        Founded in 1975 and based at D.N. Duane Reserve in Brooklyn, Altona North Soccer Club is a family-oriented club proudly representing Melbourne's western suburbs in Football Victoria State League 2 North/West. We are a welcoming, inclusive club that caters to players of all ages and skill levels.
+                        Altona North Soccer Club has called D.N. Duane Reserve home since 1975. What began as a small grassroots club founded by a tight-knit group of local families has grown into one of Melbourne's west's most respected community football clubs, with players ranging from five-year-olds in our Miniroos program through to senior men competing in Football Victoria State League 2 North/West.
                     </p>
-
-                    <p class="font-body text-base text-gray-600 mb-8" style="line-height: 1.7;">
-                        From our senior men's squad to our junior elite teams, we offer a structured pathway for every player to grow, compete, and belong. ANSC is built on community, camaraderie, and a shared love of the game that has brought people together at Duane Reserve for over 50 years.
+                    <p class="font-body text-base text-gray-600 mb-5" style="line-height: 1.7;">
+                        We are, and always have been, a club for everyone. Whether you are a parent looking for a welcoming environment for your child to learn the game, a serious competitor chasing promotion, or a long-time supporter who has seen generations of players come through Duane Reserve, you belong here. Our identity is rooted in inclusivity, hard work, and the friendships that football builds.
                     </p>
-
+                    <p class="font-body text-base text-gray-600" style="line-height: 1.7;">
+                        Across nearly fifty years, the colours have stayed the same, the love of the game has stayed the same, and the people of Brooklyn and Altona North have stayed at the heart of everything we do. This is who we are.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Programs Section -->
-    <section id="programs" class="relative bg-navy-950 noise-texture">
-        <div class="relative z-10">
-            <div class="grid md:grid-cols-2">
-                <!-- Senior -->
-                <article class="group flex flex-col fade-in">
-                    <div class="relative h-[350px] md:h-[420px] overflow-hidden">
-                        <img src="Assets/Hero Images/Senior Players.JPG" alt="Altona North SC senior players during a State League match" class="w-full h-full object-cover object-bottom transition-transform duration-500 ease-out group-hover:scale-105" loading="lazy">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                        <h3 class="absolute bottom-6 left-6 right-6 font-heading text-3xl md:text-4xl font-bold text-white uppercase leading-[1.05] tracking-[-0.02em]" style="text-shadow: 0 2px 8px rgba(0,0,0,0.5);">Senior<br>Football</h3>
-                    </div>
-                    <div class="p-6 md:p-8 bg-navy-950 flex-1 flex flex-col">
-                        <p class="font-body text-sm text-white/55 mb-6" style="line-height: 1.7;">Competing in Football Victoria State League 2 North/West. Training and match days at Duane Reserve for dedicated senior players.</p>
-                        <div class="mt-auto flex items-center gap-3">
-                            <a href="#contact" class="btn-primary inline-flex items-center justify-center gap-2 bg-accent-500 text-white px-6 py-3 font-heading text-sm font-bold tracking-[0.12em] uppercase focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-500 focus-visible:outline-offset-2">
-                                Register
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                            </a>
-                            <a href="seniors.html" class="inline-flex items-center justify-center gap-2 border border-white/30 text-white px-6 py-3 font-heading text-sm font-bold tracking-[0.12em] uppercase transition-colors duration-200 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
-                                Learn More
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Juniors -->
-                <article class="group flex flex-col fade-in">
-                    <div class="relative h-[350px] md:h-[420px] overflow-hidden">
-                        <img src="Assets/Junior Players.jpg" alt="Altona North SC junior players celebrating a tournament victory with trophy" class="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105" loading="lazy">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                        <h3 class="absolute bottom-6 left-6 right-6 font-heading text-3xl md:text-4xl font-bold text-white uppercase leading-[1.05] tracking-[-0.02em]" style="text-shadow: 0 2px 8px rgba(0,0,0,0.5);">Junior<br>Football</h3>
-                    </div>
-                    <div class="p-6 md:p-8 bg-navy-950 flex-1 flex flex-col">
-                        <p class="font-body text-sm text-white/55 mb-6" style="line-height: 1.7;">Competitive teams from U7 through to U14, developing the next generation of footballers in a structured, supportive environment.</p>
-                        <div class="mt-auto flex items-center gap-3">
-                            <a href="#contact" class="btn-primary inline-flex items-center justify-center gap-2 bg-accent-500 text-white px-6 py-3 font-heading text-sm font-bold tracking-[0.12em] uppercase focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-500 focus-visible:outline-offset-2">
-                                Register
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                            </a>
-                            <a href="juniors.html" class="inline-flex items-center justify-center gap-2 border border-white/30 text-white px-6 py-3 font-heading text-sm font-bold tracking-[0.12em] uppercase transition-colors duration-200 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2">
-                                Learn More
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
+    <!-- Stats Strip -->
+    <section class="relative bg-navy-950 noise-texture border-y border-white/5">
+        <div class="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-16">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+                <div class="text-center fade-in">
+                    <div class="stat-num font-heading text-5xl md:text-6xl font-bold tracking-[-0.04em] mb-2">50+</div>
+                    <div class="font-heading text-[11px] font-semibold tracking-[0.2em] text-white/60 uppercase">Years of Football</div>
+                </div>
+                <div class="text-center fade-in">
+                    <div class="stat-num font-heading text-5xl md:text-6xl font-bold tracking-[-0.04em] mb-2">8</div>
+                    <div class="font-heading text-[11px] font-semibold tracking-[0.2em] text-white/60 uppercase">Junior Age Groups</div>
+                </div>
+                <div class="text-center fade-in">
+                    <div class="stat-num font-heading text-5xl md:text-6xl font-bold tracking-[-0.04em] mb-2">2</div>
+                    <div class="font-heading text-[11px] font-semibold tracking-[0.2em] text-white/60 uppercase">League Titles</div>
+                </div>
+                <div class="text-center fade-in">
+                    <div class="stat-num font-heading text-5xl md:text-6xl font-bold tracking-[-0.04em] mb-2">1</div>
+                    <div class="font-heading text-[11px] font-semibold tracking-[0.2em] text-white/60 uppercase">Home Ground</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- History Section -->
-    <section id="history" class="relative py-20 md:py-28 bg-white overflow-hidden">
-        <!-- Decorative -->
-        <div class="absolute bottom-0 left-0 w-72 h-72 bg-accent-500/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+    <!-- History Timeline -->
+    <section id="history" class="relative py-20 md:py-28 bg-white">
+        <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <span class="font-heading text-xs font-semibold tracking-[0.3em] text-accent-500 uppercase mb-4 block">Our History</span>
+                <h2 class="font-heading text-3xl md:text-5xl font-bold text-navy-950 leading-tight tracking-[-0.03em] mb-6">
+                    Five Decades<br><span class="text-accent-500">In the Making</span>
+                </h2>
+                <div class="w-20 h-[3px] bg-accent-500 mx-auto mb-6"></div>
+                <p class="font-body text-base text-gray-600 max-w-2xl mx-auto" style="line-height: 1.7;">
+                    From a handful of local families forming a club in 1975 to back-to-back promotions in the 2020s, the ANSC story has been written by the people who love it.
+                </p>
+            </div>
 
+            <div class="relative">
+                <!-- Vertical line (desktop) -->
+                <div class="absolute left-1/2 top-0 bottom-0 w-[2px] timeline-line hidden md:block -translate-x-1/2"></div>
+                <!-- Vertical line (mobile, on left) -->
+                <div class="absolute left-4 top-0 bottom-0 w-[2px] timeline-line md:hidden"></div>
+
+                <!-- 1975 -->
+                <div class="relative mb-14 md:mb-20 fade-in">
+                    <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
+                        <div class="md:text-right md:pr-12 pl-12 md:pl-0">
+                            <div class="font-heading text-4xl md:text-5xl font-bold text-accent-500 tracking-[-0.03em] mb-2">1975</div>
+                            <h3 class="font-heading text-xl md:text-2xl font-bold text-navy-950 uppercase tracking-tight mb-3">The Beginning</h3>
+                            <p class="font-body text-sm md:text-base text-gray-600" style="line-height: 1.7;">Altona North Soccer Club is founded by a group of local families with a shared vision: a community football club where everyone belongs. The first matches are played at D.N. Duane Reserve in Brooklyn, the ground that would become home for the next half century.</p>
+                        </div>
+                        <div class="hidden md:block md:pl-12">
+                            <div class="overflow-hidden">
+                                <img src="Assets/1975 Team.jpg" alt="Altona North Soccer Club founding team photograph from 1975" class="w-full h-64 object-cover">
+                            </div>
+                        </div>
+                        <!-- Mobile image -->
+                        <div class="md:hidden mt-4 ml-12 overflow-hidden">
+                            <img src="Assets/1975 Team.jpg" alt="Altona North Soccer Club founding team photograph from 1975" class="w-full h-48 object-cover">
+                        </div>
+                    </div>
+                    <div class="absolute left-4 md:left-1/2 top-2 w-4 h-4 rounded-full bg-accent-500 timeline-dot md:-translate-x-1/2"></div>
+                </div>
+
+                <!-- 1990s -->
+                <div class="relative mb-14 md:mb-20 fade-in">
+                    <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
+                        <div class="hidden md:block md:pr-12">
+                            <div class="overflow-hidden">
+                                <img src="Assets/Altona North Tarxien - Early 90's.jpg" alt="Altona North versus Tarxien match action from the early 1990s" class="w-full h-64 object-cover">
+                            </div>
+                        </div>
+                        <div class="md:pl-12 pl-12">
+                            <div class="font-heading text-4xl md:text-5xl font-bold text-accent-500 tracking-[-0.03em] mb-2">1990s</div>
+                            <h3 class="font-heading text-xl md:text-2xl font-bold text-navy-950 uppercase tracking-tight mb-3">Building the Identity</h3>
+                            <p class="font-body text-sm md:text-base text-gray-600" style="line-height: 1.7;">Through the 1990s the club builds out its junior structure and forges fierce local rivalries with neighbouring sides. Long-running matches against teams like Tarxien define the era and cement Duane Reserve as one of the inner-west's loved football grounds.</p>
+                        </div>
+                        <div class="md:hidden mt-4 ml-12 overflow-hidden">
+                            <img src="Assets/Altona North Tarxien - Early 90's.jpg" alt="Altona North versus Tarxien match action from the early 1990s" class="w-full h-48 object-cover">
+                        </div>
+                    </div>
+                    <div class="absolute left-4 md:left-1/2 top-2 w-4 h-4 rounded-full bg-accent-500 timeline-dot md:-translate-x-1/2"></div>
+                </div>
+
+                <!-- 2019 -->
+                <div class="relative mb-14 md:mb-20 fade-in">
+                    <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
+                        <div class="md:text-right md:pr-12 pl-12 md:pl-0">
+                            <div class="font-heading text-4xl md:text-5xl font-bold text-accent-500 tracking-[-0.03em] mb-2">2019</div>
+                            <h3 class="font-heading text-xl md:text-2xl font-bold text-navy-950 uppercase tracking-tight mb-3">Senior Champions</h3>
+                            <p class="font-body text-sm md:text-base text-gray-600" style="line-height: 1.7;">A breakthrough season for the senior men, lifting silverware and signalling the start of a new era. The 2019 championship sets the foundation for the on-pitch success that follows in the 2020s.</p>
+                        </div>
+                        <div class="hidden md:block md:pl-12">
+                            <div class="overflow-hidden">
+                                <img src="Assets/2019 Senior Men's Champions.jpg" alt="Altona North senior men celebrating their 2019 championship win" class="w-full h-64 object-cover">
+                            </div>
+                        </div>
+                        <div class="md:hidden mt-4 ml-12 overflow-hidden">
+                            <img src="Assets/2019 Senior Men's Champions.jpg" alt="Altona North senior men celebrating their 2019 championship win" class="w-full h-48 object-cover">
+                        </div>
+                    </div>
+                    <div class="absolute left-4 md:left-1/2 top-2 w-4 h-4 rounded-full bg-accent-500 timeline-dot md:-translate-x-1/2"></div>
+                </div>
+
+                <!-- 2020 -->
+                <div class="relative mb-14 md:mb-20 fade-in">
+                    <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
+                        <div class="hidden md:block md:pr-12">
+                            <div class="overflow-hidden">
+                                <img src="Assets/2019 Senior Men's Championship Team.jpg" alt="Altona North championship squad with the trophy" class="w-full h-64 object-cover">
+                            </div>
+                        </div>
+                        <div class="md:pl-12 pl-12">
+                            <div class="font-heading text-4xl md:text-5xl font-bold text-accent-500 tracking-[-0.03em] mb-2">2020</div>
+                            <h3 class="font-heading text-xl md:text-2xl font-bold text-navy-950 uppercase tracking-tight mb-3">State League 4 Title</h3>
+                            <p class="font-body text-sm md:text-base text-gray-600" style="line-height: 1.7;">Altona North claim the State League 4 title and earn promotion. A milestone moment for the club, achieved against the backdrop of one of the most disrupted seasons in football history.</p>
+                        </div>
+                        <div class="md:hidden mt-4 ml-12 overflow-hidden">
+                            <img src="Assets/2019 Senior Men's Championship Team.jpg" alt="Altona North championship squad with the trophy" class="w-full h-48 object-cover">
+                        </div>
+                    </div>
+                    <div class="absolute left-4 md:left-1/2 top-2 w-4 h-4 rounded-full bg-accent-500 timeline-dot md:-translate-x-1/2"></div>
+                </div>
+
+                <!-- 2025 -->
+                <div class="relative mb-14 md:mb-20 fade-in">
+                    <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
+                        <div class="md:text-right md:pr-12 pl-12 md:pl-0">
+                            <div class="font-heading text-4xl md:text-5xl font-bold text-accent-500 tracking-[-0.03em] mb-2">2025</div>
+                            <h3 class="font-heading text-xl md:text-2xl font-bold text-navy-950 uppercase tracking-tight mb-3">State League 3 Champions</h3>
+                            <p class="font-body text-sm md:text-base text-gray-600" style="line-height: 1.7;">Another championship, another promotion. The senior men win the State League 3 title and earn their place in State League 2 North/West, the highest level the club has competed at in decades.</p>
+                        </div>
+                        <div class="hidden md:block md:pl-12">
+                            <div class="overflow-hidden">
+                                <img src="Assets/Senior Players 2.jpg" alt="Altona North senior players walking out at Duane Reserve" class="w-full h-64 object-cover">
+                            </div>
+                        </div>
+                        <div class="md:hidden mt-4 ml-12 overflow-hidden">
+                            <img src="Assets/Senior Players 2.jpg" alt="Altona North senior players walking out at Duane Reserve" class="w-full h-48 object-cover">
+                        </div>
+                    </div>
+                    <div class="absolute left-4 md:left-1/2 top-2 w-4 h-4 rounded-full bg-accent-500 timeline-dot md:-translate-x-1/2"></div>
+                </div>
+
+                <!-- 2026 -->
+                <div class="relative fade-in">
+                    <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
+                        <div class="hidden md:block md:pr-12">
+                            <div class="overflow-hidden">
+                                <img src="Assets/Junior Players.jpg" alt="Altona North junior players celebrating with a trophy" class="w-full h-64 object-cover">
+                            </div>
+                        </div>
+                        <div class="md:pl-12 pl-12">
+                            <div class="font-heading text-4xl md:text-5xl font-bold text-accent-500 tracking-[-0.03em] mb-2">Today</div>
+                            <h3 class="font-heading text-xl md:text-2xl font-bold text-navy-950 uppercase tracking-tight mb-3">A New Chapter</h3>
+                            <p class="font-body text-sm md:text-base text-gray-600" style="line-height: 1.7;">ANSC enters its second half-century proud of where it has come from and excited about where it is going. A senior men's side competing in State League 2, a thriving junior pathway from U7 to U14, and a community that grows every season.</p>
+                        </div>
+                        <div class="md:hidden mt-4 ml-12 overflow-hidden">
+                            <img src="Assets/Junior Players.jpg" alt="Altona North junior players celebrating with a trophy" class="w-full h-48 object-cover">
+                        </div>
+                    </div>
+                    <div class="absolute left-4 md:left-1/2 top-2 w-4 h-4 rounded-full bg-accent-500 timeline-dot md:-translate-x-1/2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section id="values" class="relative bg-navy-950 noise-texture py-20 md:py-28">
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-                <!-- Content -->
-                <div class="order-2 md:order-1 fade-in">
-                    <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy-950 leading-tight tracking-[-0.03em] mb-6">
-                        50+ Years of<br><span class="text-navy-950">Community Football</span>
-                    </h2>
+            <div class="text-center mb-16 fade-in">
+                <span class="font-heading text-xs font-semibold tracking-[0.3em] text-accent-500 uppercase mb-4 block">What We Stand For</span>
+                <h2 class="font-heading text-3xl md:text-5xl font-bold text-white leading-tight tracking-[-0.03em] mb-6">
+                    Our Values
+                </h2>
+                <div class="w-20 h-[3px] bg-accent-500 mx-auto mb-6"></div>
+                <p class="font-body text-base text-white/60 max-w-2xl mx-auto" style="line-height: 1.7;">
+                    Football is what we play, but it is not all of who we are. These are the principles that have guided ANSC since 1975, and they shape every decision we make for the next fifty years.
+                </p>
+            </div>
 
-                    <p class="font-body text-base text-navy-900 mb-5" style="line-height: 1.7;">
-                        Founded in 1975, Altona North Soccer Club was built by the local community in Brooklyn - families and footballers who wanted a club to call their own in Melbourne's western suburbs.
-                    </p>
-
-                    <p class="font-body text-base text-navy-900 mb-5" style="line-height: 1.7;">
-                        From humble beginnings on the fields of Duane Reserve, the club has grown into a proud competitor in Football Victoria's league structure. Our journey through the ranks - from State League 4 champions in 2020 to State League 3 champions in 2025 - reflects the dedication and passion of everyone who has pulled on the navy blue jersey.
-                    </p>
-
-                    <p class="font-body text-base text-navy-900 mb-8" style="line-height: 1.7;">
-                        Today, ANSC continues that tradition, fielding senior and junior teams that carry the spirit of the club's founders onto the pitch every match day.
-                    </p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="value-card bg-navy-900/60 border border-white/10 p-8 fade-in">
+                    <div class="w-12 h-12 bg-accent-500/15 border border-accent-500/30 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-white uppercase tracking-tight mb-3">Family First</h3>
+                    <p class="font-body text-sm text-white/60" style="line-height: 1.7;">Generations of families have called ANSC home. Parents, kids, and grandparents share the same touchline. We protect that.</p>
                 </div>
 
-                <!-- Image -->
-                <div class="order-1 md:order-2 fade-in">
-                    <div class="relative">
-                        <div class="img-overlay overflow-hidden">
-                            <img src="Assets/History.jpg" alt="Original Altona North Soccer Club team photo from the 1970s in red and white striped jerseys" class="w-full h-[400px] md:h-[500px] object-cover" loading="lazy">
+                <div class="value-card bg-navy-900/60 border border-white/10 p-8 fade-in">
+                    <div class="w-12 h-12 bg-accent-500/15 border border-accent-500/30 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342"/></svg>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-white uppercase tracking-tight mb-3">Player Development</h3>
+                    <p class="font-body text-sm text-white/60" style="line-height: 1.7;">Every player gets the chance to grow. From their first Miniroos session to senior football, we coach for the long term.</p>
+                </div>
+
+                <div class="value-card bg-navy-900/60 border border-white/10 p-8 fade-in">
+                    <div class="w-12 h-12 bg-accent-500/15 border border-accent-500/30 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-white uppercase tracking-tight mb-3">Inclusivity</h3>
+                    <p class="font-body text-sm text-white/60" style="line-height: 1.7;">All ages, all skill levels, all backgrounds. The blue and white shirt is for anyone who wants to wear it and earn it.</p>
+                </div>
+
+                <div class="value-card bg-navy-900/60 border border-white/10 p-8 fade-in">
+                    <div class="w-12 h-12 bg-accent-500/15 border border-accent-500/30 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516"/></svg>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-white uppercase tracking-tight mb-3">Competitive Spirit</h3>
+                    <p class="font-body text-sm text-white/60" style="line-height: 1.7;">We are a community club, and we play to win. Two league titles in five years prove what hard work at every level achieves.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Honours Section -->
+    <section id="honours" class="relative py-20 md:py-28 bg-white">
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="fade-in">
+                    <span class="font-heading text-xs font-semibold tracking-[0.3em] text-accent-500 uppercase mb-4 block">Honours Board</span>
+                    <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-navy-950 leading-tight tracking-[-0.03em] mb-6">
+                        Trophies and<br><span class="text-accent-500">Title Wins</span>
+                    </h2>
+                    <p class="font-body text-base text-gray-600 mb-8" style="line-height: 1.7;">
+                        Silverware never tells the full story of a community football club, but it does mark the moments worth remembering. Two senior league titles in five seasons have lifted Altona North through the Football Victoria pyramid and into State League 2 for the first time in a generation.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-5 p-5 border-l-4 border-accent-500 bg-gray-50">
+                            <div class="shrink-0 w-12 h-12 bg-accent-500 flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172"/></svg>
+                            </div>
+                            <div>
+                                <div class="font-heading text-xs font-semibold tracking-[0.2em] text-accent-500 uppercase mb-1">2025 Season</div>
+                                <div class="font-heading text-lg font-bold text-navy-950 uppercase tracking-tight mb-1">State League 3 Champions</div>
+                                <p class="font-body text-sm text-gray-600">Promotion secured to FV State League 2 North/West.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-5 p-5 border-l-4 border-accent-500 bg-gray-50">
+                            <div class="shrink-0 w-12 h-12 bg-accent-500 flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172"/></svg>
+                            </div>
+                            <div>
+                                <div class="font-heading text-xs font-semibold tracking-[0.2em] text-accent-500 uppercase mb-1">2020 Season</div>
+                                <div class="font-heading text-lg font-bold text-navy-950 uppercase tracking-tight mb-1">State League 4 Champions</div>
+                                <p class="font-body text-sm text-gray-600">First senior league title of the modern era.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-5 p-5 border-l-4 border-navy-950/30 bg-gray-50">
+                            <div class="shrink-0 w-12 h-12 bg-navy-950 flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z"/></svg>
+                            </div>
+                            <div>
+                                <div class="font-heading text-xs font-semibold tracking-[0.2em] text-navy-950/60 uppercase mb-1">Junior Programs</div>
+                                <div class="font-heading text-lg font-bold text-navy-950 uppercase tracking-tight mb-1">Multiple Age Group Titles</div>
+                                <p class="font-body text-sm text-gray-600">A junior pathway with consistent on-pitch success.</p>
+                            </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="fade-in grid grid-cols-2 gap-4">
+                    <div class="overflow-hidden">
+                        <img src="Assets/2019 Senior Men's Champions.jpg" alt="2019 senior men's championship celebration" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="overflow-hidden mt-12">
+                        <img src="Assets/2019 Senior Men's Championship Team.jpg" alt="2019 senior men's championship squad photograph" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="overflow-hidden">
+                        <img src="Assets/Junior Players.jpg" alt="Altona North junior team celebrating with a trophy" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="overflow-hidden mt-12">
+                        <img src="Assets/2022 Senior Team Pic.jpg" alt="2022 senior squad team photograph" class="w-full h-64 object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Crest & Identity -->
+    <section id="identity" class="relative py-20 md:py-28 bg-navy-950 noise-texture">
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div class="fade-in">
+                    <div class="overflow-hidden bg-white/5 border border-white/10 p-8 md:p-12">
+                        <img src="Assets/Kit History.jpg" alt="Altona North Soccer Club kit history through the decades" class="w-full h-auto object-contain">
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <span class="font-heading text-xs font-semibold tracking-[0.3em] text-accent-500 uppercase mb-4 block">The Crest & Colours</span>
+                    <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-[-0.03em] mb-6">
+                        Blue, White<br><span class="text-accent-500">and Red</span>
+                    </h2>
+                    <p class="font-body text-base text-white/70 mb-5" style="line-height: 1.7;">
+                        Navy blue, white and red have defined the Altona North identity from the very first season. The colours were chosen by the club's founders and have been worn proudly by every player who has pulled on the shirt since 1975. The Aya Blues nickname has become part of the local football vocabulary.
+                    </p>
+                    <p class="font-body text-base text-white/70 mb-8" style="line-height: 1.7;">
+                        Across nearly fifty years the kit has evolved with the times, but the core identity has never changed. The crest, the colours, the home jersey at Duane Reserve - it all means the same thing: this is our club, and these are our colours.
+                    </p>
+
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="text-center">
+                            <div class="aspect-square bg-navy-950 border-2 border-white/20 mb-3"></div>
+                            <div class="font-heading text-[11px] font-semibold tracking-[0.15em] text-white/70 uppercase">Navy Blue</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="aspect-square bg-white border-2 border-white/20 mb-3"></div>
+                            <div class="font-heading text-[11px] font-semibold tracking-[0.15em] text-white/70 uppercase">White</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="aspect-square bg-accent-500 border-2 border-white/20 mb-3"></div>
+                            <div class="font-heading text-[11px] font-semibold tracking-[0.15em] text-white/70 uppercase">Red</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- D.N. Duane Reserve -->
+    <section id="ground" class="relative py-20 md:py-28 bg-white">
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="overflow-hidden fade-in">
+                    <img src="Assets/Duane Reserve circa 1991.jpg" alt="D.N. Duane Reserve at Altona North circa 1991" class="w-full h-[400px] md:h-[540px] object-cover">
+                </div>
+                <div class="fade-in">
+                    <span class="font-heading text-xs font-semibold tracking-[0.3em] text-accent-500 uppercase mb-4 block">Our Home Ground</span>
+                    <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-navy-950 leading-tight tracking-[-0.03em] mb-6">
+                        D.N. Duane<br><span class="text-accent-500">Reserve</span>
+                    </h2>
+                    <p class="font-body text-base text-gray-600 mb-5" style="line-height: 1.7;">
+                        Tucked into the streets of Brooklyn, D.N. Duane Reserve has been the spiritual home of Altona North Soccer Club since 1975. Generations of players, families and supporters have walked through the gates for training nights, Saturday afternoon kick-offs and Friday lights.
+                    </p>
+                    <p class="font-body text-base text-gray-600 mb-8" style="line-height: 1.7;">
+                        Located in the City of Hobsons Bay, the ground sits in the heart of Melbourne's inner west and is easily accessible for families across Altona North, Brooklyn, Newport, Yarraville and Footscray. On match days the pitch comes alive with the sound of the Aya Blues faithful.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-start gap-3 p-4 bg-gray-50 border-l-2 border-accent-500">
+                            <svg class="w-5 h-5 text-accent-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            <div>
+                                <div class="font-heading text-xs font-bold text-navy-950 uppercase tracking-wide mb-1">Address</div>
+                                <p class="font-body text-sm text-gray-600">Primula Avenue, Brooklyn VIC</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 p-4 bg-gray-50 border-l-2 border-accent-500">
+                            <svg class="w-5 h-5 text-accent-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+                            <div>
+                                <div class="font-heading text-xs font-bold text-navy-950 uppercase tracking-wide mb-1">Municipality</div>
+                                <p class="font-body text-sm text-gray-600">City of Hobsons Bay</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 p-4 bg-gray-50 border-l-2 border-accent-500">
+                            <svg class="w-5 h-5 text-accent-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            <div>
+                                <div class="font-heading text-xs font-bold text-navy-950 uppercase tracking-wide mb-1">Facilities</div>
+                                <p class="font-body text-sm text-gray-600">Pitch, parking, clubrooms</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 p-4 bg-gray-50 border-l-2 border-accent-500">
+                            <svg class="w-5 h-5 text-accent-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            <div>
+                                <div class="font-heading text-xs font-bold text-navy-950 uppercase tracking-wide mb-1">Home Since</div>
+                                <p class="font-body text-sm text-gray-600">1975</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="index.html#contact" class="btn-primary inline-flex items-center gap-2 bg-accent-500 text-white px-7 py-3.5 font-heading text-[13px] font-bold tracking-[0.15em] uppercase">
+                        Get Directions
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="relative py-24 md:py-32 overflow-hidden">
-        <!-- Background image -->
+    <section class="relative bg-navy-950 noise-texture overflow-hidden">
         <div class="absolute inset-0">
-            <img src="Assets/Hero Images/Pitch.jpg" alt="" class="w-full h-full object-cover object-bottom" loading="lazy">
-            <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/70"></div>
-            <div class="absolute inset-0 bg-navy-950/40"></div>
+            <img src="Assets/Senior Player.jpg" alt="" class="w-full h-full object-cover opacity-20">
+            <div class="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/90 to-navy-950/70"></div>
         </div>
-
-        <!-- Top accent line -->
-        <div class="absolute top-0 left-0 right-0 h-[3px] bg-accent-500 z-10"></div>
-
-        <div class="relative z-10 max-w-3xl mx-auto px-6 sm:px-8 lg:px-8 text-center fade-in">
-            <!-- Small label -->
-            <span class="font-heading text-xs font-semibold tracking-[0.3em] text-accent-500 uppercase mb-4 block">Join the Family</span>
-
-            <h2 class="font-heading text-3xl md:text-5xl font-bold text-white tracking-[-0.03em] mb-6" style="text-shadow: 0 2px 16px rgba(0,0,0,0.4);">
-                Be Part of<br><span class="text-gold-400 italic">Something Special</span>
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 text-center">
+            <span class="font-heading text-xs font-semibold tracking-[0.3em] text-accent-500 uppercase mb-4 block">Join the Aya Blues</span>
+            <h2 class="font-heading text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-[0.95] tracking-[-0.03em] mb-6">
+                Be Part of the Next<br><span class="text-accent-500">Fifty Years</span>
             </h2>
-            <p class="font-body text-base md:text-lg text-white/85 max-w-lg mx-auto mb-10" style="line-height: 1.7; text-shadow: 0 1px 6px rgba(0,0,0,0.3);">
-                Whether you are a player, parent, or supporter, there is a place for you at Altona North Soccer Club. Join the ANSC family today.
+            <div class="w-20 h-[3px] bg-accent-500 mx-auto mb-6"></div>
+            <p class="font-body text-base md:text-lg text-white/70 max-w-2xl mx-auto mb-10" style="line-height: 1.7;">
+                Whether you are five or fifty, brand new to football or a seasoned competitor, there is a place for you at Altona North SC. Get in touch and become part of the story.
             </p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="#contact" class="btn-primary inline-flex items-center gap-2 bg-gold-500 text-white px-8 py-4 font-heading text-sm font-bold tracking-wider uppercase focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-400 focus-visible:outline-offset-2" style="box-shadow: 0 4px 20px rgba(200,16,46,0.35);">
-                    <span>Register to Play</span>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            <div class="flex flex-wrap items-center justify-center gap-4">
+                <a href="index.html#contact" class="btn-primary inline-flex items-center gap-2.5 bg-accent-500 text-white px-8 py-3.5 font-heading text-[13px] font-bold tracking-[0.15em] uppercase" style="box-shadow: 0 4px 20px rgba(200,16,46,0.35);">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                    Register With ANSC
                 </a>
-                <a href="#contact" class="btn-secondary inline-flex items-center gap-2 border border-white/30 bg-white/10 backdrop-blur-sm text-white px-8 py-4 font-heading text-sm font-medium tracking-wider uppercase focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-400 focus-visible:outline-offset-2">
-                    Get in Touch
-                </a>
-            </div>
-        </div>
-
-        <!-- Bottom accent line -->
-        <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-accent-500 z-10"></div>
-    </section>
-
-    <!-- Sponsors -->
-    <section id="sponsors" class="bg-white py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-navy-950 tracking-tight uppercase">Our Sponsors</h2>
-                <p class="mt-3 font-body text-base text-navy-700/70 max-w-xl mx-auto" style="line-height:1.7">Proudly supported by these local businesses. We thank our sponsors for their continued support of Altona North SC.</p>
-            </div>
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
-                <a href="https://cki.com.au/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-4 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-opacity duration-300">
-                    <img src="Assets/Sponsors/CKI.png" alt="CKI" class="max-h-16 sm:max-h-20 w-auto object-contain" loading="lazy">
-                </a>
-                <a href="https://www.linkedin.com/company/endorsedptyltd/about/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-4 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-opacity duration-300">
-                    <img src="Assets/Sponsors/Endorsed.png" alt="Endorsed" class="max-h-16 sm:max-h-20 w-auto object-contain" loading="lazy">
-                </a>
-                <a href="https://www.mortgagechoice.com.au/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-4 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-opacity duration-300">
-                    <img src="Assets/Sponsors/Mortgage Choice.png" alt="Mortgage Choice" class="max-h-16 sm:max-h-20 w-auto object-contain" loading="lazy">
-                </a>
-                <a href="https://nippys.com.au/site/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-4 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-opacity duration-300">
-                    <img src="Assets/Sponsors/Nippy's.png" alt="Nippy's" class="max-h-16 sm:max-h-20 w-auto object-contain" loading="lazy">
-                </a>
-                <a href="https://order.platform.hungryhungry.com/numerounopizzapasta/menu#mdl=17754529123581" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-4 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-opacity duration-300">
-                    <img src="Assets/Sponsors/Numero Uno.png" alt="Numero Uno" class="max-h-16 sm:max-h-20 w-auto object-contain" loading="lazy">
-                </a>
-                <a href="https://www.werribeeisuzuute.com.au/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-4 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-opacity duration-300">
-                    <img src="Assets/Sponsors/Werribee Isuzu Ute.png" alt="Werribee Isuzu Ute" class="max-h-16 sm:max-h-20 w-auto object-contain" loading="lazy">
+                <a href="index.html#programs" class="btn-secondary inline-flex items-center gap-2.5 border border-white/30 bg-white/10 backdrop-blur-sm text-white px-8 py-3.5 font-heading text-[13px] font-medium tracking-[0.15em] uppercase">
+                    Explore Programs
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                 </a>
             </div>
         </div>
@@ -1166,29 +1214,23 @@
     <!-- Footer -->
     <footer class="bg-navy-950 text-white relative">
         <div class="stripe-band-navy"></div>
-        <!-- Upper Footer: Logo, Hashtags, Social -->
         <div class="pt-28 sm:pt-32 pb-12 px-4 sm:px-6 lg:px-8">
             <div class="max-w-5xl mx-auto">
-                <!-- Overlapping Logo -->
                 <div class="absolute left-1/2 -translate-x-1/2 -top-16 sm:-top-20 z-10">
                     <img src="Assets/Logo.png" alt="Altona North Soccer Club crest" class="w-32 h-32 sm:w-40 sm:h-40 object-contain drop-shadow-[0_4px_24px_rgba(0,0,0,0.5)]" loading="lazy">
                 </div>
-                <!-- Hashtags Row -->
                 <div class="flex flex-col sm:flex-row items-center justify-center mb-12 gap-2 sm:gap-0">
                     <span class="font-heading text-lg sm:text-xl font-bold tracking-[0.15em] text-white/90 sm:flex-1 sm:text-right sm:pr-16">#ALTONANORTHSC</span>
                     <div class="hidden sm:block w-32 sm:w-40 shrink-0"></div>
                     <span class="font-heading text-lg sm:text-xl font-bold tracking-[0.15em] text-white/90 sm:flex-1 sm:text-left sm:pl-16">#ANSC</span>
                 </div>
 
-                <!-- Social Media -->
                 <div class="text-center">
                     <p class="font-heading text-xs sm:text-sm font-bold tracking-[0.2em] text-white/80 uppercase mb-5">ANSC on Social Media</p>
                     <div class="flex items-center justify-center gap-5 sm:gap-7">
-                        <!-- Facebook -->
                         <a href="https://www.facebook.com/altonanorthsc/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="text-white/80 hover:text-white focus-visible:text-white transition-colors duration-200 active:scale-95" style="transition-property: color, transform;">
                             <svg class="w-7 h-7 sm:w-8 sm:h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
                         </a>
-                        <!-- Instagram -->
                         <a href="https://www.instagram.com/altonanorthsc/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-white/80 hover:text-white focus-visible:text-white transition-colors duration-200 active:scale-95" style="transition-property: color, transform;">
                             <svg class="w-7 h-7 sm:w-8 sm:h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
                         </a>
@@ -1197,32 +1239,28 @@
             </div>
         </div>
 
-        <!-- Divider -->
         <div class="max-w-3xl mx-auto px-8">
             <div class="h-px bg-white/20"></div>
         </div>
 
-        <!-- Lower Footer: Copyright + Links -->
         <div class="py-10 px-4 sm:px-6 lg:px-8">
             <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-start gap-8 md:gap-12">
-                <!-- Copyright -->
                 <div class="md:w-1/3 shrink-0">
                     <p class="font-body text-xs text-white/50" style="line-height: 1.7;">
                         Copyright &copy; 2026 Altona North Soccer Club. All rights reserved. Do not duplicate or redistribute in any form.
                     </p>
                 </div>
 
-                <!-- Link Columns -->
                 <nav aria-label="Footer navigation" class="flex-1 grid grid-cols-2 sm:grid-cols-3 gap-y-3 gap-x-8">
                     <a href="about.html" class="font-heading text-xs font-bold tracking-[0.12em] text-white/80 uppercase hover:text-white focus-visible:text-white transition-colors duration-200">About the Club</a>
                     <a href="#" class="font-heading text-xs font-bold tracking-[0.12em] text-white/80 uppercase hover:text-white focus-visible:text-white transition-colors duration-200">Privacy</a>
-                    <a href="#sponsors" class="font-heading text-xs font-bold tracking-[0.12em] text-white/80 uppercase hover:text-white focus-visible:text-white transition-colors duration-200">Sponsors</a>
-                    <a href="#programs" class="font-heading text-xs font-bold tracking-[0.12em] text-white/80 uppercase hover:text-white focus-visible:text-white transition-colors duration-200">Programs</a>
+                    <a href="index.html#sponsors" class="font-heading text-xs font-bold tracking-[0.12em] text-white/80 uppercase hover:text-white focus-visible:text-white transition-colors duration-200">Sponsors</a>
+                    <a href="index.html#programs" class="font-heading text-xs font-bold tracking-[0.12em] text-white/80 uppercase hover:text-white focus-visible:text-white transition-colors duration-200">Programs</a>
                     <a href="#" class="font-heading text-xs font-bold tracking-[0.12em] text-white/80 uppercase hover:text-white focus-visible:text-white transition-colors duration-200">Legal</a>
                     <a href="#" class="font-heading text-xs font-bold tracking-[0.12em] text-white/80 uppercase hover:text-white focus-visible:text-white transition-colors duration-200">Club News</a>
-                    <a href="#contact" class="font-heading text-xs font-bold tracking-[0.12em] text-white/80 uppercase hover:text-white focus-visible:text-white transition-colors duration-200">Contact</a>
+                    <a href="index.html#contact" class="font-heading text-xs font-bold tracking-[0.12em] text-white/80 uppercase hover:text-white focus-visible:text-white transition-colors duration-200">Contact</a>
                     <a href="#" class="font-heading text-xs font-bold tracking-[0.12em] text-white/80 uppercase hover:text-white focus-visible:text-white transition-colors duration-200">Accessibility</a>
-                    <a href="#fixtures" class="font-heading text-xs font-bold tracking-[0.12em] text-white/80 uppercase hover:text-white focus-visible:text-white transition-colors duration-200">Fixtures</a>
+                    <a href="index.html#fixtures" class="font-heading text-xs font-bold tracking-[0.12em] text-white/80 uppercase hover:text-white focus-visible:text-white transition-colors duration-200">Fixtures</a>
                 </nav>
             </div>
         </div>
@@ -1254,45 +1292,43 @@
         mobileMenuClose.addEventListener('click', closeMobileMenu);
         mobileMenuBackdrop.addEventListener('click', closeMobileMenu);
 
-        // Close mobile menu on link click
         mobileMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', closeMobileMenu);
         });
 
-        // Mega Menu - Desktop hover/click
+        // Mega Menu
         const megaTriggers = document.querySelectorAll('.mega-menu-trigger');
         const megaPanels = document.querySelectorAll('.mega-menu-panel');
         let megaTimeout;
 
-        function closeAllMegaMenus() {
-            megaPanels.forEach(p => p.classList.remove('open'));
-            megaTriggers.forEach(t => {
-                t.classList.remove('active');
-                const btn = t.querySelector('button');
-                if (btn) btn.setAttribute('aria-expanded', 'false');
-            });
-        }
-
-        function openMegaMenu(triggerName) {
-            clearTimeout(megaTimeout);
+        function openMegaMenu(name) {
             closeAllMegaMenus();
-            const panel = document.querySelector(`[data-panel="${triggerName}"]`);
-            const trigger = document.querySelector(`[data-mega="${triggerName}"]`);
-            if (panel && trigger) {
-                panel.classList.add('open');
+            const trigger = document.querySelector(`[data-mega="${name}"]`);
+            const panel = document.querySelector(`[data-panel="${name}"]`);
+            if (trigger && panel) {
                 trigger.classList.add('active');
+                panel.classList.add('open');
                 const btn = trigger.querySelector('button');
                 if (btn) btn.setAttribute('aria-expanded', 'true');
             }
+        }
+
+        function closeAllMegaMenus() {
+            megaTriggers.forEach(t => t.classList.remove('active'));
+            megaPanels.forEach(p => p.classList.remove('open'));
+            megaTriggers.forEach(t => {
+                const btn = t.querySelector('button');
+                if (btn) btn.setAttribute('aria-expanded', 'false');
+            });
         }
 
         megaTriggers.forEach(trigger => {
             const name = trigger.dataset.mega;
 
             trigger.addEventListener('mouseenter', () => {
+                clearTimeout(megaTimeout);
                 openMegaMenu(name);
             });
-
             trigger.addEventListener('mouseleave', () => {
                 megaTimeout = setTimeout(() => {
                     const panel = document.querySelector(`[data-panel="${name}"]`);
@@ -1302,7 +1338,6 @@
                 }, 150);
             });
 
-            // Keyboard / click toggle
             const btn = trigger.querySelector('button');
             if (btn) {
                 btn.addEventListener('click', (e) => {
@@ -1326,14 +1361,12 @@
             });
         });
 
-        // Close mega menu on click outside
         document.addEventListener('click', (e) => {
             if (!e.target.closest('.mega-menu-trigger') && !e.target.closest('.mega-menu-panel')) {
                 closeAllMegaMenus();
             }
         });
 
-        // Close mega menu on Escape
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeAllMegaMenus();
         });
@@ -1345,7 +1378,6 @@
                 const content = document.querySelector(`[data-accordion-content="${name}"]`);
                 const isOpen = content.classList.contains('open');
 
-                // Close all other accordions
                 document.querySelectorAll('.mobile-accordion-content').forEach(c => c.classList.remove('open'));
                 document.querySelectorAll('.mobile-accordion-btn').forEach(b => b.classList.remove('open'));
 
@@ -1379,151 +1411,6 @@
             }
             lastScrollY = currentScrollY;
         });
-
-        // Hero Carousel
-        const slides = document.querySelectorAll('.hero-slide');
-        const dots = document.querySelectorAll('.carousel-dot');
-        const prevBtn = document.getElementById('heroPrev');
-        const nextBtn = document.getElementById('heroNext');
-        let currentSlide = 0;
-        let autoplayTimer;
-
-        function goToSlide(index) {
-            slides[currentSlide].classList.remove('active');
-            dots[currentSlide].classList.remove('active');
-            currentSlide = (index + slides.length) % slides.length;
-            slides[currentSlide].classList.add('active');
-            dots[currentSlide].classList.add('active');
-        }
-
-        function nextSlide() { goToSlide(currentSlide + 1); }
-        function prevSlide() { goToSlide(currentSlide - 1); }
-
-        function startAutoplay() {
-            autoplayTimer = setInterval(nextSlide, 5000);
-        }
-        function resetAutoplay() {
-            clearInterval(autoplayTimer);
-            startAutoplay();
-        }
-
-        nextBtn.addEventListener('click', () => { nextSlide(); resetAutoplay(); });
-        prevBtn.addEventListener('click', () => { prevSlide(); resetAutoplay(); });
-        dots.forEach(dot => {
-            dot.addEventListener('click', () => {
-                goToSlide(parseInt(dot.dataset.dot));
-                resetAutoplay();
-            });
-        });
-
-        startAutoplay();
-
-
-        // Fixture data & auto-update
-        const fixtures = [
-            { round: 3, dateISO: '2026-04-11T18:00:00', dateDisplay: '11 April 2026', dateShort: 'Sat 11 Apr', time: '18:00', home: 'Williamstown', homeLogo: 'Assets/Other Team Logos/Williamstown SC.webp', away: 'Altona North', awayLogo: 'Assets/Logo.png', venue: 'JT Gray Reserve' },
-            { round: 4, dateISO: '2026-04-18T15:00:00', dateDisplay: '18 April 2026', dateShort: 'Sat 18 Apr', time: '15:00', home: 'Altona North', homeLogo: 'Assets/Logo.png', away: 'Albion Rovers', awayLogo: 'Assets/Other Team Logos/Albion Rovers.png', venue: 'Duane Reserve' },
-            { round: 5, dateISO: '2026-04-24T20:30:00', dateDisplay: '24 April 2026', dateShort: 'Fri 24 Apr', time: '20:30', home: 'Mill Park', homeLogo: 'Assets/Other Team Logos/Mill Park.png', away: 'Altona North', awayLogo: 'Assets/Logo.png', venue: 'Partridge St Reserve' },
-            { round: 6, dateISO: '2026-05-02T15:00:00', dateDisplay: '2 May 2026', dateShort: 'Sat 2 May', time: '15:00', home: 'Altona North', homeLogo: 'Assets/Logo.png', away: 'FC Strathmore', awayLogo: 'Assets/Other Team Logos/FC Strathmore.png', venue: 'Duane Reserve' },
-            { round: 7, dateISO: '2026-05-08T20:30:00', dateDisplay: '8 May 2026', dateShort: 'Fri 8 May', time: '20:30', home: 'Whittlesea Ranges', homeLogo: 'Assets/Other Team Logos/Whittlesea Rangers.png', away: 'Altona North', awayLogo: 'Assets/Logo.png', venue: 'Epping Stadium' },
-            { round: 8, dateISO: '2026-05-16T15:00:00', dateDisplay: '16 May 2026', dateShort: 'Sat 16 May', time: '15:00', home: 'Altona North', homeLogo: 'Assets/Logo.png', away: 'Surf Coast', awayLogo: 'Assets/Other Team Logos/Surf Coast.png', venue: 'Duane Reserve' },
-            { round: 9, dateISO: '2026-05-23T15:00:00', dateDisplay: '23 May 2026', dateShort: 'Sat 23 May', time: '15:00', home: 'Corio', homeLogo: 'Assets/Other Team Logos/Corio.png', away: 'Altona North', awayLogo: 'Assets/Logo.png', venue: 'Hume Reserve' },
-            { round: 10, dateISO: '2026-05-30T15:00:00', dateDisplay: '30 May 2026', dateShort: 'Sat 30 May', time: '15:00', home: 'Altona North', homeLogo: 'Assets/Logo.png', away: 'Brimbank Stallions', awayLogo: 'Assets/Other Team Logos/Brimbank.png', venue: 'Duane Reserve' },
-            { round: 11, dateISO: '2026-06-13T15:00:00', dateDisplay: '13 June 2026', dateShort: 'Sat 13 Jun', time: '15:00', home: 'Geelong Rangers', homeLogo: 'Assets/Other Team Logos/Geelong Rangers.png', away: 'Altona North', awayLogo: 'Assets/Logo.png', venue: 'Myers Reserve' },
-            { round: 12, dateISO: '2026-06-20T15:00:00', dateDisplay: '20 June 2026', dateShort: 'Sat 20 Jun', time: '15:00', home: 'Altona North', homeLogo: 'Assets/Logo.png', away: 'Western Eagles', awayLogo: 'Assets/Other Team Logos/Western Eagles.png', venue: 'Duane Reserve' },
-            { round: 13, dateISO: '2026-06-27T15:00:00', dateDisplay: '27 June 2026', dateShort: 'Sat 27 Jun', time: '15:00', home: 'Uni Hill Eagles', homeLogo: 'Assets/Other Team Logos/Uni Hill Eagles.png', away: 'Altona North', awayLogo: 'Assets/Logo.png', venue: 'Findon Reserve' },
-            { round: 14, dateISO: '2026-07-04T15:00:00', dateDisplay: '4 July 2026', dateShort: 'Sat 4 Jul', time: '15:00', home: 'Altona North', homeLogo: 'Assets/Logo.png', away: 'Williamstown', awayLogo: 'Assets/Other Team Logos/Williamstown SC.webp', venue: 'Duane Reserve' },
-            { round: 15, dateISO: '2026-07-11T15:00:00', dateDisplay: '11 July 2026', dateShort: 'Sat 11 Jul', time: '15:00', home: 'Albion Rovers', homeLogo: 'Assets/Other Team Logos/Albion Rovers.png', away: 'Altona North', awayLogo: 'Assets/Logo.png', venue: 'Kevin Flint Reserve' },
-            { round: 16, dateISO: '2026-07-18T15:00:00', dateDisplay: '18 July 2026', dateShort: 'Sat 18 Jul', time: '15:00', home: 'Altona North', homeLogo: 'Assets/Logo.png', away: 'Mill Park', awayLogo: 'Assets/Other Team Logos/Mill Park.png', venue: 'Duane Reserve' },
-            { round: 17, dateISO: '2026-07-24T20:15:00', dateDisplay: '24 July 2026', dateShort: 'Fri 24 Jul', time: '20:15', home: 'FC Strathmore', homeLogo: 'Assets/Other Team Logos/FC Strathmore.png', away: 'Altona North', awayLogo: 'Assets/Logo.png', venue: 'Strathnaver Reserve' },
-            { round: 18, dateISO: '2026-08-01T15:00:00', dateDisplay: '1 August 2026', dateShort: 'Sat 1 Aug', time: '15:00', home: 'Altona North', homeLogo: 'Assets/Logo.png', away: 'Whittlesea Ranges', awayLogo: 'Assets/Other Team Logos/Whittlesea Rangers.png', venue: 'Duane Reserve' },
-            { round: 19, dateISO: '2026-08-15T17:00:00', dateDisplay: '15 August 2026', dateShort: 'Sat 15 Aug', time: '17:00', home: 'Surf Coast', homeLogo: 'Assets/Other Team Logos/Surf Coast.png', away: 'Altona North', awayLogo: 'Assets/Logo.png', venue: 'NewFlo Stadium' },
-            { round: 20, dateISO: '2026-08-22T15:00:00', dateDisplay: '22 August 2026', dateShort: 'Sat 22 Aug', time: '15:00', home: 'Altona North', homeLogo: 'Assets/Logo.png', away: 'Corio', awayLogo: 'Assets/Other Team Logos/Corio.png', venue: 'Duane Reserve' },
-            { round: 21, dateISO: '2026-08-28T20:30:00', dateDisplay: '28 August 2026', dateShort: 'Fri 28 Aug', time: '20:30', home: 'Brimbank Stallions', homeLogo: 'Assets/Other Team Logos/Brimbank.png', away: 'Altona North', awayLogo: 'Assets/Logo.png', venue: 'Club Italia SC' },
-            { round: 22, dateISO: '2026-09-05T15:00:00', dateDisplay: '5 September 2026', dateShort: 'Sat 5 Sep', time: '15:00', home: 'Altona North', homeLogo: 'Assets/Logo.png', away: 'Geelong Rangers', awayLogo: 'Assets/Other Team Logos/Geelong Rangers.png', venue: 'Duane Reserve' }
-        ];
-
-        function renderFixtures() {
-            const now = new Date();
-            const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-            const upcoming = fixtures.filter(f => {
-                const md = new Date(f.dateISO);
-                return new Date(md.getFullYear(), md.getMonth(), md.getDate()) >= today;
-            });
-
-            if (upcoming.length === 0) {
-                document.getElementById('matchRound').textContent = 'SEASON COMPLETE';
-                document.getElementById('matchDateTime').textContent = '2026 Season';
-                document.getElementById('matchVenue').textContent = '';
-                document.getElementById('next5List').innerHTML = '<p class="font-body text-sm text-gray-400 text-center py-8">Season complete</p>';
-                return;
-            }
-
-            const next = upcoming[0];
-            const isHome = next.home === 'Altona North';
-            const matchCard = document.getElementById('matchCard');
-
-            // Home = navy, Away = white
-            if (isHome) {
-                matchCard.classList.remove('bg-white', 'lg:border-r', 'border-gray-200');
-                matchCard.classList.add('bg-navy-950');
-                document.getElementById('matchRound').className = 'font-heading text-sm font-bold text-white tracking-wide';
-                document.getElementById('matchDateTime').className = 'font-body text-xs text-white/60';
-                document.getElementById('matchVenue').className = 'font-body text-xs text-white/60 italic';
-                document.getElementById('homeTeamName').className = 'font-heading text-sm md:text-base font-bold text-white tracking-wide uppercase';
-                document.getElementById('awayTeamName').className = 'font-heading text-sm md:text-base font-bold text-white tracking-wide uppercase';
-                matchCard.querySelector('h2').className = 'font-heading text-2xl md:text-3xl font-bold text-white text-center tracking-tight mb-1';
-                matchCard.querySelector('.text-gray-500').className = 'font-body text-xs text-white/50 tracking-wider uppercase';
-                matchCard.querySelector('.font-heading.text-lg').className = 'font-heading text-lg md:text-xl font-bold text-white/40';
-            }
-
-            document.getElementById('matchRound').textContent = 'ROUND ' + next.round;
-            document.getElementById('matchDateTime').textContent = next.dateDisplay + ' - ' + next.time;
-            document.getElementById('matchVenue').textContent = next.venue;
-            document.getElementById('homeTeamLogo').src = next.homeLogo;
-            document.getElementById('homeTeamLogo').alt = next.home;
-            document.getElementById('homeTeamName').textContent = next.home;
-            document.getElementById('awayTeamLogo').src = next.awayLogo;
-            document.getElementById('awayTeamLogo').alt = next.away;
-            document.getElementById('awayTeamName').textContent = next.away;
-
-            const next5 = upcoming.slice(1, 6);
-            const list = document.getElementById('next5List');
-
-            if (next5.length === 0) {
-                list.innerHTML = '<p class="font-body text-sm text-gray-400 text-center py-8">Last match of the season</p>';
-                return;
-            }
-
-            list.innerHTML = next5.map(f => {
-                const fHome = f.home === 'Altona North';
-                const rowBg = fHome ? 'bg-navy-950' : 'bg-white';
-                const textColor = fHome ? 'text-white' : 'text-navy-950';
-                const subText = fHome ? 'text-white/50' : 'text-gray-500';
-                const subTextLight = fHome ? 'text-white/35' : 'text-gray-300';
-                const roundColor = fHome ? 'text-white/50' : 'text-gray-400';
-                const vColor = fHome ? 'text-white/30' : 'text-gray-300';
-                return `
-                <div class="py-3.5 px-3 flex items-center gap-2 ${rowBg}">
-                    <span class="font-heading text-[11px] font-bold ${roundColor} w-7 text-center shrink-0">R${f.round}</span>
-                    <div class="flex items-center gap-1.5 justify-end flex-1 min-w-0">
-                        <span class="font-heading text-xs font-bold ${textColor} uppercase tracking-wide text-right truncate">${f.home}</span>
-                        <img src="${f.homeLogo}" alt="${f.home}" class="w-7 h-7 object-contain shrink-0 rounded-full">
-                    </div>
-                    <span class="font-heading text-[10px] font-bold ${vColor} shrink-0">v</span>
-                    <div class="flex items-center gap-1.5 flex-1 min-w-0">
-                        <img src="${f.awayLogo}" alt="${f.away}" class="w-7 h-7 object-contain shrink-0 rounded-full">
-                        <span class="font-heading text-xs font-bold ${textColor} uppercase tracking-wide truncate">${f.away}</span>
-                    </div>
-                    <div class="shrink-0 w-[68px] text-right leading-tight">
-                        <span class="font-body text-[11px] ${subText} block">${f.dateShort}</span>
-                        <span class="font-body text-[10px] ${subTextLight}">${f.time}</span>
-                    </div>
-                </div>`;
-            }).join('');
-        }
-
-        renderFixtures();
     </script>
 </body>
 </html>
