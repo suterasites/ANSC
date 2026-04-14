@@ -7,7 +7,8 @@
 - **Established:** 1975
 - **Location:** D.N. Duane Reserve, Primula Avenue, Brooklyn, Victoria, Australia
 - **Municipality:** City of Hobsons Bay, Melbourne's western suburbs
-- **Hashtags:** #AltonaNorthSC, #ANSC, #AyaBlues
+- **Hashtags:** #AltonaNorthSC, #ANSC
+- **Note:** Do not refer to the club as "Aya Blues" - this is not their nickname.
 
 ## Competition & League
 
