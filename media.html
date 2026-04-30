@@ -373,6 +373,375 @@
         @media (max-width: 480px) {
             .page-title { font-size: 2.25rem !important; }
         }
+
+        /* Round gallery card */
+        .round-card {
+            position: relative;
+            background: #ffffff;
+            border: 1px solid rgba(35, 38, 80, 0.08);
+            cursor: pointer;
+            overflow: hidden;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .round-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 40px -16px rgba(35, 38, 80, 0.35), 0 6px 16px -8px rgba(200, 16, 46, 0.18);
+            border-color: rgba(200, 16, 46, 0.25);
+        }
+        .round-card:focus-visible {
+            outline: 2px solid #c8102e;
+            outline-offset: 4px;
+        }
+        .round-card .cover {
+            position: relative;
+            aspect-ratio: 16 / 10;
+            overflow: hidden;
+            background: #232650;
+        }
+        .round-card .cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .round-card:hover .cover img {
+            transform: scale(1.06);
+        }
+        .round-card .cover::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(35,38,80,0) 40%, rgba(35,38,80,0.85) 100%);
+            pointer-events: none;
+        }
+        .round-card .cover-meta {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 16px 18px;
+            color: #fff;
+            z-index: 1;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        .round-badge {
+            display: inline-block;
+            background: #c8102e;
+            color: #fff;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 11px;
+            letter-spacing: 0.18em;
+            padding: 5px 10px;
+            text-transform: uppercase;
+        }
+        .round-card .photo-count {
+            font-family: 'Oswald', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.85);
+            background: rgba(0,0,0,0.45);
+            padding: 5px 10px;
+        }
+        .round-card .body {
+            padding: 18px 20px 22px;
+        }
+        .round-card .matchup {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .round-card .matchup img {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+        .round-card .matchup .vs {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            color: #6a6da2;
+            text-transform: uppercase;
+        }
+        .round-card .opp-name {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            color: #232650;
+            line-height: 1.15;
+        }
+        .round-card .meta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 14px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: #6a6da2;
+            margin-bottom: 14px;
+        }
+        .round-card .meta-row span {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .round-card .result-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(35, 38, 80, 0.08);
+        }
+        .round-card .score {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 22px;
+            letter-spacing: -0.01em;
+            color: #232650;
+        }
+        .round-card .result-tag {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 11px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            padding: 5px 10px;
+        }
+        .result-tag.win { background: rgba(34, 139, 80, 0.12); color: #1f7a48; }
+        .result-tag.draw { background: rgba(106, 109, 162, 0.15); color: #474a86; }
+        .result-tag.loss { background: rgba(200, 16, 46, 0.12); color: #a00d25; }
+        .round-card .view-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 14px;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 11px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #c8102e;
+        }
+
+        /* Round modal */
+        .round-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            display: none;
+            background: rgba(20, 22, 45, 0.78);
+            backdrop-filter: blur(6px);
+            overflow-y: auto;
+        }
+        .round-modal.open { display: block; }
+        .round-modal-inner {
+            max-width: 1100px;
+            margin: 32px auto;
+            background: #ffffff;
+            position: relative;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+        }
+        .round-modal-close {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            z-index: 5;
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            background: rgba(35,38,80,0.85);
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+        .round-modal-close:hover { background: #c8102e; }
+        .round-modal-header {
+            position: relative;
+            padding: 36px 28px 28px;
+            background: #232650;
+            color: #fff;
+            overflow: hidden;
+        }
+        .round-modal-header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0.18;
+            background-image: radial-gradient(circle at 20% 20%, rgba(200,16,46,0.5), transparent 55%), radial-gradient(circle at 80% 80%, rgba(106,109,162,0.4), transparent 50%);
+            pointer-events: none;
+        }
+        .round-modal-header > * { position: relative; z-index: 1; }
+        .round-modal-header .matchup {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 18px;
+        }
+        .round-modal-header .matchup img {
+            width: 56px;
+            height: 56px;
+            object-fit: contain;
+        }
+        .round-modal-header h3 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 1.1;
+            margin-top: 4px;
+        }
+        @media (min-width: 768px) {
+            .round-modal-header h3 { font-size: 36px; }
+        }
+        .round-modal-meta {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px 24px;
+            margin-top: 18px;
+        }
+        @media (min-width: 768px) {
+            .round-modal-meta { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+        }
+        .round-modal-meta .label {
+            font-family: 'Oswald', sans-serif;
+            font-size: 10px;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.55);
+            margin-bottom: 4px;
+        }
+        .round-modal-meta .value {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            color: #ffffff;
+        }
+        .round-modal-body { padding: 28px; }
+        .round-modal-section { margin-bottom: 24px; }
+        .round-modal-section h4 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #c8102e;
+            margin-bottom: 10px;
+        }
+        .round-modal-section p {
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            color: #303368;
+            line-height: 1.7;
+        }
+        .round-modal-section ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            list-style: none;
+        }
+        .round-modal-section ul li {
+            font-family: 'Oswald', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            background: rgba(35,38,80,0.06);
+            color: #232650;
+            padding: 6px 12px;
+        }
+        .round-modal-photos {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 8px;
+        }
+        @media (min-width: 640px) { .round-modal-photos { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+        @media (min-width: 1024px) { .round-modal-photos { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+        .round-modal-photos figure {
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+        }
+        .round-modal-photos img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .round-modal-photos figure:hover img { transform: scale(1.05); }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            display: none;
+            background: rgba(15, 17, 35, 0.95);
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox.open { display: flex; }
+        .lightbox-img-wrap {
+            max-width: 92vw;
+            max-height: 88vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+        }
+        .lightbox img {
+            max-width: 92vw;
+            max-height: 80vh;
+            object-fit: contain;
+            box-shadow: 0 16px 50px rgba(0,0,0,0.5);
+        }
+        .lightbox-caption {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: rgba(255,255,255,0.75);
+            text-align: center;
+        }
+        .lightbox-counter {
+            font-family: 'Oswald', sans-serif;
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            color: rgba(255,255,255,0.55);
+            text-transform: uppercase;
+        }
+        .lightbox-btn {
+            position: absolute;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: #fff;
+            width: 48px;
+            height: 48px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.2s ease, border-color 0.2s ease;
+        }
+        .lightbox-btn:hover {
+            background: #c8102e;
+            border-color: #c8102e;
+        }
+        .lightbox-close { top: 18px; right: 18px; }
+        .lightbox-prev { top: 50%; left: 18px; transform: translateY(-50%); }
+        .lightbox-next { top: 50%; right: 18px; transform: translateY(-50%); }
+        @media (max-width: 640px) {
+            .lightbox-prev { left: 8px; }
+            .lightbox-next { right: 8px; }
+        }
+
+        body.modal-open { overflow: hidden; }
     </style>
 
     <!-- JSON-LD Structured Data -->
@@ -767,7 +1136,7 @@
             </h1>
             <div class="w-20 h-[3px] bg-accent-500 mb-6" style="box-shadow: 0 0 16px rgba(200,16,46,0.5);"></div>
             <p class="font-body text-base md:text-lg text-white/80 max-w-2xl" style="line-height: 1.7;">
-                Photos and match day galleries from across the club. Family-owned operators, long-time partners, and proud supporters of community football in Melbourne's west.
+                Fifty years of Altona North in pictures. Match day photo sets, championship moments, junior gameday, training nights, and the milestones that have shaped the club since 1975.
             </p>
         </div>
     </header>
@@ -792,79 +1161,75 @@
 
     <div class="stripe-band-navy" aria-hidden="true"></div>
 
-    <!-- Photo Grid -->
-    <section id="gallery" class="relative py-20 md:py-28 bg-gray-50">
+    <!-- Match Day Galleries -->
+    <section id="matchday" class="relative py-20 md:py-28 bg-gray-50">
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-14 fade-in">
-                <span class="font-heading text-xs font-semibold tracking-[0.3em] text-accent-500 uppercase mb-4 block">Photo Gallery</span>
+                <span class="font-heading text-xs font-semibold tracking-[0.3em] text-accent-500 uppercase mb-4 block">Match Day Galleries</span>
+                <h2 class="font-heading text-3xl md:text-5xl font-bold text-navy-950 leading-tight tracking-[-0.03em] mb-6">
+                    Game by game,<br><span class="text-accent-500">round by round</span>
+                </h2>
+                <div class="w-20 h-[3px] bg-accent-500 mx-auto mb-6"></div>
+                <p class="font-body text-base md:text-lg text-gray-600 max-w-2xl mx-auto" style="line-height: 1.7;">
+                    Match day photo sets from the 2026 State League 2 N/W campaign. Tap a round to view the full gallery and the result.
+                </p>
+            </div>
+
+            <div id="roundCards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 fade-in"></div>
+        </div>
+    </section>
+
+    <!-- Club Archive -->
+    <section id="gallery" class="relative py-20 md:py-28 bg-white">
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14 fade-in">
+                <span class="font-heading text-xs font-semibold tracking-[0.3em] text-accent-500 uppercase mb-4 block">Club Archive</span>
                 <h2 class="font-heading text-3xl md:text-5xl font-bold text-navy-950 leading-tight tracking-[-0.03em] mb-6">
                     The Club<br><span class="text-accent-500">In Frames</span>
                 </h2>
                 <div class="w-20 h-[3px] bg-accent-500 mx-auto mb-6"></div>
+                <p class="font-body text-base md:text-lg text-gray-600 max-w-2xl mx-auto" style="line-height: 1.7;">
+                    A snapshot of ANSC across the decades. Tap any photo to view it full-size.
+                </p>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 fade-in">
-                <figure class="aspect-[4/5] overflow-hidden">
-                    <img src="Assets/2025 State League 3 Champions.jpg" alt="ANSC senior men celebrating their 2025 State League 3 championship win" class="w-full h-full object-cover" loading="lazy">
+            <div id="archiveGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 fade-in">
+                <figure class="aspect-[4/5] overflow-hidden cursor-pointer group" data-archive-photo data-src="Assets/2025 State League 3 Champions.jpg" data-caption="2025 State League 3 Champions">
+                    <img src="Assets/2025 State League 3 Champions.jpg" alt="ANSC senior men celebrating their 2025 State League 3 championship win" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
                 </figure>
-                <figure class="aspect-[4/5] overflow-hidden">
-                    <img src="Assets/2022 Senior Team Pic.jpg" alt="2022 ANSC senior squad team photograph" class="w-full h-full object-cover" loading="lazy">
+                <figure class="aspect-[4/5] overflow-hidden cursor-pointer group" data-archive-photo data-src="Assets/2022 Senior Team Pic.jpg" data-caption="2022 Senior Squad">
+                    <img src="Assets/2022 Senior Team Pic.jpg" alt="2022 ANSC senior squad team photograph" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
                 </figure>
-                <figure class="aspect-[4/5] overflow-hidden">
-                    <img src="Assets/2019 Senior Men's Champions.jpg" alt="2019 senior men's championship celebration" class="w-full h-full object-cover" loading="lazy">
+                <figure class="aspect-[4/5] overflow-hidden cursor-pointer group" data-archive-photo data-src="Assets/2019 Senior Men's Champions.jpg" data-caption="2019 Senior Men's Champions">
+                    <img src="Assets/2019 Senior Men's Champions.jpg" alt="2019 senior men's championship celebration" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
                 </figure>
-                <figure class="aspect-[4/5] overflow-hidden">
-                    <img src="Assets/2019 Senior Men's Championship Team.jpg" alt="2019 senior men's championship squad" class="w-full h-full object-cover" loading="lazy">
+                <figure class="aspect-[4/5] overflow-hidden cursor-pointer group" data-archive-photo data-src="Assets/2019 Senior Men's Championship Team.jpg" data-caption="2019 Senior Men's Championship Squad">
+                    <img src="Assets/2019 Senior Men's Championship Team.jpg" alt="2019 senior men's championship squad" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
                 </figure>
-                <figure class="aspect-[4/5] overflow-hidden">
-                    <img src="Assets/Senior Player.jpg" alt="ANSC senior player at D.N. Duane Reserve" class="w-full h-full object-cover" loading="lazy">
+                <figure class="aspect-[4/5] overflow-hidden cursor-pointer group" data-archive-photo data-src="Assets/Senior Player.jpg" data-caption="Senior player at D.N. Duane Reserve">
+                    <img src="Assets/Senior Player.jpg" alt="ANSC senior player at D.N. Duane Reserve" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
                 </figure>
-                <figure class="aspect-[4/5] overflow-hidden">
-                    <img src="Assets/Senior Players 2.jpg" alt="ANSC senior squad in training" class="w-full h-full object-cover" loading="lazy">
+                <figure class="aspect-[4/5] overflow-hidden cursor-pointer group" data-archive-photo data-src="Assets/Senior Players 2.jpg" data-caption="Senior squad in training">
+                    <img src="Assets/Senior Players 2.jpg" alt="ANSC senior squad in training" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
                 </figure>
-                <figure class="aspect-[4/5] overflow-hidden">
-                    <img src="Assets/Junior Players.jpg" alt="ANSC junior players celebrating with a trophy" class="w-full h-full object-cover" loading="lazy">
+                <figure class="aspect-[4/5] overflow-hidden cursor-pointer group" data-archive-photo data-src="Assets/Junior Players.jpg" data-caption="Junior players with trophy">
+                    <img src="Assets/Junior Players.jpg" alt="ANSC junior players celebrating with a trophy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
                 </figure>
-                <figure class="aspect-[4/5] overflow-hidden">
-                    <img src="Assets/Junior Team.jpg" alt="ANSC junior team players" class="w-full h-full object-cover" loading="lazy">
+                <figure class="aspect-[4/5] overflow-hidden cursor-pointer group" data-archive-photo data-src="Assets/Junior Team.jpg" data-caption="Junior team">
+                    <img src="Assets/Junior Team.jpg" alt="ANSC junior team players" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
                 </figure>
-                <figure class="aspect-[4/5] overflow-hidden">
-                    <img src="Assets/Hero Images/Pitch.jpg" alt="D.N. Duane Reserve home pitch" class="w-full h-full object-cover" loading="lazy">
+                <figure class="aspect-[4/5] overflow-hidden cursor-pointer group" data-archive-photo data-src="Assets/Hero Images/Pitch.jpg" data-caption="D.N. Duane Reserve home pitch">
+                    <img src="Assets/Hero Images/Pitch.jpg" alt="D.N. Duane Reserve home pitch" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
                 </figure>
-                <figure class="aspect-[4/5] overflow-hidden">
-                    <img src="Assets/Coaching Staff 2026.jpg" alt="ANSC 2026 coaching staff" class="w-full h-full object-cover" loading="lazy">
+                <figure class="aspect-[4/5] overflow-hidden cursor-pointer group" data-archive-photo data-src="Assets/Coaching Staff 2026.jpg" data-caption="2026 Coaching Staff">
+                    <img src="Assets/Coaching Staff 2026.jpg" alt="ANSC 2026 coaching staff" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
                 </figure>
-                <figure class="aspect-[4/5] overflow-hidden">
-                    <img src="Assets/Altona North Tarxien - Early 90's.jpg" alt="Altona North versus Tarxien match action from the early 1990s" class="w-full h-full object-cover" loading="lazy">
+                <figure class="aspect-[4/5] overflow-hidden cursor-pointer group" data-archive-photo data-src="Assets/Altona North Tarxien - Early 90's.jpg" data-caption="Altona North v Tarxien, early 1990s">
+                    <img src="Assets/Altona North Tarxien - Early 90's.jpg" alt="Altona North versus Tarxien match action from the early 1990s" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
                 </figure>
-                <figure class="aspect-[4/5] overflow-hidden">
-                    <img src="Assets/1975 Team.jpg" alt="ANSC founding team photograph from 1975" class="w-full h-full object-cover" loading="lazy">
+                <figure class="aspect-[4/5] overflow-hidden cursor-pointer group" data-archive-photo data-src="Assets/1975 Team.jpg" data-caption="ANSC founding team, 1975">
+                    <img src="Assets/1975 Team.jpg" alt="ANSC founding team photograph from 1975" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
                 </figure>
-            </div>
-        </div>
-    </section>
-
-    <!-- Kit Archive -->
-    <section id="kit-archive" class="relative py-20 md:py-28 bg-navy-950 text-white overflow-hidden">
-        <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                <div class="overflow-hidden fade-in">
-                    <img src="Assets/Kit History.jpg" alt="Visual timeline of every Altona North Soccer Club home kit from 1975 to 2025" class="w-full h-auto object-contain" loading="lazy">
-                </div>
-                <div class="fade-in">
-                    <span class="font-heading text-xs font-semibold tracking-[0.3em] text-accent-500 uppercase mb-4 block">Visual Archive</span>
-                    <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-[-0.03em] mb-6">
-                        Every kit,<br><span class="text-accent-500">every era</span>
-                    </h2>
-                    <div class="w-20 h-[3px] bg-accent-500 mb-6"></div>
-                    <p class="font-body text-base text-white/70 mb-5" style="line-height: 1.7;">
-                        From the red and white stripes of 1975 through to the modern CKI-fronted shirt, every ANSC home kit lives in this single artwork. The full breakdown sits on the club page.
-                    </p>
-                    <a href="the-club.html#kits" class="inline-flex items-center gap-2 text-accent-500 hover:text-white font-heading text-sm font-bold tracking-[0.15em] uppercase transition-colors duration-200">
-                        See Kit History
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-                    </a>
-                </div>
             </div>
         </div>
     </section>
@@ -947,6 +1312,34 @@
             </div>
         </div>
     </footer>
+
+    <!-- Round Gallery Modal -->
+    <div id="roundModal" class="round-modal" role="dialog" aria-modal="true" aria-labelledby="roundModalTitle" aria-hidden="true">
+        <div class="round-modal-inner">
+            <button id="roundModalClose" class="round-modal-close" aria-label="Close gallery">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+            <div id="roundModalContent"></div>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Full-size photo">
+        <button id="lightboxClose" class="lightbox-btn lightbox-close" aria-label="Close photo">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+        <button id="lightboxPrev" class="lightbox-btn lightbox-prev" aria-label="Previous photo">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <button id="lightboxNext" class="lightbox-btn lightbox-next" aria-label="Next photo">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </button>
+        <div class="lightbox-img-wrap">
+            <img id="lightboxImg" src="" alt="">
+            <div class="lightbox-counter" id="lightboxCounter"></div>
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script>
@@ -1092,6 +1485,320 @@
                 nav.classList.remove('nav-hidden');
             }
             lastScrollY = currentScrollY;
+        });
+
+        // Match Day Galleries
+        const roundGalleries = [
+            {
+                round: 1,
+                opponent: 'Western Eagles FC',
+                opponentLogo: 'Assets/Other Team Logos/Western Eagles.png',
+                homeAway: 'Away',
+                date: 'Saturday 21 March 2026',
+                venue: 'Polish Sports and Recreation Complex, Albion',
+                seniorScore: '0 - 0',
+                resultLabel: 'Draw',
+                resultClass: 'draw',
+                reservesScore: '1 - 2 (L)',
+                seniorScorers: [],
+                reservesScorers: [],
+                notes: 'First league point of the 2026 SL2 N/W campaign. Season opener for the senior side following promotion from State League 3.',
+                folder: 'Assets/Gallery Groups/Round 1 v Western Eagles',
+                photos: [
+                    '654337556_1527237682742902_6669551278171669757_n.jpg',
+                    '654782348_1528124785987525_582801531647446770_n.jpg',
+                    '654801766_1528124879320849_1464202757265724801_n.jpg',
+                    '654806729_1528124802654190_8967116049500375950_n.jpg',
+                    '655426353_1528124762654194_5712048564139381284_n.jpg',
+                    '656043727_1528124875987516_3807523943301802022_n.jpg',
+                    '656466747_1528124835987520_2291211185082762852_n.jpg',
+                    '656562326_1528124822654188_8968721989497253017_n.jpg',
+                    '656923653_1527237706076233_6179508139867997971_n.jpg'
+                ]
+            },
+            {
+                round: 2,
+                opponent: 'Uni Hill Eagles FC',
+                opponentLogo: 'Assets/Other Team Logos/Uni Hill Eagles.png',
+                homeAway: 'Home',
+                date: 'Saturday 28 March 2026',
+                venue: 'Duane Reserve, Brooklyn',
+                seniorScore: '4 - 2',
+                resultLabel: 'Win',
+                resultClass: 'win',
+                reservesScore: '1 - 1 (D)',
+                seniorScorers: ['Habib Fleifel (2)', 'Shaf Ibrahim', 'Chris Sutera'],
+                reservesScorers: ['Yash Sandhu'],
+                notes: 'First league win of the 2026 season and first home game at Duane Reserve. Habib Fleifel opens his account with a brace.',
+                folder: 'Assets/Gallery Groups/Round 2 v Uni Hill Eagles',
+                photos: [
+                    '657360833_1535553528577984_62602342997367695_n.jpg',
+                    '657405741_1535553445244659_1190621183948634107_n.jpg',
+                    '658120853_1535553581911312_8729804486109131022_n.jpg',
+                    '658136244_1535553478577989_3237749462007122614_n.jpg',
+                    '658249350_1535553618577975_5830457956477796234_n.jpg',
+                    '658355553_1535553708577966_389278410798564193_n.jpg',
+                    '658401791_1535553558577981_6453155199070571355_n.jpg',
+                    '658735448_1535553728577964_8189296518580383489_n.jpg',
+                    '658939508_1535553598577977_7463251364987675678_n.jpg',
+                    '659039757_1535553641911306_7942062867541677899_n.jpg',
+                    '660090692_1535553661911304_459661371993066103_n.jpg',
+                    '661656227_1535553681911302_6824061358056354390_n.jpg',
+                    '661737330_1535553505244653_1296851550684017688_n.jpg'
+                ]
+            },
+            {
+                round: 4,
+                opponent: 'Albion Rovers FC',
+                opponentLogo: 'Assets/Other Team Logos/Albion Rovers.png',
+                homeAway: 'Home',
+                date: 'Saturday 18 April 2026',
+                venue: 'Duane Reserve, Brooklyn',
+                seniorScore: '3 - 0',
+                resultLabel: 'Win',
+                resultClass: 'win',
+                reservesScore: '1 - 2 (L)',
+                seniorScorers: ['Habib Fleifel', 'Festim Elmazi', 'Alex Vlassis'],
+                reservesScorers: ['Luca Conte'],
+                notes: 'Clinical bounce-back home win after the Round 3 loss. First clean sheet of the season with three different scorers.',
+                folder: 'Assets/Gallery Groups/Round 4 v Albion Rovers',
+                photos: [
+                    '672173577_1552337293566274_5685095035298676016_n.jpg',
+                    '672328795_1552337286899608_4772897083345669574_n.jpg',
+                    '672678737_1552337173566286_5519164658338758044_n.jpg',
+                    '672681573_1552337250232945_314873563359757273_n.jpg',
+                    '672686731_1552337183566285_6622313099222062440_n.jpg',
+                    '673480894_1552166410250029_5620242356598454218_n.jpg',
+                    '673772192_1552337243566279_3102535109038121262_n.jpg',
+                    '675182989_1552337140232956_3290926402139266213_n.jpg',
+                    '675183862_1552337336899603_44912554555505406_n.jpg',
+                    '675616222_1552166393583364_4276247332212901471_n.jpg',
+                    '675727701_1552337246899612_5816464693401201647_n.jpg'
+                ]
+            }
+        ];
+
+        const ANSC_LOGO = 'Assets/Logo.png';
+        const photoUrl = (folder, file) => folder.split('/').map(encodeURIComponent).join('/') + '/' + encodeURIComponent(file);
+
+        // Render round cards
+        const roundCardsContainer = document.getElementById('roundCards');
+        roundGalleries.forEach((g, i) => {
+            const card = document.createElement('button');
+            card.type = 'button';
+            card.className = 'round-card text-left fade-in';
+            card.setAttribute('aria-label', `View Round ${g.round} v ${g.opponent} gallery, ${g.photos.length} photos`);
+            card.dataset.roundIndex = i;
+            const cover = photoUrl(g.folder, g.photos[0]);
+            const homeLeft = g.homeAway === 'Home';
+            const leftLogo = homeLeft ? ANSC_LOGO : g.opponentLogo;
+            const rightLogo = homeLeft ? g.opponentLogo : ANSC_LOGO;
+            const leftName = homeLeft ? 'Altona North' : g.opponent.replace(/\s+(FC|SC)$/i, '');
+            const rightName = homeLeft ? g.opponent.replace(/\s+(FC|SC)$/i, '') : 'Altona North';
+            card.innerHTML = `
+                <div class="cover">
+                    <img src="${cover}" alt="Round ${g.round} v ${g.opponent} match photo cover" loading="lazy">
+                    <div class="cover-meta">
+                        <span class="round-badge">Round ${g.round}</span>
+                        <span class="photo-count">${g.photos.length} photos</span>
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="matchup">
+                        <img src="${leftLogo}" alt="${leftName} crest">
+                        <span class="vs">vs</span>
+                        <img src="${rightLogo}" alt="${rightName} crest">
+                    </div>
+                    <div class="opp-name">${homeLeft ? 'v ' + g.opponent : 'Away at ' + g.opponent}</div>
+                    <div class="meta-row" style="margin-top: 10px;">
+                        <span><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>${g.date.replace('Saturday ', '')}</span>
+                        <span><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>${g.homeAway}</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="score">${g.seniorScore}</span>
+                        <span class="result-tag ${g.resultClass}">${g.resultLabel}</span>
+                    </div>
+                    <span class="view-cta">View Gallery
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                    </span>
+                </div>
+            `;
+            card.addEventListener('click', () => openRoundModal(i));
+            roundCardsContainer.appendChild(card);
+            // Activate fade-in immediately for already-visible cards
+            requestAnimationFrame(() => card.classList.add('visible'));
+        });
+
+        // Round modal
+        const roundModal = document.getElementById('roundModal');
+        const roundModalContent = document.getElementById('roundModalContent');
+        const roundModalClose = document.getElementById('roundModalClose');
+        let currentLightboxList = [];
+        let currentLightboxIndex = 0;
+        let currentLightboxLabel = '';
+
+        function openRoundModal(index) {
+            const g = roundGalleries[index];
+            const homeLeft = g.homeAway === 'Home';
+            const leftLogo = homeLeft ? ANSC_LOGO : g.opponentLogo;
+            const rightLogo = homeLeft ? g.opponentLogo : ANSC_LOGO;
+            const matchupTitle = homeLeft ? `Altona North v ${g.opponent}` : `${g.opponent} v Altona North`;
+            const seniorScorers = g.seniorScorers.length ? g.seniorScorers.map(s => `<li>${s}</li>`).join('') : '<li style="background: transparent; color: #6a6da2; padding-left: 0;">No goals</li>';
+            const reservesScorers = g.reservesScorers.length ? g.reservesScorers.map(s => `<li>${s}</li>`).join('') : '<li style="background: transparent; color: #6a6da2; padding-left: 0;">No goals</li>';
+
+            const photosHTML = g.photos.map((p, i) => `
+                <figure data-round-photo data-round-index="${index}" data-photo-index="${i}">
+                    <img src="${photoUrl(g.folder, p)}" alt="Round ${g.round} v ${g.opponent} - photo ${i + 1}" loading="lazy">
+                </figure>
+            `).join('');
+
+            roundModalContent.innerHTML = `
+                <div class="round-modal-header">
+                    <span class="round-badge">Round ${g.round} - SL2 N/W</span>
+                    <div class="matchup" style="margin-top: 14px;">
+                        <img src="${leftLogo}" alt="">
+                        <span class="vs" style="font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.2em; color: rgba(255,255,255,0.55); text-transform: uppercase;">vs</span>
+                        <img src="${rightLogo}" alt="">
+                    </div>
+                    <h3 id="roundModalTitle">${matchupTitle}</h3>
+                    <div class="round-modal-meta">
+                        <div>
+                            <div class="label">Date</div>
+                            <div class="value">${g.date}</div>
+                        </div>
+                        <div>
+                            <div class="label">Venue</div>
+                            <div class="value">${g.venue}</div>
+                        </div>
+                        <div>
+                            <div class="label">Senior Result</div>
+                            <div class="value">${g.seniorScore} (${g.resultLabel})</div>
+                        </div>
+                        <div>
+                            <div class="label">Reserves</div>
+                            <div class="value">${g.reservesScore}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="round-modal-body">
+                    ${g.notes ? `<div class="round-modal-section"><h4>Match Notes</h4><p>${g.notes}</p></div>` : ''}
+                    <div class="round-modal-section">
+                        <h4>Senior Goal Scorers</h4>
+                        <ul>${seniorScorers}</ul>
+                    </div>
+                    <div class="round-modal-section">
+                        <h4>Reserves Goal Scorers</h4>
+                        <ul>${reservesScorers}</ul>
+                    </div>
+                    <div class="round-modal-section">
+                        <h4>Photos (${g.photos.length})</h4>
+                        <div class="round-modal-photos">${photosHTML}</div>
+                    </div>
+                </div>
+            `;
+
+            roundModal.classList.add('open');
+            roundModal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('modal-open');
+            roundModalClose.focus();
+
+            // Wire up photo clicks
+            roundModalContent.querySelectorAll('[data-round-photo]').forEach(fig => {
+                fig.addEventListener('click', () => {
+                    const ri = parseInt(fig.dataset.roundIndex, 10);
+                    const pi = parseInt(fig.dataset.photoIndex, 10);
+                    const round = roundGalleries[ri];
+                    const list = round.photos.map(p => ({
+                        src: photoUrl(round.folder, p),
+                        caption: `Round ${round.round} v ${round.opponent}`
+                    }));
+                    openLightbox(list, pi, `Round ${round.round} v ${round.opponent}`);
+                });
+            });
+        }
+
+        function closeRoundModal() {
+            roundModal.classList.remove('open');
+            roundModal.setAttribute('aria-hidden', 'true');
+            roundModalContent.innerHTML = '';
+            if (!document.getElementById('lightbox').classList.contains('open')) {
+                document.body.classList.remove('modal-open');
+            }
+        }
+
+        roundModalClose.addEventListener('click', closeRoundModal);
+        roundModal.addEventListener('click', (e) => {
+            if (e.target === roundModal) closeRoundModal();
+        });
+
+        // Archive grid - wire up clicks
+        const archivePhotos = Array.from(document.querySelectorAll('[data-archive-photo]')).map(el => ({
+            src: el.dataset.src,
+            caption: el.dataset.caption || ''
+        }));
+        document.querySelectorAll('[data-archive-photo]').forEach((el, i) => {
+            el.addEventListener('click', () => openLightbox(archivePhotos, i, 'Club Archive'));
+        });
+
+        // Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxCaption = document.getElementById('lightboxCaption');
+        const lightboxCounter = document.getElementById('lightboxCounter');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const lightboxPrev = document.getElementById('lightboxPrev');
+        const lightboxNext = document.getElementById('lightboxNext');
+
+        function openLightbox(list, index, label) {
+            currentLightboxList = list;
+            currentLightboxIndex = index;
+            currentLightboxLabel = label || '';
+            renderLightbox();
+            lightbox.classList.add('open');
+            document.body.classList.add('modal-open');
+            lightboxClose.focus();
+        }
+
+        function renderLightbox() {
+            const item = currentLightboxList[currentLightboxIndex];
+            if (!item) return;
+            lightboxImg.src = item.src;
+            lightboxImg.alt = item.caption || '';
+            lightboxCaption.textContent = item.caption || '';
+            lightboxCounter.textContent = `${currentLightboxIndex + 1} / ${currentLightboxList.length}${currentLightboxLabel ? ' - ' + currentLightboxLabel : ''}`;
+            lightboxPrev.style.display = currentLightboxList.length > 1 ? '' : 'none';
+            lightboxNext.style.display = currentLightboxList.length > 1 ? '' : 'none';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('open');
+            lightboxImg.src = '';
+            if (!roundModal.classList.contains('open')) {
+                document.body.classList.remove('modal-open');
+            }
+        }
+
+        function lightboxStep(delta) {
+            if (!currentLightboxList.length) return;
+            currentLightboxIndex = (currentLightboxIndex + delta + currentLightboxList.length) % currentLightboxList.length;
+            renderLightbox();
+        }
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightboxPrev.addEventListener('click', () => lightboxStep(-1));
+        lightboxNext.addEventListener('click', () => lightboxStep(1));
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.classList.contains('open')) {
+                if (e.key === 'Escape') closeLightbox();
+                else if (e.key === 'ArrowLeft') lightboxStep(-1);
+                else if (e.key === 'ArrowRight') lightboxStep(1);
+            } else if (roundModal.classList.contains('open')) {
+                if (e.key === 'Escape') closeRoundModal();
+            }
         });
     </script>
 </body>
