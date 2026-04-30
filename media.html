@@ -703,12 +703,6 @@
             object-fit: contain;
             box-shadow: 0 16px 50px rgba(0,0,0,0.5);
         }
-        .lightbox-caption {
-            font-family: 'Inter', sans-serif;
-            font-size: 13px;
-            color: rgba(255,255,255,0.75);
-            text-align: center;
-        }
         .lightbox-counter {
             font-family: 'Oswald', sans-serif;
             font-size: 11px;
@@ -1337,7 +1331,6 @@
         <div class="lightbox-img-wrap">
             <img id="lightboxImg" src="" alt="">
             <div class="lightbox-counter" id="lightboxCounter"></div>
-            <div class="lightbox-caption" id="lightboxCaption"></div>
         </div>
     </div>
 
@@ -1635,7 +1628,6 @@
         const roundModalClose = document.getElementById('roundModalClose');
         let currentLightboxList = [];
         let currentLightboxIndex = 0;
-        let currentLightboxLabel = '';
 
         function openRoundModal(index) {
             const g = roundGalleries[index];
@@ -1712,7 +1704,7 @@
                         src: photoUrl(round.folder, p),
                         caption: `Round ${round.round} v ${round.opponent}`
                     }));
-                    openLightbox(list, pi, `Round ${round.round} v ${round.opponent}`);
+                    openLightbox(list, pi);
                 });
             });
         }
@@ -1737,22 +1729,20 @@
             caption: el.dataset.caption || ''
         }));
         document.querySelectorAll('[data-archive-photo]').forEach((el, i) => {
-            el.addEventListener('click', () => openLightbox(archivePhotos, i, 'Club Archive'));
+            el.addEventListener('click', () => openLightbox(archivePhotos, i));
         });
 
         // Lightbox
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightboxImg');
-        const lightboxCaption = document.getElementById('lightboxCaption');
         const lightboxCounter = document.getElementById('lightboxCounter');
         const lightboxClose = document.getElementById('lightboxClose');
         const lightboxPrev = document.getElementById('lightboxPrev');
         const lightboxNext = document.getElementById('lightboxNext');
 
-        function openLightbox(list, index, label) {
+        function openLightbox(list, index) {
             currentLightboxList = list;
             currentLightboxIndex = index;
-            currentLightboxLabel = label || '';
             renderLightbox();
             lightbox.classList.add('open');
             document.body.classList.add('modal-open');
@@ -1764,8 +1754,7 @@
             if (!item) return;
             lightboxImg.src = item.src;
             lightboxImg.alt = item.caption || '';
-            lightboxCaption.textContent = item.caption || '';
-            lightboxCounter.textContent = `${currentLightboxIndex + 1} / ${currentLightboxList.length}${currentLightboxLabel ? ' - ' + currentLightboxLabel : ''}`;
+            lightboxCounter.textContent = `${currentLightboxIndex + 1} / ${currentLightboxList.length}`;
             lightboxPrev.style.display = currentLightboxList.length > 1 ? '' : 'none';
             lightboxNext.style.display = currentLightboxList.length > 1 ? '' : 'none';
         }
