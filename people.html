@@ -10,6 +10,19 @@
     <meta property="og:description" content="The committee, coaching staff and honoured names that have shaped Altona North SC since 1975.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://altonanorthsc.com.au/people.html">
+    <meta property="og:site_name" content="Altona North Soccer Club">
+    <meta property="og:locale" content="en_AU">
+    <meta property="og:image" content="https://altonanorthsc.com.au/Assets/Logo.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Altona North Soccer Club crest">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Our People - Committee, Coaches & Honours | Altona North SC">
+    <meta name="twitter:description" content="The committee, coaching staff and honoured names that have shaped Altona North SC since 1975.">
+    <meta name="twitter:image" content="https://altonanorthsc.com.au/Assets/Logo.png">
+    <meta name="geo.region" content="AU-VIC">
+    <meta name="geo.placename" content="Brooklyn, Melbourne">
+    <meta name="ICBM" content="-37.8232, 144.8489">
     <link rel="icon" type="image/png" href="Assets/Logo.png">
     <link rel="apple-touch-icon" href="Assets/Logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -300,36 +313,38 @@
         @media (max-width: 480px) {
             .page-title { font-size: 2.25rem !important; }
         }
+        .skip-link { position: absolute; left: -9999px; top: 0; z-index: 9999; padding: 8px 16px; background: #232650; color: #fff; text-decoration: none; }
+        .skip-link:focus { left: 0; }
     </style>
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "AboutPage",
-        "name": "Our People - Altona North Soccer Club",
-        "url": "https://altonanorthsc.com.au/people.html",
-        "mainEntity": {
-            "@type": "SportsOrganization",
-            "name": "Altona North Soccer Club",
-            "alternateName": ["Altona North SC", "ANSC"],
-            "url": "https://altonanorthsc.com.au",
-            "logo": "https://altonanorthsc.com.au/Assets/Logo.png",
-            "foundingDate": "1975",
-            "sport": "Soccer"
-        },
-        "breadcrumb": {
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://altonanorthsc.com.au/" },
-                { "@type": "ListItem", "position": 2, "name": "About", "item": "https://altonanorthsc.com.au/the-club.html" },
-                { "@type": "ListItem", "position": 3, "name": "People", "item": "https://altonanorthsc.com.au/people.html" }
-            ]
-        }
+        "@graph": [
+            { "@type": "SportsOrganization", "@id": "https://altonanorthsc.com.au/#organization" },
+            {
+                "@type": "AboutPage",
+                "url": "https://altonanorthsc.com.au/people.html",
+                "name": "Our People - Committee, Coaches & Honours | Altona North SC",
+                "description": "Meet the people behind Altona North Soccer Club. Committee, staff, coaching team for the 2026 season and the club's honours board of past presidents and life members.",
+                "isPartOf": { "@id": "https://altonanorthsc.com.au/#website" },
+                "about": { "@id": "https://altonanorthsc.com.au/#organization" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://altonanorthsc.com.au/" },
+                    { "@type": "ListItem", "position": 2, "name": "About", "item": "https://altonanorthsc.com.au/about.html" },
+                    { "@type": "ListItem", "position": 3, "name": "People", "item": "https://altonanorthsc.com.au/people.html" }
+                ]
+            }
+        ]
     }
     </script>
 </head>
 <body class="bg-navy-950 text-white font-body">
+    <a href="#main" class="skip-link">Skip to main content</a>
 
     <!-- Top Utility Bar -->
     <div class="top-bar hidden lg:block relative z-50">
@@ -659,6 +674,19 @@
         </div>
     </div>
 
+    <main id="main">
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumbs bg-navy-950 text-white/70 text-sm" aria-label="Breadcrumb">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+        <a href="/" class="hover:text-white">Home</a>
+        <span class="mx-2 text-white/40">/</span>
+        <a href="/about.html" class="hover:text-white">About</a>
+        <span class="mx-2 text-white/40">/</span>
+        <span class="text-white">People</span>
+      </div>
+    </nav>
+
     <!-- Page Header -->
     <header class="page-header relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/40 to-transparent pointer-events-none"></div>
@@ -935,6 +963,8 @@
             </div>
         </div>
     </section>
+
+    </main>
 
     <!-- Footer -->
     <footer class="bg-navy-950 text-white relative">

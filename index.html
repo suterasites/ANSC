@@ -10,6 +10,19 @@
     <meta property="og:description" content="Family-oriented football club in Melbourne's west since 1975. FV State League 2. Senior and junior programs for all ages. Join ANSC.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://altonanorthsc.com.au/">
+    <meta property="og:site_name" content="Altona North Soccer Club">
+    <meta property="og:locale" content="en_AU">
+    <meta property="og:image" content="https://altonanorthsc.com.au/Assets/Logo.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Altona North Soccer Club crest">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Altona North Soccer Club - Est. 1975 | Brooklyn, Melbourne">
+    <meta name="twitter:description" content="Family-oriented football club in Melbourne's west since 1975. FV State League 2. Senior and junior programs for all ages. Join ANSC.">
+    <meta name="twitter:image" content="https://altonanorthsc.com.au/Assets/Logo.png">
+    <meta name="geo.region" content="AU-VIC">
+    <meta name="geo.placename" content="Brooklyn, Melbourne">
+    <meta name="ICBM" content="-37.8232, 144.8489">
     <link rel="icon" type="image/png" href="Assets/Logo.png">
     <link rel="apple-touch-icon" href="Assets/Logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -455,47 +468,66 @@
             .hero-title { font-size: 2.25rem !important; }
             .hero-subtitle { font-size: 1rem !important; }
         }
+        .skip-link { position: absolute; left: -9999px; top: 0; z-index: 9999; padding: 8px 16px; background: #232650; color: #fff; text-decoration: none; }
+        .skip-link:focus { left: 0; }
     </style>
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "SportsOrganization",
-        "name": "Altona North Soccer Club",
-        "alternateName": ["Altona North SC", "ANSC"],
-        "url": "https://altonanorthsc.com.au",
-        "logo": "https://altonanorthsc.com.au/Assets/Logo.png",
-        "foundingDate": "1975",
-        "sport": "Soccer",
-        "description": "A family-oriented football club based in Brooklyn, Melbourne since 1975. Competing in Football Victoria State League 2 North/West with senior and junior programs.",
-        "location": {
-            "@type": "Place",
-            "name": "D.N. Duane Reserve",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Primula Avenue",
-                "addressLocality": "Brooklyn",
-                "addressRegion": "VIC",
-                "addressCountry": "AU"
+        "@graph": [
+            {
+                "@type": "SportsOrganization",
+                "@id": "https://altonanorthsc.com.au/#organization",
+                "name": "Altona North Soccer Club",
+                "alternateName": ["ANSC", "Altona North SC"],
+                "url": "https://altonanorthsc.com.au/",
+                "logo": "https://altonanorthsc.com.au/Assets/Logo.png",
+                "image": "https://altonanorthsc.com.au/Assets/Logo.png",
+                "foundingDate": "1975",
+                "sport": "Soccer",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "D.N. Duane Reserve, Primula Avenue",
+                    "addressLocality": "Brooklyn",
+                    "addressRegion": "VIC",
+                    "postalCode": "3012",
+                    "addressCountry": "AU"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": -37.8232,
+                    "longitude": 144.8489
+                },
+                "memberOf": {
+                    "@type": "SportsOrganization",
+                    "name": "Football Victoria"
+                },
+                "sameAs": [
+                    "https://www.facebook.com/altonanorthsc",
+                    "https://www.instagram.com/altonanorthsc"
+                ]
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://altonanorthsc.com.au/#website",
+                "url": "https://altonanorthsc.com.au/",
+                "name": "Altona North Soccer Club",
+                "publisher": { "@id": "https://altonanorthsc.com.au/#organization" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://altonanorthsc.com.au/" }
+                ]
             }
-        },
-        "memberOf": {
-            "@type": "SportsOrganization",
-            "name": "Football Victoria"
-        },
-        "areaServed": {
-            "@type": "City",
-            "name": "Melbourne",
-            "containedInPlace": {
-                "@type": "AdministrativeArea",
-                "name": "City of Hobsons Bay"
-            }
-        }
+        ]
     }
     </script>
 </head>
 <body class="bg-navy-950 text-white font-body">
+    <a href="#main" class="skip-link">Skip to main content</a>
 
     <!-- Navigation - Top Utility Bar -->
     <div class="top-bar hidden lg:block relative z-50">
@@ -844,6 +876,8 @@
         </div>
     </div>
 
+    <main id="main">
+
     <!-- Hero Section -->
     <header class="relative h-[calc(100vh-60px)] min-h-[600px] max-h-[1000px] overflow-hidden">
         <!-- Carousel Slides -->
@@ -1162,6 +1196,8 @@
             </div>
         </div>
     </section>
+
+    </main>
 
     <!-- Footer -->
     <footer class="bg-navy-950 text-white relative">

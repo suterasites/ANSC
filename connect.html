@@ -10,6 +10,19 @@
     <meta property="og:description" content="Stay close to the club on social and beyond.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://altonanorthsc.com.au/connect.html">
+    <meta property="og:site_name" content="Altona North Soccer Club">
+    <meta property="og:locale" content="en_AU">
+    <meta property="og:image" content="https://altonanorthsc.com.au/Assets/Logo.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Altona North Soccer Club crest">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Connect with ANSC">
+    <meta name="twitter:description" content="Stay close to the club on social and beyond.">
+    <meta name="twitter:image" content="https://altonanorthsc.com.au/Assets/Logo.png">
+    <meta name="geo.region" content="AU-VIC">
+    <meta name="geo.placename" content="Brooklyn, Melbourne">
+    <meta name="ICBM" content="-37.8232, 144.8489">
     <link rel="icon" type="image/png" href="Assets/Logo.png">
     <link rel="apple-touch-icon" href="Assets/Logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -373,50 +386,37 @@
         @media (max-width: 480px) {
             .page-title { font-size: 2.25rem !important; }
         }
+        .skip-link { position: absolute; left: -9999px; top: 0; z-index: 9999; padding: 8px 16px; background: #232650; color: #fff; text-decoration: none; }
+        .skip-link:focus { left: 0; }
     </style>
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "SportsTeam",
-        "name": "Altona North SC Connect",
-        "url": "https://altonanorthsc.com.au/connect.html",
-        "sport": "Soccer",
-        "memberOf": {
-            "@type": "SportsOrganization",
-            "name": "Football Victoria"
-        },
-        "parentOrganization": {
-            "@type": "SportsOrganization",
-            "name": "Altona North Soccer Club",
-            "url": "https://altonanorthsc.com.au"
-        },
-        "location": {
-            "@type": "Place",
-            "name": "D.N. Duane Reserve",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Primula Avenue",
-                "addressLocality": "Brooklyn",
-                "addressRegion": "VIC",
-                "addressCountry": "AU"
+        "@graph": [
+            { "@type": "SportsOrganization", "@id": "https://altonanorthsc.com.au/#organization" },
+            {
+                "@type": "ContactPage",
+                "url": "https://altonanorthsc.com.au/connect.html",
+                "name": "Connect - Follow ANSC on Social | Altona North SC",
+                "description": "Follow Altona North SC on Facebook and Instagram. Stay close to match days, club news, junior gameday and #AltonaNorthSC.",
+                "isPartOf": { "@id": "https://altonanorthsc.com.au/#website" },
+                "about": { "@id": "https://altonanorthsc.com.au/#organization" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://altonanorthsc.com.au/" },
+                    { "@type": "ListItem", "position": 2, "name": "Connect", "item": "https://altonanorthsc.com.au/connect.html" }
+                ]
             }
-        }
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://altonanorthsc.com.au/" },
-            { "@type": "ListItem", "position": 2, "name": "Connect", "item": "https://altonanorthsc.com.au/connect.html" }
         ]
     }
     </script>
 </head>
 <body class="bg-navy-950 text-white font-body">
+    <a href="#main" class="skip-link">Skip to main content</a>
 
     <!-- Navigation - Top Utility Bar -->
     <div class="top-bar hidden lg:block relative z-50">
@@ -746,6 +746,17 @@
         </div>
     </div>
 
+    <main id="main">
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumbs bg-navy-950 text-white/70 text-sm" aria-label="Breadcrumb">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+        <a href="/" class="hover:text-white">Home</a>
+        <span class="mx-2 text-white/40">/</span>
+        <span class="text-white">Connect</span>
+      </div>
+    </nav>
+
     <!-- Page Header -->
     <header class="page-header relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/40 to-transparent pointer-events-none"></div>
@@ -883,6 +894,8 @@
             </div>
         </div>
     </section>
+
+    </main>
 
     <!-- Footer -->
     <footer class="bg-navy-950 text-white relative">
