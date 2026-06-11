@@ -1766,6 +1766,15 @@
                 const fHome = f.home === 'Altona North';
                 const round = f.round ? ('ROUND ' + f.round) : roundLabel;
                 const dateTime = `${f.dateDisplay || ''}${f.time ? ' - ' + formatTime12hr(f.time) : ''}`.trim();
+                // Home games (Altona North at home) render on a navy card; away games on a white card.
+                const rowClass = fHome ? 'bg-navy-950' : 'bg-white border border-gray-200';
+                const txtMain = fHome ? 'text-white' : 'text-navy-950';
+                const txtBody = fHome ? 'text-white/90' : 'text-navy-950/80';
+                const txtMute = fHome ? 'text-white/55' : 'text-gray-400';
+                const txtVs = fHome ? 'text-white/45' : 'text-gray-300';
+                const homeBadge = fHome ? 'bg-white' : 'bg-navy-50';
+                const awayBadge = fHome ? 'bg-white' : 'bg-gray-50';
+                const badgeBorder = fHome ? 'border-white/30' : 'border-gray-100';
                 const homeCrest = f.homeLogo
                     ? `<img src="${f.homeLogo}" alt="${f.home}" class="w-8 h-8 object-contain">`
                     : `<span class="font-heading text-[10px] font-bold text-navy-950 tracking-wide">${getInitials(f.home)}</span>`;
@@ -1773,17 +1782,17 @@
                     ? `<img src="${f.awayLogo}" alt="${f.away}" class="w-8 h-8 object-contain">`
                     : `<span class="font-heading text-[10px] font-bold text-navy-950 tracking-wide">${getInitials(f.away)}</span>`;
                 return `
-                    <div class="flex items-center gap-3 py-2.5 border-b border-gray-100 last:border-b-0">
+                    <div class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg ${rowClass}">
                         <div class="min-w-0 flex-1">
-                            <p class="font-heading text-[11px] font-bold text-navy-950 tracking-[0.06em] uppercase leading-tight">${f.team || ''}</p>
-                            <p class="font-body text-[11px] text-navy-950/80 mt-1 leading-snug"><span class="${fHome ? 'font-bold' : ''}">${f.home}</span><span class="text-gray-400"> vs </span><span class="${fHome ? '' : 'font-bold'}">${f.away}</span></p>
-                            <p class="font-body text-[10px] text-gray-400 mt-1 leading-tight">${round}${dateTime ? ' &middot; ' + dateTime : ''}</p>
-                            <p class="font-body text-[10px] text-gray-400 italic leading-tight">${f.venue || ''}</p>
+                            <p class="font-heading text-[11px] font-bold ${txtMain} tracking-[0.06em] uppercase leading-tight">${f.team || ''}</p>
+                            <p class="font-body text-[11px] ${txtBody} mt-1 leading-snug"><span class="${fHome ? 'font-bold' : ''}">${f.home}</span><span class="${txtVs}"> vs </span><span class="${fHome ? '' : 'font-bold'}">${f.away}</span></p>
+                            <p class="font-body text-[10px] ${txtMute} mt-1 leading-tight">${round}${dateTime ? ' &middot; ' + dateTime : ''}</p>
+                            <p class="font-body text-[10px] ${txtMute} italic leading-tight">${f.venue || ''}</p>
                         </div>
                         <div class="flex items-center gap-2 shrink-0">
-                            <div class="w-9 h-9 rounded-full bg-navy-50 flex items-center justify-center overflow-hidden border border-gray-100">${homeCrest}</div>
-                            <span class="font-heading text-[10px] font-bold text-gray-300">VS</span>
-                            <div class="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center overflow-hidden border border-gray-100">${awayCrest}</div>
+                            <div class="w-9 h-9 rounded-full ${homeBadge} flex items-center justify-center overflow-hidden border ${badgeBorder}">${homeCrest}</div>
+                            <span class="font-heading text-[10px] font-bold ${txtVs}">VS</span>
+                            <div class="w-9 h-9 rounded-full ${awayBadge} flex items-center justify-center overflow-hidden border ${badgeBorder}">${awayCrest}</div>
                         </div>
                     </div>`;
             };
@@ -1792,7 +1801,7 @@
             for (let i = 0; i < fixtures.length; i += PER_PAGE) pages.push(fixtures.slice(i, i + PER_PAGE));
 
             track.innerHTML = pages.map(page => `
-                <div class="w-full shrink-0 flex flex-col justify-center">
+                <div class="w-full shrink-0 flex flex-col justify-center gap-2 px-0.5">
                     ${page.map(fixtureRow).join('')}
                 </div>`).join('');
 
