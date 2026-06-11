@@ -1760,49 +1760,56 @@
                 return;
             }
 
-            track.innerHTML = fixtures.map(f => {
+            // Show fixtures 4-at-a-time. Each "slide" is a page of up to PER_PAGE rows.
+            const PER_PAGE = 4;
+            const fixtureRow = (f) => {
                 const fHome = f.home === 'Altona North';
                 const round = f.round ? ('ROUND ' + f.round) : roundLabel;
+                const dateTime = `${f.dateDisplay || ''}${f.time ? ' - ' + formatTime12hr(f.time) : ''}`.trim();
                 const homeCrest = f.homeLogo
-                    ? `<img src="${f.homeLogo}" alt="${f.home}" class="w-9 h-9 object-contain">`
-                    : `<span class="font-heading text-[11px] font-bold text-navy-950 tracking-wide">${getInitials(f.home)}</span>`;
+                    ? `<img src="${f.homeLogo}" alt="${f.home}" class="w-8 h-8 object-contain">`
+                    : `<span class="font-heading text-[10px] font-bold text-navy-950 tracking-wide">${getInitials(f.home)}</span>`;
                 const awayCrest = f.awayLogo
-                    ? `<img src="${f.awayLogo}" alt="${f.away}" class="w-9 h-9 object-contain">`
-                    : `<span class="font-heading text-[11px] font-bold text-navy-950 tracking-wide">${getInitials(f.away)}</span>`;
+                    ? `<img src="${f.awayLogo}" alt="${f.away}" class="w-8 h-8 object-contain">`
+                    : `<span class="font-heading text-[10px] font-bold text-navy-950 tracking-wide">${getInitials(f.away)}</span>`;
                 return `
-                    <div class="w-full shrink-0 px-2 flex flex-col items-center justify-center text-center">
-                        <span class="font-body text-[10px] text-gray-500 tracking-[0.15em] uppercase mb-0.5">${f.team || ''}</span>
-                        <span class="font-heading text-[11px] font-bold text-navy-950 tracking-wide mb-0.5">${round}</span>
-                        <span class="font-body text-[10px] text-gray-400">${f.dateDisplay || ''}${f.time ? ' - ' + formatTime12hr(f.time) : ''}</span>
-                        <span class="font-body text-[10px] text-gray-400 italic mb-4">${f.venue || ''}</span>
-                        <div class="flex items-center justify-center gap-4 w-full">
-                            <div class="flex flex-col items-center gap-1.5 flex-1 min-w-0">
-                                <div class="w-11 h-11 rounded-full bg-navy-50 flex items-center justify-center overflow-hidden border border-gray-100 shrink-0">${homeCrest}</div>
-                                <span class="font-heading text-[10px] font-bold text-navy-950 tracking-wide uppercase text-center leading-tight">${f.home}</span>
-                            </div>
-                            <span class="font-heading text-xs font-bold text-gray-300">VS</span>
-                            <div class="flex flex-col items-center gap-1.5 flex-1 min-w-0">
-                                <div class="w-11 h-11 rounded-full bg-gray-50 flex items-center justify-center overflow-hidden border border-gray-100 shrink-0">${awayCrest}</div>
-                                <span class="font-heading text-[10px] font-bold text-navy-950 tracking-wide uppercase text-center leading-tight">${f.away}</span>
-                            </div>
+                    <div class="flex items-center gap-3 py-2.5 border-b border-gray-100 last:border-b-0">
+                        <div class="min-w-0 flex-1">
+                            <p class="font-heading text-[11px] font-bold text-navy-950 tracking-[0.06em] uppercase leading-tight">${f.team || ''}</p>
+                            <p class="font-body text-[11px] text-navy-950/80 mt-1 leading-snug"><span class="${fHome ? 'font-bold' : ''}">${f.home}</span><span class="text-gray-400"> vs </span><span class="${fHome ? '' : 'font-bold'}">${f.away}</span></p>
+                            <p class="font-body text-[10px] text-gray-400 mt-1 leading-tight">${round}${dateTime ? ' &middot; ' + dateTime : ''}</p>
+                            <p class="font-body text-[10px] text-gray-400 italic leading-tight">${f.venue || ''}</p>
+                        </div>
+                        <div class="flex items-center gap-2 shrink-0">
+                            <div class="w-9 h-9 rounded-full bg-navy-50 flex items-center justify-center overflow-hidden border border-gray-100">${homeCrest}</div>
+                            <span class="font-heading text-[10px] font-bold text-gray-300">VS</span>
+                            <div class="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center overflow-hidden border border-gray-100">${awayCrest}</div>
                         </div>
                     </div>`;
-            }).join('');
+            };
 
-            dotsEl.innerHTML = fixtures.map((_, i) =>
-                `<button class="junior-dot w-1.5 h-1.5 rounded-full ${i === 0 ? 'bg-accent-500' : 'bg-gray-300'} hover:bg-gray-400 transition-colors duration-200" data-dot="${i}" aria-label="Go to fixture ${i + 1}"></button>`
+            const pages = [];
+            for (let i = 0; i < fixtures.length; i += PER_PAGE) pages.push(fixtures.slice(i, i + PER_PAGE));
+
+            track.innerHTML = pages.map(page => `
+                <div class="w-full shrink-0 flex flex-col justify-center">
+                    ${page.map(fixtureRow).join('')}
+                </div>`).join('');
+
+            dotsEl.innerHTML = pages.map((_, i) =>
+                `<button class="junior-dot w-1.5 h-1.5 rounded-full ${i === 0 ? 'bg-accent-500' : 'bg-gray-300'} hover:bg-gray-400 transition-colors duration-200" data-dot="${i}" aria-label="Go to fixtures page ${i + 1}"></button>`
             ).join('');
 
             let current = 0;
             function go(idx) {
-                const len = fixtures.length;
+                const len = pages.length;
                 current = ((idx % len) + len) % len;
                 track.style.transform = `translateX(-${current * 100}%)`;
                 document.querySelectorAll('.junior-dot').forEach((d, i) => {
                     d.className = `junior-dot w-1.5 h-1.5 rounded-full ${i === current ? 'bg-accent-500' : 'bg-gray-300'} hover:bg-gray-400 transition-colors duration-200`;
                 });
             }
-            if (fixtures.length <= 1) {
+            if (pages.length <= 1) {
                 disableNav();
             } else {
                 prevBtn.addEventListener('click', () => go(current - 1));
