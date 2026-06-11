@@ -11,7 +11,7 @@
       "home": "Altona North",
       "homeLogo": "Assets/Logo.png",
       "away": "Yarraville Glory FC",
-      "awayLogo": null,
+      "awayLogo": "Assets/Other Team Logos/Yarraville Glory FC.png",
       "venue": "AB Shaw Reserve Pitch 2 - Half B"
     },
     {
@@ -23,7 +23,7 @@
       "home": "Altona North",
       "homeLogo": "Assets/Logo.png",
       "away": "Williams Landing SC",
-      "awayLogo": null,
+      "awayLogo": "Assets/Other Team Logos/Williams landing SC.png",
       "venue": "Duane Reserve Main Pitch - Half A"
     },
     {
@@ -33,7 +33,7 @@
       "dateDisplay": "14 June 2026",
       "time": "09:00",
       "home": "Wyndham FC",
-      "homeLogo": null,
+      "homeLogo": "Assets/Other Team Logos/Wyndham FC.png",
       "away": "Altona North",
       "awayLogo": "Assets/Logo.png",
       "venue": "Wyndham Vale North Reserve - Southern End Half Pitch (9v9)"
@@ -47,7 +47,7 @@
       "home": "Altona North",
       "homeLogo": "Assets/Logo.png",
       "away": "Tarneit United SC",
-      "awayLogo": null,
+      "awayLogo": "Assets/Other Team Logos/Tarneit United SC.png",
       "venue": "Duane Reserve Main Pitch - Half B"
     },
     {
@@ -59,7 +59,7 @@
       "home": "Altona North",
       "homeLogo": "Assets/Logo.png",
       "away": "Williams Landing SC",
-      "awayLogo": null,
+      "awayLogo": "Assets/Other Team Logos/Williams landing SC.png",
       "venue": "Duane Reserve Main Pitch - Midi A (7v7)"
     },
     {
@@ -69,7 +69,7 @@
       "dateDisplay": "14 June 2026",
       "time": "10:00",
       "home": "Laverton FC",
-      "homeLogo": null,
+      "homeLogo": "Assets/Other Team Logos/Laverton SC.png",
       "away": "Altona North",
       "awayLogo": "Assets/Logo.png",
       "venue": "HD Graham Reserve Field 1 (North) Half B"
@@ -93,7 +93,7 @@
       "dateDisplay": "14 June 2026",
       "time": "10:00",
       "home": "Maidstone United SC",
-      "homeLogo": null,
+      "homeLogo": "Assets/Other Team Logos/Maidstone United.png",
       "away": "Altona North",
       "awayLogo": "Assets/Logo.png",
       "venue": "Scovell Reserve Half Pitch"
@@ -105,7 +105,7 @@
       "dateDisplay": "14 June 2026",
       "time": "10:00",
       "home": "Point Cook SC",
-      "homeLogo": null,
+      "homeLogo": "Assets/Other Team Logos/Point Cook SC.png",
       "away": "Altona North",
       "awayLogo": "Assets/Logo.png",
       "venue": "Saltwater Reserve Pitch 3"
@@ -117,7 +117,7 @@
       "dateDisplay": "14 June 2026",
       "time": "10:15",
       "home": "Werribee City FC",
-      "homeLogo": null,
+      "homeLogo": "Assets/Other Team Logos/Werribee City FC.png",
       "away": "Altona North",
       "awayLogo": "Assets/Logo.png",
       "venue": "Costas Mitre 10 Park, Galvin Park Reserve - Half Field"
@@ -131,7 +131,7 @@
       "home": "Altona North",
       "homeLogo": "Assets/Logo.png",
       "away": "Keilor Park SC",
-      "awayLogo": null,
+      "awayLogo": "Assets/Other Team Logos/Keilor Park SC.png",
       "venue": "AB Shaw Reserve Pitch 1 - Half B"
     }
   ]
