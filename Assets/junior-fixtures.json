@@ -1,5 +1,138 @@
 {
-  "round": "",
-  "updated": "",
-  "fixtures": []
+  "round": "ROUND 7",
+  "updated": "2026-06-11",
+  "fixtures": [
+    {
+      "team": "U12 Juniors A Oriol",
+      "round": 7,
+      "dateISO": "2026-06-14T09:00:00",
+      "dateDisplay": "14 June 2026",
+      "time": "09:00",
+      "home": "Altona North",
+      "homeLogo": "Assets/Logo.png",
+      "away": "Yarraville Glory FC",
+      "awayLogo": null,
+      "venue": "AB Shaw Reserve Pitch 2 - Half B"
+    },
+    {
+      "team": "U12 Juniors A Masnou",
+      "round": 7,
+      "dateISO": "2026-06-14T09:00:00",
+      "dateDisplay": "14 June 2026",
+      "time": "09:00",
+      "home": "Altona North",
+      "homeLogo": "Assets/Logo.png",
+      "away": "Williams Landing SC",
+      "awayLogo": null,
+      "venue": "Duane Reserve Main Pitch - Half A"
+    },
+    {
+      "team": "U9 Kangaroos Masnou",
+      "round": 7,
+      "dateISO": "2026-06-14T09:00:00",
+      "dateDisplay": "14 June 2026",
+      "time": "09:00",
+      "home": "Wyndham FC",
+      "homeLogo": null,
+      "away": "Altona North",
+      "awayLogo": "Assets/Logo.png",
+      "venue": "Wyndham Vale North Reserve - Southern End Half Pitch (9v9)"
+    },
+    {
+      "team": "U11 Kangaroos Oriol",
+      "round": 7,
+      "dateISO": "2026-06-14T09:00:00",
+      "dateDisplay": "14 June 2026",
+      "time": "09:00",
+      "home": "Altona North",
+      "homeLogo": "Assets/Logo.png",
+      "away": "Tarneit United SC",
+      "awayLogo": null,
+      "venue": "Duane Reserve Main Pitch - Half B"
+    },
+    {
+      "team": "U8 Kangaroos Masnou",
+      "round": 7,
+      "dateISO": "2026-06-14T09:00:00",
+      "dateDisplay": "14 June 2026",
+      "time": "09:00",
+      "home": "Altona North",
+      "homeLogo": "Assets/Logo.png",
+      "away": "Williams Landing SC",
+      "awayLogo": null,
+      "venue": "Duane Reserve Main Pitch - Midi A (7v7)"
+    },
+    {
+      "team": "U11 Kangaroos Masnou",
+      "round": 7,
+      "dateISO": "2026-06-14T10:00:00",
+      "dateDisplay": "14 June 2026",
+      "time": "10:00",
+      "home": "Laverton FC",
+      "homeLogo": null,
+      "away": "Altona North",
+      "awayLogo": "Assets/Logo.png",
+      "venue": "HD Graham Reserve Field 1 (North) Half B"
+    },
+    {
+      "team": "U8 Kangaroos Oriol",
+      "round": 7,
+      "dateISO": "2026-06-14T10:00:00",
+      "dateDisplay": "14 June 2026",
+      "time": "10:00",
+      "home": "Williamstown SC",
+      "homeLogo": "Assets/Other Team Logos/Williamstown SC.webp",
+      "away": "Altona North",
+      "awayLogo": "Assets/Logo.png",
+      "venue": "JT Gray Reserve Pitch 2B (7v7)"
+    },
+    {
+      "team": "U10 Kangaroos Oriol",
+      "round": 7,
+      "dateISO": "2026-06-14T10:00:00",
+      "dateDisplay": "14 June 2026",
+      "time": "10:00",
+      "home": "Maidstone United SC",
+      "homeLogo": null,
+      "away": "Altona North",
+      "awayLogo": "Assets/Logo.png",
+      "venue": "Scovell Reserve Half Pitch"
+    },
+    {
+      "team": "U8 Wallabies",
+      "round": 7,
+      "dateISO": "2026-06-14T10:00:00",
+      "dateDisplay": "14 June 2026",
+      "time": "10:00",
+      "home": "Point Cook SC",
+      "homeLogo": null,
+      "away": "Altona North",
+      "awayLogo": "Assets/Logo.png",
+      "venue": "Saltwater Reserve Pitch 3"
+    },
+    {
+      "team": "U13 Juniors A Oriol",
+      "round": 7,
+      "dateISO": "2026-06-14T10:15:00",
+      "dateDisplay": "14 June 2026",
+      "time": "10:15",
+      "home": "Werribee City FC",
+      "homeLogo": null,
+      "away": "Altona North",
+      "awayLogo": "Assets/Logo.png",
+      "venue": "Costas Mitre 10 Park, Galvin Park Reserve - Half Field"
+    },
+    {
+      "team": "U13 Juniors A Masnou",
+      "round": 7,
+      "dateISO": "2026-06-14T11:00:00",
+      "dateDisplay": "14 June 2026",
+      "time": "11:00",
+      "home": "Altona North",
+      "homeLogo": "Assets/Logo.png",
+      "away": "Keilor Park SC",
+      "awayLogo": null,
+      "venue": "AB Shaw Reserve Pitch 1 - Half B"
+    }
+  ]
 }
