@@ -47,7 +47,7 @@
       "home": "Altona North",
       "homeLogo": "Assets/Logo.png",
       "away": "Altona East SC",
-      "awayLogo": null,
+      "awayLogo": "Assets/Other Team Logos/Altona East SC.png",
       "venue": "AB Shaw Reserve Pitch 1 - Half B"
     },
     {
@@ -59,7 +59,7 @@
       "home": "Altona North",
       "homeLogo": "Assets/Logo.png",
       "away": "North Geelong Warriors FC",
-      "awayLogo": null,
+      "awayLogo": "Assets/Other Team Logos/North Geelong Warriors FC.png",
       "venue": "AB Shaw Reserve Pitch 1 - Half A"
     },
     {
