@@ -14,21 +14,23 @@
     <meta name="google-site-verification" content="hqpaU3btgELloPSzB0ue7ehK5eU19DSoQxhoGgrfSqs" />
     <title>Altona North Soccer Club - Est. 1975 | Brooklyn, Melbourne</title>
     <meta name="description" content="Altona North Soccer Club - a family-oriented football club based in Brooklyn, Melbourne since 1975. FV State League 2. Senior and junior programs. Join ANSC today.">
-    <link rel="canonical" href="https://altonanorthsc.com.au/">
+    <link rel="preload" as="image" href="Assets/Hero%20Images/Pitch-sm.jpg" fetchpriority="high" media="(max-width: 767px)">
+    <link rel="preload" as="image" href="Assets/Hero%20Images/Pitch.jpg" fetchpriority="high" media="(min-width: 768px)">
+    <link rel="canonical" href="https://www.altonanorthsc.com.au/">
     <meta property="og:title" content="Altona North Soccer Club - Est. 1975 | Brooklyn, Melbourne">
     <meta property="og:description" content="Family-oriented football club in Melbourne's west since 1975. FV State League 2. Senior and junior programs for all ages. Join ANSC.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://altonanorthsc.com.au/">
+    <meta property="og:url" content="https://www.altonanorthsc.com.au/">
     <meta property="og:site_name" content="Altona North Soccer Club">
     <meta property="og:locale" content="en_AU">
-    <meta property="og:image" content="https://altonanorthsc.com.au/Assets/Logo.png">
+    <meta property="og:image" content="https://www.altonanorthsc.com.au/Assets/Logo.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Altona North Soccer Club crest">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Altona North Soccer Club - Est. 1975 | Brooklyn, Melbourne">
     <meta name="twitter:description" content="Family-oriented football club in Melbourne's west since 1975. FV State League 2. Senior and junior programs for all ages. Join ANSC.">
-    <meta name="twitter:image" content="https://altonanorthsc.com.au/Assets/Logo.png">
+    <meta name="twitter:image" content="https://www.altonanorthsc.com.au/Assets/Logo.png">
     <meta name="geo.region" content="AU-VIC">
     <meta name="geo.placename" content="Brooklyn, Melbourne">
     <meta name="ICBM" content="-37.8232, 144.8489">
@@ -488,12 +490,12 @@
         "@graph": [
             {
                 "@type": "SportsOrganization",
-                "@id": "https://altonanorthsc.com.au/#organization",
+                "@id": "https://www.altonanorthsc.com.au/#organization",
                 "name": "Altona North Soccer Club",
                 "alternateName": ["ANSC", "Altona North SC"],
-                "url": "https://altonanorthsc.com.au/",
-                "logo": "https://altonanorthsc.com.au/Assets/Logo.png",
-                "image": "https://altonanorthsc.com.au/Assets/Logo.png",
+                "url": "https://www.altonanorthsc.com.au/",
+                "logo": "https://www.altonanorthsc.com.au/Assets/Logo.png",
+                "image": "https://www.altonanorthsc.com.au/Assets/Logo.png",
                 "foundingDate": "1975",
                 "sport": "Soccer",
                 "address": {
@@ -520,15 +522,15 @@
             },
             {
                 "@type": "WebSite",
-                "@id": "https://altonanorthsc.com.au/#website",
-                "url": "https://altonanorthsc.com.au/",
+                "@id": "https://www.altonanorthsc.com.au/#website",
+                "url": "https://www.altonanorthsc.com.au/",
                 "name": "Altona North Soccer Club",
-                "publisher": { "@id": "https://altonanorthsc.com.au/#organization" }
+                "publisher": { "@id": "https://www.altonanorthsc.com.au/#organization" }
             },
             {
                 "@type": "BreadcrumbList",
                 "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://altonanorthsc.com.au/" }
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.altonanorthsc.com.au/" }
                 ]
             }
         ]
@@ -913,13 +915,16 @@
     <header class="relative h-[calc(100vh-60px)] min-h-[600px] max-h-[1000px] overflow-hidden">
         <!-- Carousel Slides -->
         <div class="hero-slide active" data-slide="0">
-            <img src="Assets/Hero Images/Pitch.jpg" alt="Altona North SC home ground pitch at D.N. Duane Reserve" class="w-full h-full object-cover object-center" loading="eager">
+            <img src="Assets/Hero Images/Pitch.jpg"
+                 srcset="Assets/Hero%20Images/Pitch-sm.jpg 900w, Assets/Hero%20Images/Pitch.jpg 1600w"
+                 sizes="100vw"
+                 alt="Altona North SC home ground pitch at D.N. Duane Reserve" class="w-full h-full object-cover object-center" width="1600" height="1200" loading="eager" fetchpriority="high" decoding="async">
         </div>
         <div class="hero-slide" data-slide="1">
-            <img src="Assets/Hero Images/Senior Players.JPG" alt="Altona North SC senior players in a team huddle" class="w-full h-full object-cover object-center" loading="eager">
+            <img src="Assets/Hero Images/Senior Players.JPG" alt="Altona North SC senior players in a team huddle" class="w-full h-full object-cover object-center" width="1600" height="1069" loading="lazy" decoding="async">
         </div>
         <div class="hero-slide" data-slide="2">
-            <img src="Assets/Hero Images/Junior Players2.jpg" alt="Altona North SC junior players during a game" class="w-full h-full object-cover object-center" loading="lazy">
+            <img src="Assets/Hero Images/Junior Players2.jpg" alt="Altona North SC junior players during a game" class="w-full h-full object-cover object-center" width="1440" height="1080" loading="lazy" decoding="async">
         </div>
 
         <!-- Gradient overlays -->

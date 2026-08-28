@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://altonanorthsc.com.au/sitemap.xml
+Sitemap: https://www.altonanorthsc.com.au/sitemap.xml
