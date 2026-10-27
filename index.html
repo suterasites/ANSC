@@ -443,6 +443,44 @@
         }
         .skip-link { position: absolute; left: -9999px; top: 0; z-index: 9999; padding: 8px 16px; background: #232650; color: #fff; text-decoration: none; }
         .skip-link:focus { left: 0; }
+        /* Inline enquiry forms (same field styles as get-involved.html) */
+        .form-field {
+            width: 100%;
+            background: #ffffff;
+            border: 1px solid rgba(35, 38, 80, 0.15);
+            padding: 14px 16px;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            color: #232650;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .form-field:focus {
+            outline: none;
+            border-color: #c8102e;
+            box-shadow: 0 0 0 3px rgba(200, 16, 46, 0.12);
+        }
+        .form-field::placeholder { color: rgba(35, 38, 80, 0.4); }
+        .form-label {
+            display: block;
+            font-family: 'Oswald', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #232650;
+            margin-bottom: 8px;
+        }
+        .form-label .required { color: #c8102e; margin-left: 2px; }
+        select.form-field {
+            -webkit-appearance: none;
+            appearance: none;
+            border-radius: 0;
+            padding-right: 44px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23232650' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            background-size: 16px;
+        }
     </style>
 
     <!-- JSON-LD Structured Data -->
@@ -1240,17 +1278,56 @@
                 Be Part of<br><span class="text-gold-400 italic">Something Special</span>
             </h2>
             <p class="font-body text-base md:text-lg text-white/85 max-w-lg mx-auto mb-10" style="line-height: 1.7; text-shadow: 0 1px 6px rgba(0,0,0,0.3);">
-                Whether you are a player, parent, or supporter, there is a place for you at Altona North Soccer Club. Join the ANSC family today.
+                Whether you are a player, parent, or supporter, there is a place for you at Altona North Soccer Club. Send the committee a message and they will be in touch.
             </p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="get-involved.html#contact" class="btn-primary inline-flex items-center gap-2 bg-gold-500 text-white px-8 py-4 font-heading text-sm font-bold tracking-wider uppercase focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-400 focus-visible:outline-offset-2" style="box-shadow: 0 4px 20px rgba(200,16,46,0.35);">
-                    <span>Register to Play</span>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                </a>
-                <a href="get-involved.html#contact" class="btn-secondary inline-flex items-center gap-2 border border-white/30 bg-white/10 backdrop-blur-sm text-white px-8 py-4 font-heading text-sm font-medium tracking-wider uppercase focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-400 focus-visible:outline-offset-2">
-                    Get in Touch
-                </a>
-            </div>
+
+            <!-- Homepage enquiry form (posts to the same Formspree form as get-involved.html#contact) -->
+            <form id="home-enquiry" action="https://formspree.io/f/mvznoblr" method="POST" class="bg-white border border-navy-950/10 p-8 md:p-12 text-left space-y-6" style="box-shadow: 0 24px 60px -30px rgba(35, 38, 80, 0.25);">
+                <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+                <input type="hidden" name="_subject" value="New ANSC website enquiry">
+                <input type="hidden" name="page" value="Homepage">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="form-label" for="home-name">Full Name<span class="required">*</span></label>
+                        <input class="form-field" type="text" id="home-name" name="name" placeholder="Your name" autocomplete="name" required>
+                    </div>
+                    <div>
+                        <label class="form-label" for="home-email">Email Address<span class="required">*</span></label>
+                        <input class="form-field" type="email" id="home-email" name="email" placeholder="you@example.com" autocomplete="email" required>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="form-label" for="home-phone">Phone</label>
+                        <input class="form-field" type="tel" id="home-phone" name="phone" placeholder="Optional" autocomplete="tel">
+                    </div>
+                    <div>
+                        <label class="form-label" for="home-subject">Enquiry Type<span class="required">*</span></label>
+                        <select class="form-field" id="home-subject" name="subject" required>
+                            <option value="" disabled selected>Select a topic</option>
+                            <option value="seniors">Senior Football</option>
+                            <option value="juniors">Junior Football (U7-U14)</option>
+                            <option value="membership">Social Membership &amp; Registration</option>
+                            <option value="sponsorship">Sponsorship</option>
+                            <option value="volunteer">Volunteering</option>
+                            <option value="general">General Enquiry</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="form-label" for="home-message">Message<span class="required">*</span></label>
+                    <textarea class="form-field" id="home-message" name="message" rows="4" placeholder="Age group, position, the squad you are after, or anything else the committee should know" required></textarea>
+                </div>
+                <div class="pt-2">
+                    <button type="submit" class="btn-primary inline-flex items-center gap-2.5 bg-accent-500 text-white px-10 py-4 font-heading text-[13px] font-bold tracking-[0.15em] uppercase focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-500 focus-visible:outline-offset-2" style="box-shadow: 0 8px 24px -8px rgba(200,16,46,0.45);">
+                        Send Enquiry
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </button>
+                </div>
+            </form>
+            <p class="font-body text-sm text-white/80 mt-6" style="line-height: 1.7; text-shadow: 0 1px 6px rgba(0,0,0,0.3);">
+                Registering a junior for 2027? <a href="junior-football.html#eoi-2027" class="text-white underline hover:text-accent-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-500 focus-visible:outline-offset-2">The junior expression of interest is open now.</a>
+            </p>
         </div>
 
         <!-- Bottom accent line -->
