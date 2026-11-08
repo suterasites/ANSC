@@ -37,6 +37,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html, body { overflow-x: hidden; }
@@ -76,82 +77,6 @@
             transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
-
-        .mobile-menu { transform: translateX(100%); transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
-        .mobile-menu.open { transform: translateX(0); }
-
-        .nav-link { position: relative; transition: color 0.2s ease; }
-        .nav-link::after {
-            content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
-            background: #c8102e; transition: width 0.3s ease;
-        }
-        .nav-link:hover::after, .nav-link:focus-visible::after, .nav-link.active::after { width: 100%; }
-
-        .mega-menu-trigger { position: relative; cursor: pointer; }
-        .mega-menu-trigger .chevron-icon { transition: transform 0.2s ease; }
-        .mega-menu-trigger:hover .chevron-icon, .mega-menu-trigger.active .chevron-icon { transform: rotate(180deg); }
-        .mega-menu-panel {
-            position: absolute; top: 100%; left: 0; right: 0;
-            background: rgba(35, 38, 80, 0.98); backdrop-filter: blur(16px);
-            border-top: 2px solid #c8102e; opacity: 0; visibility: hidden;
-            transform: translateY(-8px);
-            transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
-            z-index: 100; pointer-events: none;
-        }
-        .mega-menu-panel.open { opacity: 1; visibility: visible; transform: translateY(0); pointer-events: auto; }
-        .mega-menu-panel::before {
-            content: ''; position: absolute; inset: 0; opacity: 0.03;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-            pointer-events: none;
-        }
-        .mega-col-title {
-            display: block; font-family: 'Oswald', sans-serif; font-size: 11px;
-            font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
-            color: #c8102e; padding-bottom: 10px; margin-bottom: 12px;
-            border-bottom: 1px solid rgba(200, 16, 46, 0.2);
-            text-decoration: none;
-            transition: color 0.2s ease, border-color 0.2s ease;
-        }
-        a.mega-col-title:hover { color: #ffffff; border-bottom-color: rgba(200, 16, 46, 0.6); }
-        a.mega-col-title:focus-visible { color: #ffffff; outline: 2px solid #c8102e; outline-offset: 2px; }
-        .mega-link {
-            display: flex; align-items: center; gap: 8px; padding: 6px 0;
-            font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 400;
-            color: rgba(255, 255, 255, 0.7); text-decoration: none;
-            transition: color 0.2s ease, transform 0.15s ease;
-        }
-        .mega-link:hover { color: #ffffff; transform: translateX(4px); }
-        .mega-link:focus-visible { color: #ffffff; outline: 2px solid #c8102e; outline-offset: 2px; }
-        .mega-link svg { width: 14px; height: 14px; opacity: 0.5; flex-shrink: 0; }
-        .mega-link:hover svg { opacity: 0.8; }
-        .mega-featured {
-            background: rgba(200, 16, 46, 0.08); border: 1px solid rgba(200, 16, 46, 0.15);
-            padding: 16px; display: flex; flex-direction: column; gap: 8px;
-        }
-        .mega-featured-title {
-            font-family: 'Oswald', sans-serif; font-size: 14px; font-weight: 600;
-            color: white; text-transform: uppercase; letter-spacing: 0.05em;
-        }
-        .mega-featured-text { font-family: 'Inter', sans-serif; font-size: 12px; color: rgba(255, 255, 255, 0.5); line-height: 1.6; }
-        .mega-featured-btn {
-            display: inline-flex; align-items: center; gap: 6px; margin-top: 4px;
-            font-family: 'Oswald', sans-serif; font-size: 11px; font-weight: 600;
-            letter-spacing: 0.15em; text-transform: uppercase; color: #c8102e;
-            text-decoration: none; transition: color 0.2s ease;
-        }
-        .mega-featured-btn:hover { color: #e8485a; }
-
-        .mobile-accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-        .mobile-accordion-content.open { max-height: 500px; }
-        .mobile-accordion-btn .chevron-icon { transition: transform 0.2s ease; }
-        .mobile-accordion-btn.open .chevron-icon { transform: rotate(180deg); }
-
-        .top-bar { background: rgba(35, 38, 80, 0.97); border-bottom: 1px solid rgba(255,255,255,0.06); }
-        .main-nav-bar { background: rgba(35, 38, 80, 0.97); backdrop-filter: blur(12px); transition: transform 0.3s ease; }
-        .main-nav-bar.nav-hidden { transform: translateY(-100%); }
-
-        .nav-logo-wrapper { position: absolute; left: 2rem; top: -16px; z-index: 60; }
-        @media (min-width: 1024px) { .nav-logo-wrapper { left: 2.5rem; } }
 
         .page-header {
             background: linear-gradient(135deg, rgba(35, 38, 80, 0.92) 0%, rgba(42, 45, 97, 0.85) 40%, rgba(80, 83, 130, 0.78) 100%), url('Assets/Hero Images/Supporters - Round 8 v Surf Coast.jpg');
@@ -302,6 +227,400 @@
         }
         .skip-link { position: absolute; left: -9999px; top: 0; z-index: 9999; padding: 8px 16px; background: #232650; color: #fff; text-decoration: none; }
         .skip-link:focus { left: 0; }
+
+        /* ---------- Site chrome (2026 redesign): utility bar, nav, mega panels, drawer, footer ---------- */
+        :root {
+            --navy-950: #232650;
+            --navy-900: #2a2d61;
+            --navy-800: #303368;
+            --red: #c8102e;
+            --red-600: #a00d25;
+            --white: #ffffff;
+            --ink-soft: rgba(255, 255, 255, 0.72);
+            --hair: rgba(255, 255, 255, 0.14);
+
+            --serif: "Instrument Serif", "Times New Roman", serif;
+            --sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
+
+            --gutter: clamp(20px, 2.2vw, 40px);
+            --bar-h: 32px;
+            --nav-h: 88px;
+            --ease: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        /* clip, not hidden: hidden turns body into a scroll box and stops the nav sticking */
+        html, body { overflow-x: hidden; overflow-x: clip; }
+        .utility, .nav, .drawer, .footer {
+            color: var(--white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .utility :focus-visible, .nav :focus-visible, .drawer :focus-visible, .footer :focus-visible {
+            outline: 2px solid var(--white);
+            outline-offset: 4px;
+        }
+
+        /* ---------- Shared underline link (nav, CTAs, panels) ---------- */
+        .uline {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 8px 0 10px;
+            font: 500 12px/1 var(--sans);
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--white);
+            background: none;
+            border: 0;
+            cursor: pointer;
+            transition: transform 0.2s var(--ease);
+        }
+        .uline::before,
+        .uline::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0.14em; /* trailing letter-spacing should not stretch the rule */
+            bottom: 0;
+            height: 1px;
+            background: var(--white);
+        }
+        .uline::before { opacity: 0; }
+        .uline::after {
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.5s var(--ease);
+        }
+        .uline:hover::after,
+        .uline:focus-visible::after,
+        .uline[aria-expanded="true"]::after,
+        .uline.is-current::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        .uline:active { transform: translateY(1px); }
+
+        /* Standing rule under a CTA, white sweeps over it on hover */
+        .uline--rule::before { opacity: 0.5; }
+        /* Join actions carry the club red */
+        .uline--join::before { opacity: 1; height: 2px; background: var(--red); }
+        .uline--join::after { height: 2px; }
+
+        .chev { width: 8px; height: 8px; opacity: 0.6; transition: transform 0.4s var(--ease); }
+        .uline[aria-expanded="true"] .chev { transform: rotate(180deg); }
+
+        /* ---------- Utility bar ---------- */
+        .utility {
+            display: none;
+            height: var(--bar-h);
+            background: var(--navy-950);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .utility__inner {
+            height: 100%;
+            padding: 0 var(--gutter);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 18px;
+        }
+        .utility a {
+            display: inline-flex;
+            padding: 4px;
+            opacity: 0.62;
+            transition: opacity 0.25s var(--ease), transform 0.2s var(--ease);
+        }
+        .utility a:hover, .utility a:focus-visible { opacity: 1; }
+        .utility a:active { transform: translateY(1px); }
+        .utility svg { width: 14px; height: 14px; }
+
+        /* ---------- Main nav ---------- */
+        .nav {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            transition: transform 0.45s var(--ease);
+        }
+        .nav.is-hidden { transform: translateY(-100%); }
+        .nav::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: var(--navy-950);
+            transition: opacity 0.35s var(--ease);
+        }
+        /* Homepage: floats over the hero, turns solid once the page moves or a panel opens */
+        .nav--overlay { margin-bottom: calc(-1 * var(--nav-h)); }
+        .nav--overlay::before { opacity: 0; }
+        .nav--overlay.is-scrolled::before, .nav--overlay.is-open::before { opacity: 1; }
+        .nav__inner {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            height: var(--nav-h);
+            padding: 0 var(--gutter);
+        }
+        .nav__group { display: none; align-items: center; gap: 32px; }
+        .nav__group--right { justify-content: flex-end; }
+        .nav__crest {
+            grid-column: 2;
+            display: block;
+            transition: transform 0.5s var(--ease);
+        }
+        .nav__crest img { height: 60px; width: auto; }
+        .nav__crest:hover { transform: scale(1.04); }
+        .nav__crest:active { transform: scale(0.98); }
+
+        /* Mobile header controls */
+        .nav__menu {
+            grid-column: 1;
+            justify-self: start;
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 6px;
+            width: 44px; height: 44px;
+            margin-left: -10px;
+            padding: 0 10px;
+            background: none; border: 0; cursor: pointer;
+        }
+        .nav__menu span {
+            display: block; height: 1.5px; width: 22px; background: var(--white);
+            transition: transform 0.4s var(--ease);
+        }
+        .nav__menu span:last-child { width: 15px; }
+        .nav__menu:hover span:last-child { transform: scaleX(1.4667); transform-origin: left; }
+        .nav__menu:active { transform: translateY(1px); }
+        .nav__join-m { grid-column: 3; justify-self: end; }
+
+        /* ---------- Mega panels ---------- */
+        .panel {
+            position: absolute;
+            top: 100%; left: 0; right: 0;
+            background: var(--navy-950);
+            border-top: 1px solid var(--hair);
+            opacity: 0;
+            transform: translateY(-8px);
+            pointer-events: none;
+            transition: opacity 0.3s var(--ease), transform 0.45s var(--ease);
+        }
+        .panel.is-open { opacity: 1; transform: translateY(0); pointer-events: auto; }
+        .panel__inner {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 40px;
+            padding: 40px var(--gutter) 52px;
+        }
+        .panel__title {
+            display: inline-block;
+            margin-bottom: 14px;
+            font: 400 28px/1.1 var(--serif);
+            transition: transform 0.4s var(--ease);
+        }
+        .panel__title:hover { transform: translateX(4px); }
+        .panel__links a {
+            display: inline-block;
+            padding: 5px 0;
+            font: 400 14px/1.5 var(--sans);
+            opacity: 0.72;
+            transition: opacity 0.25s var(--ease), transform 0.4s var(--ease);
+        }
+        .panel__links a:hover, .panel__links a:focus-visible { opacity: 1; transform: translateX(4px); }
+        .panel__links a:active { transform: translateX(4px) translateY(1px); }
+        .panel__feature {
+            grid-column: 4;
+            padding-left: 32px;
+            border-left: 1px solid var(--hair);
+        }
+        .panel__feature-title { margin: 0 0 12px; font: italic 400 30px/1.05 var(--serif); }
+        .panel__feature-text { margin: 0 0 18px; font: 400 14px/1.7 var(--sans); color: var(--ink-soft); }
+
+        /* ---------- Footer ---------- */
+        .footer {
+            --crest-h: clamp(104px, 9vw, 136px);
+            position: relative;
+            padding: clamp(56px, 6vw, 88px) var(--gutter) 40px;
+            background: var(--navy-950);
+            color: var(--white);
+        }
+        /* Club stripes, the same fine double rule as above About */
+        .footer::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 6px;
+            border-top: 1px solid var(--red);
+            border-bottom: 1px solid var(--red);
+        }
+        .footer__crest { height: var(--crest-h); width: auto; order: -1; margin-bottom: 20px; }
+        .footer__inner { max-width: 1600px; margin: 0 auto; }
+        .footer__tags {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            margin: 0;
+            text-align: center;
+        }
+        .footer__tag { font: 400 clamp(1.75rem, 1.3rem + 1.2vw, 2.5rem)/1.1 var(--serif); letter-spacing: 0.02em; }
+        .footer__social { margin-top: clamp(36px, 4vw, 52px); text-align: center; }
+        .footer__label {
+            margin: 0 0 18px;
+            font: 500 11px/1.4 var(--sans);
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.62);
+        }
+        .footer__icons { display: flex; justify-content: center; gap: 12px; }
+        .footer__icons a {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 48px; height: 48px;
+            border: 1px solid var(--hair);
+            border-radius: 50%;
+            transition: transform 0.4s var(--ease), opacity 0.25s var(--ease);
+            opacity: 0.85;
+        }
+        .footer__icons a:hover, .footer__icons a:focus-visible { opacity: 1; transform: translateY(-3px); }
+        .footer__icons a:active { transform: translateY(0) scale(0.95); }
+        .footer__icons svg { width: 20px; height: 20px; }
+        .footer__lower {
+            display: grid;
+            gap: 32px;
+            margin-top: clamp(48px, 6vw, 80px);
+            padding-top: 32px;
+            border-top: 1px solid var(--hair);
+        }
+        .footer__copy { max-width: 44ch; margin: 0; font: 400 12.5px/1.7 var(--sans); color: rgba(255, 255, 255, 0.5); }
+        .footer__credit {
+            margin: 14px 0 0;
+            font: 500 10px/1.4 var(--sans);
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.4);
+        }
+        .footer__credit a {
+            color: rgba(255, 255, 255, 0.75);
+            text-decoration: underline;
+            text-decoration-color: rgba(255, 255, 255, 0.25);
+            text-underline-offset: 3px;
+        }
+        .footer__credit a:hover { text-decoration-color: var(--red); }
+        .footer__nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 32px; align-content: start; }
+        .footer__nav .uline { justify-self: start; font-size: 11px; opacity: 0.8; transition: opacity 0.25s var(--ease), transform 0.2s var(--ease); }
+        .footer__nav .uline:hover, .footer__nav .uline:focus-visible { opacity: 1; }
+
+        @media (min-width: 640px) {
+            .footer__tags { flex-direction: row; justify-content: center; gap: 0; }
+            .footer__tag { flex: 1; }
+            .footer__tag:first-child { text-align: right; padding-right: clamp(32px, 5vw, 80px); }
+            .footer__tag:last-child { text-align: left; padding-left: clamp(32px, 5vw, 80px); }
+            .footer__crest { order: 0; margin-bottom: 0; }
+            .footer__nav { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+        }
+        @media (min-width: 900px) {
+            .footer__lower { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 0 var(--gutter); }
+            .footer__legal { grid-column: 1 / 5; }
+            .footer__nav { grid-column: 6 / 13; }
+        }
+
+        /* ---------- Mobile drawer ---------- */
+        .drawer {
+            position: fixed;
+            inset: 0;
+            z-index: 80;
+            display: flex;
+            flex-direction: column;
+            padding: 0 var(--gutter) 32px;
+            background: var(--navy-950);
+            overflow-y: auto;
+            transform: translateX(-100%);
+            transition: transform 0.55s var(--ease);
+        }
+        .drawer.is-open { transform: translateX(0); }
+        .drawer__top {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            height: 76px;
+            flex-shrink: 0;
+        }
+        .drawer__top img { grid-column: 2; height: 48px; width: auto; }
+        .drawer__close {
+            grid-column: 1; grid-row: 1;
+            justify-self: start;
+            width: 44px; height: 44px;
+            margin-left: -10px;
+            display: inline-flex; align-items: center; justify-content: center;
+            background: none; border: 0; cursor: pointer;
+            transition: transform 0.4s var(--ease);
+        }
+        .drawer__close:hover { transform: rotate(90deg); }
+        .drawer__close:active { transform: rotate(90deg) scale(0.92); }
+        .drawer__close svg { width: 20px; height: 20px; }
+        .drawer__list { margin-top: 20px; border-top: 1px solid var(--hair); }
+        .drawer__list > li { border-bottom: 1px solid var(--hair); }
+        .drawer__row { display: flex; align-items: center; justify-content: space-between; }
+        .drawer__link {
+            display: block;
+            padding: 14px 0;
+            font: 400 34px/1.1 var(--serif);
+            background: none; border: 0; cursor: pointer; text-align: left;
+            transition: transform 0.4s var(--ease), opacity 0.25s var(--ease);
+        }
+        .drawer__link:hover { transform: translateX(4px); }
+        .drawer__link:active { opacity: 0.7; }
+        .drawer__link.is-current { font-style: italic; }
+        .drawer__toggle {
+            width: 44px; height: 44px;
+            margin-right: -10px;
+            display: inline-flex; align-items: center; justify-content: center;
+            background: none; border: 0; cursor: pointer;
+        }
+        .drawer__toggle svg { width: 14px; height: 14px; transition: transform 0.4s var(--ease); }
+        .drawer__toggle[aria-expanded="true"] svg { transform: rotate(45deg); }
+        .drawer__row--button { width: 100%; padding: 0; background: none; border: 0; cursor: pointer; }
+        .drawer__row--button[aria-expanded="true"] svg { transform: rotate(45deg); }
+        .drawer__sub { padding: 0 0 18px; }
+        .drawer__sub a {
+            display: block;
+            padding: 6px 0;
+            font: 400 15px/1.5 var(--sans);
+            opacity: 0.72;
+            transition: opacity 0.25s var(--ease);
+        }
+        .drawer__sub a:hover, .drawer__sub a:focus-visible { opacity: 1; }
+        .drawer__sub .drawer__subhead {
+            margin-top: 10px;
+            font: 500 11px/1.5 var(--sans);
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            opacity: 0.5;
+        }
+        .drawer__sub .drawer__subhead:first-child { margin-top: 0; }
+        .drawer__join { align-self: flex-start; margin-top: 32px; }
+        body.menu-open { overflow: hidden; }
+
+        @media (min-width: 1024px) {
+            .utility { display: block; }
+            .nav__group { display: flex; }
+            .nav__group--left { grid-column: 1; }
+            .nav__group--right { grid-column: 3; }
+            .nav__menu, .nav__join-m { display: none; }
+            .drawer { display: none; }
+        }
+        @media (max-width: 1023px) {
+            :root { --nav-h: 72px; }
+            .nav__crest img { height: 46px; }
+            .panel { display: none; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .nav, .nav::before, .nav *, .nav *::before, .nav *::after,
+            .drawer, .drawer *, .footer *, .footer *::before, .footer *::after, .utility * {
+                transition-duration: 0.01ms !important;
+            }
+        }
     </style>
 
     <!-- JSON-LD Structured Data -->
@@ -350,337 +669,240 @@
 <body class="bg-navy-950 text-white font-body">
     <a href="#main" class="skip-link">Skip to main content</a>
 
-    <!-- Top Utility Bar -->
-    <div class="top-bar hidden lg:block relative z-50">
-        <div class="max-w-[1400px] mx-auto px-8 lg:px-10">
-            <div class="flex items-center justify-between h-9">
-                <div class="ml-28"></div>
-                <div class="flex items-center gap-3">
-                    <a href="https://www.facebook.com/altonanorthsc/" target="_blank" rel="noopener noreferrer" class="text-white/50 hover:text-white focus-visible:text-white transition-colors duration-200" aria-label="Facebook">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                    </a>
-                    <a href="https://www.instagram.com/altonanorthsc/" target="_blank" rel="noopener noreferrer" class="text-white/50 hover:text-white focus-visible:text-white transition-colors duration-200" aria-label="Instagram">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                    </a>
-                </div>
-            </div>
+    <!-- Navigation - Top Utility Bar -->
+    <div class="utility">
+        <div class="utility__inner">
+            <a href="https://www.facebook.com/altonanorthsc/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/altonanorthsc/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
         </div>
     </div>
 
-    <!-- Main Nav Bar -->
-    <nav id="mainNav" class="main-nav-bar sticky top-0 z-50">
-        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 relative">
-            <div class="nav-logo-wrapper hidden lg:block">
-                <a href="index.html" aria-label="Altona North SC Home">
-                    <img src="Assets/Logo.png" alt="Altona North Soccer Club crest" class="w-24 h-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]">
-                </a>
-            </div>
+    <!-- Navigation - Main Nav (split around the crest) -->
+    <nav class="nav" id="mainNav" aria-label="Main">
+        <div class="nav__inner">
+            <!-- Mobile: menu left, crest centre, Join Us right -->
+            <button class="nav__menu" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+                <span></span><span></span>
+            </button>
 
-            <div class="flex items-center justify-between h-16 lg:h-16">
-                <a href="index.html" class="lg:hidden flex items-center" aria-label="Altona North SC Home">
-                    <img src="Assets/Logo.png" alt="Altona North Soccer Club crest" class="w-11 h-auto">
-                </a>
-
-                <div class="hidden lg:flex items-center justify-center gap-8 flex-1 ml-24">
-                    <a href="index.html" class="nav-link font-heading text-[13px] font-medium tracking-[0.15em] text-white/75 uppercase hover:text-white focus-visible:text-white">Home</a>
-
-                    <div class="mega-menu-trigger" data-mega="about">
-                        <a href="about.html" class="nav-link active font-heading text-[13px] font-semibold tracking-[0.15em] text-white uppercase flex items-center gap-1.5" aria-haspopup="true">
+            <ul class="nav__group nav__group--left">
+                    <li><a href="index.html" class="uline">Home</a></li>
+                    <li data-panel="about">
+                        <a href="about.html" class="uline is-current" aria-current="page" aria-haspopup="true" aria-expanded="false" aria-controls="panel-about">
                             About
-                            <svg class="chevron-icon w-3 h-3 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+                            <svg class="chev" fill="none" stroke="currentColor" viewBox="0 0 12 12" aria-hidden="true"><path stroke-width="1.5" d="M2 4.5l4 4 4-4"/></svg>
                         </a>
-                    </div>
-
-                    <div class="mega-menu-trigger" data-mega="teams">
-                        <a href="teams.html" class="nav-link font-heading text-[13px] font-medium tracking-[0.15em] text-white/75 uppercase hover:text-white focus-visible:text-white flex items-center gap-1.5" aria-haspopup="true">
+                    </li>
+                    <li data-panel="teams">
+                        <a href="teams.html" class="uline" aria-haspopup="true" aria-expanded="false" aria-controls="panel-teams">
                             Teams
-                            <svg class="chevron-icon w-3 h-3 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+                            <svg class="chev" fill="none" stroke="currentColor" viewBox="0 0 12 12" aria-hidden="true"><path stroke-width="1.5" d="M2 4.5l4 4 4-4"/></svg>
                         </a>
-                    </div>
+                    </li>
+                    <li><a href="fixtures.html" class="uline">Fixtures</a></li>
+            </ul>
 
-                    <a href="fixtures.html" class="nav-link font-heading text-[13px] font-medium tracking-[0.15em] text-white/75 uppercase hover:text-white focus-visible:text-white flex items-center gap-1.5">Fixtures</a>
+            <a href="index.html" class="nav__crest" aria-label="Altona North SC Home">
+                <img src="Assets/Logo.png" alt="Altona North Soccer Club crest" width="166" height="200">
+            </a>
 
-                    <div class="mega-menu-trigger" data-mega="news">
-                        <button class="nav-link font-heading text-[13px] font-medium tracking-[0.15em] text-white/75 uppercase hover:text-white focus-visible:text-white flex items-center gap-1.5" aria-expanded="false" aria-haspopup="true">
+            <ul class="nav__group nav__group--right">
+                    <li data-panel="news">
+                        <button class="uline" aria-haspopup="true" aria-expanded="false" aria-controls="panel-news">
                             News
-                            <svg class="chevron-icon w-3 h-3 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+                            <svg class="chev" fill="none" stroke="currentColor" viewBox="0 0 12 12" aria-hidden="true"><path stroke-width="1.5" d="M2 4.5l4 4 4-4"/></svg>
                         </button>
-                    </div>
+                    </li>
+                    <li><a href="sponsors.html" class="uline">Sponsors</a></li>
+                    <li><a href="get-involved.html" class="uline">Contact</a></li>
+                    <li><a href="get-involved.html" class="uline uline--join">Join Us</a></li>
+            </ul>
 
-                    <a href="sponsors.html" class="nav-link font-heading text-[13px] font-medium tracking-[0.15em] text-white/75 uppercase hover:text-white focus-visible:text-white">Sponsors</a>
-                    <a href="get-involved.html" class="nav-link font-heading text-[13px] font-medium tracking-[0.15em] text-white/75 uppercase hover:text-white focus-visible:text-white">Contact</a>
-                </div>
-
-                <div class="hidden lg:flex items-center gap-4">
-                    <a href="get-involved.html" class="btn-primary inline-flex items-center gap-2 bg-accent-500 text-white px-5 py-2 font-heading text-[12px] font-bold tracking-[0.15em] uppercase focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-500 focus-visible:outline-offset-2">
-                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-                        Join Us
-                    </a>
-                </div>
-
-                <button id="mobileMenuBtn" class="lg:hidden p-2 text-white/80 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold-400" aria-label="Open menu" aria-expanded="false">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-                </button>
-            </div>
+            <a href="get-involved.html" class="nav__join-m uline uline--join">Join Us</a>
         </div>
 
         <!-- Mega Menu Panels -->
-        <div class="mega-menu-panel" data-panel="about">
-            <div class="max-w-[1400px] mx-auto px-10 py-8">
-                <div class="grid grid-cols-4 gap-8">
+
+            <!-- About Panel -->
+            <div class="panel" id="panel-about" inert>
+                <div class="panel__inner">
                     <div>
-                        <a href="the-club.html" class="mega-col-title">The Club</a>
-                        <a href="the-club.html#history" class="mega-link">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                            Club History
-                        </a>
-                        <a href="the-club.html#kits" class="mega-link">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 4l-4 2v4l3-1v10h8V9l3 1V6l-4-2-1.5 1.5h-4L9 4z"/></svg>
-                            Kit History
-                        </a>
-                        <a href="the-club.html#honours" class="mega-link">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872"/></svg>
-                            Achievements
-                        </a>
-                        <a href="the-club.html#ground" class="mega-link">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
-                            D.N. Duane Reserve
-                        </a>
+                        <a href="the-club.html" class="panel__title">The Club</a>
+                        <ul class="panel__links">
+                            <li><a href="the-club.html#history">Club History</a></li>
+                            <li><a href="the-club.html#kits">Kit History</a></li>
+                            <li><a href="the-club.html#honours">Achievements</a></li>
+                            <li><a href="the-club.html#ground">D.N. Duane Reserve</a></li>
+                        </ul>
                     </div>
                     <div>
-                        <a href="people.html" class="mega-col-title">People</a>
-                        <a href="people.html#committee" class="mega-link">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
-                            Committee & Staff
-                        </a>
-                        <a href="people.html#coaching" class="mega-link">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
-                            Coaching Staff
-                        </a>
-                        <a href="people.html#honours" class="mega-link">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M18.75 4.236c.982.143 1.954.317 2.916.52A6.003 6.003 0 0016.27 9.728M18.75 4.236V4.5c0 2.108-.966 3.99-2.48 5.228m0 0a6.023 6.023 0 01-7.54 0"/></svg>
-                            Honours
-                        </a>
+                        <a href="people.html" class="panel__title">People</a>
+                        <ul class="panel__links">
+                            <li><a href="people.html#committee">Committee &amp; Staff</a></li>
+                            <li><a href="people.html#coaching">Coaching Staff</a></li>
+                            <li><a href="people.html#honours">Honours</a></li>
+                        </ul>
                     </div>
                     <div>
-                        <a href="get-involved.html" class="mega-col-title">Get Involved</a>
-                        <a href="get-involved.html#faqs" class="mega-link">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"/></svg>
-                            FAQs
-                        </a>
-                        <a href="get-involved.html#membership" class="mega-link">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/></svg>
-                            Membership
-                        </a>
-                        <a href="get-involved.html#contact" class="mega-link">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
-                            Contact Us
-                        </a>
+                        <a href="get-involved.html" class="panel__title">Get Involved</a>
+                        <ul class="panel__links">
+                            <li><a href="get-involved.html#faqs">FAQs</a></li>
+                            <li><a href="get-involved.html#membership">Membership</a></li>
+                            <li><a href="get-involved.html#contact">Contact Us</a></li>
+                        </ul>
                     </div>
-                    <div>
-                        <div class="mega-featured">
-                            <div class="mega-featured-title">Est. 1975</div>
-                            <p class="mega-featured-text">Nearly 50 years of community football in Melbourne's west. From grassroots juniors to State League 2 - proudly representing Brooklyn and Altona North.</p>
-                            <a href="the-club.html" class="mega-featured-btn">
-                                Learn Our Story
-                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-                            </a>
-                        </div>
+                    <div class="panel__feature">
+                        <p class="panel__feature-title">Est. 1975</p>
+                        <p class="panel__feature-text">Nearly 50 years of community football in Melbourne's west. From grassroots juniors to State League 2 - proudly representing Brooklyn and Altona North.</p>
+                        <a href="the-club.html" class="uline uline--rule">Learn Our Story</a>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="mega-menu-panel" data-panel="teams">
-            <div class="max-w-[1400px] mx-auto px-10 py-8">
-                <div class="grid grid-cols-4 gap-8">
+            <!-- Teams Panel -->
+            <div class="panel" id="panel-teams" inert>
+                <div class="panel__inner">
                     <div>
-                        <a href="senior-football.html" class="mega-col-title">Senior Football</a>
-                        <a href="senior-football.html#senior-mens" class="mega-link">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 6.75a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                            Senior Men's Squad
-                        </a>
-                        <a href="senior-football.html#reserves" class="mega-link">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/></svg>
-                            Reserves
-                        </a>
-                        <a href="senior-football.html#metro" class="mega-link">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                            Metro
-                        </a>
+                        <a href="senior-football.html" class="panel__title">Senior Football</a>
+                        <ul class="panel__links">
+                            <li><a href="senior-football.html#senior-mens">Senior Men's Squad</a></li>
+                            <li><a href="senior-football.html#reserves">Reserves</a></li>
+                            <li><a href="senior-football.html#metro">Metro</a></li>
+                        </ul>
                     </div>
                     <div>
-                        <a href="junior-football.html" class="mega-col-title">Junior Football</a>
-                        <a href="junior-football.html#juniors" class="mega-link">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0z"/></svg>
-                            Elite Juniors (U7-U14)
-                        </a>
-                        <a href="junior-football.html#miniroos" class="mega-link">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347"/></svg>
-                            Junior Development Pathway
-                        </a>
-                        <a href="junior-football.html#eoi-2027" class="mega-link">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"/></svg>
-                            2027 Junior EOI
-                        </a>
+                        <a href="junior-football.html" class="panel__title">Junior Football</a>
+                        <ul class="panel__links">
+                            <li><a href="junior-football.html#juniors">Elite Juniors (U7-U14)</a></li>
+                            <li><a href="junior-football.html#miniroos">Junior Development Pathway</a></li>
+                            <li><a href="junior-football.html#eoi-2027">2027 Junior EOI</a></li>
+                        </ul>
                     </div>
                     <div>
-                        <a href="get-involved.html" class="mega-col-title">Join a Team</a>
-                        <a href="get-involved.html#faqs" class="mega-link">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"/></svg>
-                            FAQs
-                        </a>
-                        <a href="get-involved.html#membership" class="mega-link">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/></svg>
-                            Social Membership
-                        </a>
-                        <a href="get-involved.html#contact" class="mega-link">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
-                            Contact Us
-                        </a>
+                        <a href="get-involved.html" class="panel__title">Join a Team</a>
+                        <ul class="panel__links">
+                            <li><a href="get-involved.html#faqs">FAQs</a></li>
+                            <li><a href="get-involved.html#membership">Social Membership</a></li>
+                            <li><a href="get-involved.html#contact">Contact Us</a></li>
+                        </ul>
                     </div>
-                    <div>
-                        <div class="mega-featured">
-                            <div class="mega-featured-title">2026 Season</div>
-                            <p class="mega-featured-text">FV State League 2 North/West. Registrations open for all age groups - from Miniroos through to senior men's football.</p>
-                            <a href="get-involved.html#contact" class="mega-featured-btn">
-                                Register Now
-                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-                            </a>
-                        </div>
+                    <div class="panel__feature">
+                        <p class="panel__feature-title">2026 Season</p>
+                        <p class="panel__feature-text">FV State League 2 North/West. Registrations open for all age groups - from Miniroos through to senior men's football.</p>
+                        <a href="get-involved.html#contact" class="uline uline--join">Register Now</a>
                     </div>
                 </div>
             </div>
-        </div>
 
-
-        <div class="mega-menu-panel" data-panel="news">
-            <div class="max-w-[1400px] mx-auto px-10 py-8">
-                <div class="grid grid-cols-4 gap-8">
+            <!-- News Panel -->
+            <div class="panel" id="panel-news" inert>
+                <div class="panel__inner">
                     <div>
-                        <a href="media.html" class="mega-col-title">Media</a>
-                        <a href="#" class="mega-link">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159"/></svg>
-                            Photo Gallery
-                        </a>
+                        <a href="media.html" class="panel__title">Media</a>
+                        <ul class="panel__links">
+                            <li><a href="#">Photo Gallery</a></li>
+                        </ul>
                     </div>
                     <div>
-                        <a href="connect.html" class="mega-col-title">Connect</a>
-                        <a href="https://www.facebook.com/altonanorthsc/" target="_blank" rel="noopener noreferrer" class="mega-link">
-                            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                            Facebook
-                        </a>
-                        <a href="https://www.instagram.com/altonanorthsc/" target="_blank" rel="noopener noreferrer" class="mega-link">
-                            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                            Instagram
-                        </a>
+                        <a href="connect.html" class="panel__title">Connect</a>
+                        <ul class="panel__links">
+                            <li><a href="https://www.facebook.com/altonanorthsc/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                            <li><a href="https://www.instagram.com/altonanorthsc/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                        </ul>
                     </div>
-                    <div>
-                        <div class="mega-featured">
-                            <div class="mega-featured-title">#AltonaNorthSC</div>
-                            <p class="mega-featured-text">Stay up to date with all the latest from ANSC. Follow us on social media for match day content, behind-the-scenes, and club announcements.</p>
-                            <a href="https://www.instagram.com/altonanorthsc/" target="_blank" rel="noopener noreferrer" class="mega-featured-btn">
-                                Follow Us
-                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-                            </a>
-                        </div>
+                    <div class="panel__feature">
+                        <p class="panel__feature-title">#AltonaNorthSC</p>
+                        <p class="panel__feature-text">Stay up to date with all the latest from ANSC. Follow us on social media for match day content, behind-the-scenes, and club announcements.</p>
+                        <a href="https://www.instagram.com/altonanorthsc/" target="_blank" rel="noopener noreferrer" class="uline uline--rule">Follow Us</a>
                     </div>
                 </div>
             </div>
-        </div>
 
     </nav>
 
-    <!-- Mobile Menu Backdrop -->
-    <div id="mobileMenuBackdrop" class="fixed inset-0 bg-black/60 opacity-0 pointer-events-none lg:hidden z-[60]" style="transition: opacity 0.3s ease;"></div>
     <!-- Mobile Menu -->
-    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-72 h-full bg-white border-l border-black/10 p-6 lg:hidden z-[70]">
-        <button id="mobileMenuClose" class="absolute top-4 right-4 p-2 text-navy-950/70 hover:text-navy-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent-500" aria-label="Close menu">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-        </button>
-        <div class="flex flex-col gap-1 mt-16 overflow-y-auto" style="max-height: calc(100vh - 100px);">
-            <a href="index.html" class="font-heading text-base font-semibold tracking-wider text-navy-950/80 uppercase py-2 hover:text-navy-950">Home</a>
-
-            <div>
-                <div class="flex items-center justify-between">
-                    <a href="about.html" class="font-heading text-base font-semibold tracking-wider text-accent-500 uppercase py-2">About</a>
-                    <button class="mobile-accordion-btn p-2" data-accordion="about-mobile" aria-label="Toggle About menu">
-                        <svg class="chevron-icon w-4 h-4 text-navy-950/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
-                    </button>
-                </div>
-                <div class="mobile-accordion-content" data-accordion-content="about-mobile">
-                    <div class="pl-3 pb-2 flex flex-col gap-1 border-l-2 border-accent-500/20 ml-1">
-                        <a href="the-club.html" class="text-sm font-semibold text-accent-500 hover:text-accent-600 py-1">The Club</a>
-                        <a href="the-club.html#history" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">Club History</a>
-                        <a href="the-club.html#kits" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">Kit History</a>
-                        <a href="the-club.html#honours" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">Achievements</a>
-                        <a href="the-club.html#ground" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">D.N. Duane Reserve</a>
-                        <a href="people.html" class="text-sm font-semibold text-accent-500 hover:text-accent-600 py-1">People</a>
-                        <a href="people.html#committee" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">Committee & Staff</a>
-                        <a href="people.html#coaching" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">Coaching Staff</a>
-                        <a href="people.html#honours" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">Honours</a>
-                        <a href="get-involved.html" class="text-sm font-semibold text-accent-500 hover:text-accent-600 py-1">Get Involved</a>
-                        <a href="get-involved.html#faqs" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">FAQs</a>
-                        <a href="get-involved.html#membership" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">Social Membership</a>
-                        <a href="get-involved.html#contact" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">Contact</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Teams Accordion -->
-            <div>
-                <div class="flex items-center justify-between">
-                    <a href="teams.html" class="font-heading text-base font-semibold tracking-wider text-navy-950/80 uppercase py-2 hover:text-navy-950">Teams</a>
-                    <button class="mobile-accordion-btn p-2" data-accordion="teams-mobile" aria-label="Toggle Teams menu">
-                        <svg class="chevron-icon w-4 h-4 text-navy-950/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
-                    </button>
-                </div>
-                <div class="mobile-accordion-content" data-accordion-content="teams-mobile">
-                    <div class="pl-3 pb-2 flex flex-col gap-1 border-l-2 border-accent-500/20 ml-1">
-                        <a href="senior-football.html" class="text-sm font-semibold text-accent-500 hover:text-accent-600 py-1">Senior Football</a>
-                        <a href="senior-football.html" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">Senior Men's Squad</a>
-                        <a href="senior-football.html" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">Reserves</a>
-                        <a href="senior-football.html" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">Metro</a>
-                        <a href="junior-football.html" class="text-sm font-semibold text-accent-500 hover:text-accent-600 py-1">Junior Football</a>
-                        <a href="junior-football.html" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">Elite Juniors (U7-U14)</a>
-                        <a href="junior-football.html" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">Junior Development Pathway</a>
-                        <a href="junior-football.html#eoi-2027" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">2027 Junior EOI</a>
-                        <a href="get-involved.html" class="text-sm font-semibold text-accent-500 hover:text-accent-600 py-1">Join a Team</a>
-                        <a href="get-involved.html#faqs" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">FAQs</a>
-                        <a href="get-involved.html#membership" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">Social Membership</a>
-                        <a href="get-involved.html#contact" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">Contact Us</a>
-                    </div>
-                </div>
-            </div>
-
-            <a href="fixtures.html" class="font-heading text-base font-semibold tracking-wider text-navy-950/80 uppercase py-2 hover:text-navy-950">Fixtures</a>
-
-            <!-- News Accordion -->
-            <div>
-                <button class="mobile-accordion-btn w-full flex items-center justify-between py-2" data-accordion="news-mobile">
-                    <span class="font-heading text-base font-semibold tracking-wider text-navy-950/80 uppercase">News</span>
-                    <svg class="chevron-icon w-4 h-4 text-navy-950/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
-                </button>
-                <div class="mobile-accordion-content" data-accordion-content="news-mobile">
-                    <div class="pl-3 pb-2 flex flex-col gap-1 border-l-2 border-accent-500/20 ml-1">
-                        <a href="media.html" class="text-sm font-semibold text-accent-500 hover:text-accent-600 py-1">Media</a>
-                        <a href="media.html#gallery" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">Photo Gallery</a>
-                        <a href="media.html#matchday" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">Match Day Photos</a>
-                        <a href="connect.html" class="text-sm font-semibold text-accent-500 hover:text-accent-600 py-1">Connect</a>
-                        <a href="https://www.facebook.com/altonanorthsc/" target="_blank" rel="noopener noreferrer" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">Facebook</a>
-                        <a href="https://www.instagram.com/altonanorthsc/" target="_blank" rel="noopener noreferrer" class="text-sm text-navy-950/60 hover:text-navy-950 py-1">Instagram</a>
-                    </div>
-                </div>
-            </div>
-
-            <a href="sponsors.html" class="font-heading text-base font-semibold tracking-wider text-navy-950/80 uppercase py-2 hover:text-navy-950">Sponsors</a>
-            <a href="get-involved.html" class="font-heading text-base font-semibold tracking-wider text-navy-950/80 uppercase py-2 hover:text-navy-950">Contact</a>
-
-            <a href="get-involved.html" class="mt-4 btn-primary inline-flex items-center justify-center gap-2 bg-accent-500 text-white px-5 py-3 font-heading text-[12px] font-bold tracking-[0.15em] uppercase">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-                Join Us
-            </a>
+    <div class="drawer" id="mobileMenu" aria-label="Menu" inert>
+        <div class="drawer__top">
+            <button class="drawer__close" id="mobileMenuClose" aria-label="Close menu">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path stroke-width="1.5" d="M4 4l12 12M16 4L4 16"/></svg>
+            </button>
+            <img src="Assets/Logo.png" alt="" width="166" height="200" loading="lazy">
         </div>
+
+        <ul class="drawer__list">
+            <li><a href="index.html" class="drawer__link">Home</a></li>
+            <li>
+                <div class="drawer__row">
+                    <a href="about.html" class="drawer__link is-current" aria-current="page">About</a>
+                    <button class="drawer__toggle" aria-expanded="false" aria-controls="m-about" aria-label="Toggle About menu">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 14 14" aria-hidden="true"><path stroke-width="1.5" d="M7 1v12M1 7h12"/></svg>
+                    </button>
+                </div>
+                <div class="drawer__sub" id="m-about" hidden>
+                    <a href="the-club.html" class="drawer__subhead">The Club</a>
+                    <a href="the-club.html#history">Club History</a>
+                    <a href="the-club.html#kits">Kit History</a>
+                    <a href="the-club.html#honours">Achievements</a>
+                    <a href="the-club.html#ground">D.N. Duane Reserve</a>
+                    <a href="people.html" class="drawer__subhead">People</a>
+                    <a href="people.html#committee">Committee &amp; Staff</a>
+                    <a href="people.html#coaching">Coaching Staff</a>
+                    <a href="people.html#honours">Honours</a>
+                    <a href="get-involved.html" class="drawer__subhead">Get Involved</a>
+                    <a href="get-involved.html#faqs">FAQs</a>
+                    <a href="get-involved.html#membership">Social Membership</a>
+                    <a href="get-involved.html#contact">Contact</a>
+                </div>
+            </li>
+            <li>
+                <div class="drawer__row">
+                    <a href="teams.html" class="drawer__link">Teams</a>
+                    <button class="drawer__toggle" aria-expanded="false" aria-controls="m-teams" aria-label="Toggle Teams menu">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 14 14" aria-hidden="true"><path stroke-width="1.5" d="M7 1v12M1 7h12"/></svg>
+                    </button>
+                </div>
+                <div class="drawer__sub" id="m-teams" hidden>
+                    <a href="senior-football.html" class="drawer__subhead">Senior Football</a>
+                    <a href="senior-football.html">Senior Men's Squad</a>
+                    <a href="senior-football.html">Reserves</a>
+                    <a href="senior-football.html">Metro</a>
+                    <a href="junior-football.html" class="drawer__subhead">Junior Football</a>
+                    <a href="junior-football.html">Elite Juniors (U7-U14)</a>
+                    <a href="junior-football.html">Junior Development Pathway</a>
+                    <a href="junior-football.html#eoi-2027">2027 Junior EOI</a>
+                    <a href="get-involved.html" class="drawer__subhead">Join a Team</a>
+                    <a href="get-involved.html#faqs">FAQs</a>
+                    <a href="get-involved.html#membership">Social Membership</a>
+                    <a href="get-involved.html#contact">Contact Us</a>
+                </div>
+            </li>
+            <li><a href="fixtures.html" class="drawer__link">Fixtures</a></li>
+            <li>
+                <button class="drawer__row drawer__row--button" aria-expanded="false" aria-controls="m-news">
+                    <span class="drawer__link">News</span>
+                    <span class="drawer__toggle" aria-hidden="true">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 14 14"><path stroke-width="1.5" d="M7 1v12M1 7h12"/></svg>
+                    </span>
+                </button>
+                <div class="drawer__sub" id="m-news" hidden>
+                    <a href="media.html" class="drawer__subhead">Media</a>
+                    <a href="media.html#gallery">Photo Gallery</a>
+                    <a href="media.html#matchday">Match Day Photos</a>
+                    <a href="connect.html" class="drawer__subhead">Connect</a>
+                    <a href="https://www.facebook.com/altonanorthsc/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                    <a href="https://www.instagram.com/altonanorthsc/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                </div>
+            </li>
+            <li><a href="sponsors.html" class="drawer__link">Sponsors</a></li>
+            <li><a href="get-involved.html" class="drawer__link">Contact</a></li>
+        </ul>
+
+        <!-- Mobile CTA -->
+        <a href="get-involved.html" class="drawer__join uline uline--join">Join Us</a>
     </div>
 
     <main id="main">
@@ -899,58 +1121,40 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-navy-950 text-white relative">
-        <div class="stripe-band-navy"></div>
-        <div class="pt-28 sm:pt-32 pb-12 px-4 sm:px-6 lg:px-8">
-            <div class="max-w-5xl mx-auto">
-                <div class="absolute left-1/2 -translate-x-1/2 -top-16 sm:-top-20 z-10">
-                    <img src="Assets/Logo.png" alt="Altona North Soccer Club crest" class="w-32 h-32 sm:w-40 sm:h-40 object-contain drop-shadow-[0_4px_24px_rgba(0,0,0,0.5)]" loading="lazy">
-                </div>
-                <div class="flex flex-col sm:flex-row items-center justify-center mb-12 gap-2 sm:gap-0">
-                    <span class="font-heading text-lg sm:text-xl font-bold tracking-[0.15em] text-white/90 sm:flex-1 sm:text-right sm:pr-16">#ALTONANORTHSC</span>
-                    <div class="hidden sm:block w-32 sm:w-40 shrink-0"></div>
-                    <span class="font-heading text-lg sm:text-xl font-bold tracking-[0.15em] text-white/90 sm:flex-1 sm:text-left sm:pl-16">#ANSC</span>
-                </div>
+    <footer class="footer">
+        <div class="footer__inner">
+            <!-- Crest flanked by the hashtags -->
+            <div class="footer__tags">
+                <span class="footer__tag">#ALTONANORTHSC</span>
+                <img src="Assets/Logo.png" alt="Altona North Soccer Club crest" class="footer__crest" width="166" height="200" loading="lazy">
+                <span class="footer__tag">#ANSC</span>
+            </div>
 
-                <div class="text-center">
-                    <p class="font-heading text-xs sm:text-sm font-bold tracking-[0.2em] text-white/80 uppercase mb-5">ANSC on Social Media</p>
-                    <div class="flex items-center justify-center gap-5 sm:gap-7">
-                        <a href="https://www.facebook.com/altonanorthsc/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="text-white/80 hover:text-white focus-visible:text-white transition-colors duration-200 active:scale-95" style="transition-property: color, transform;">
-                            <svg class="w-7 h-7 sm:w-8 sm:h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
-                        </a>
-                        <a href="https://www.instagram.com/altonanorthsc/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-white/80 hover:text-white focus-visible:text-white transition-colors duration-200 active:scale-95" style="transition-property: color, transform;">
-                            <svg class="w-7 h-7 sm:w-8 sm:h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                        </a>
-                    </div>
+            <!-- Social Media -->
+            <div class="footer__social">
+                <p class="footer__label">ANSC on Social Media</p>
+                <div class="footer__icons">
+                    <a href="https://www.facebook.com/altonanorthsc/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg></a>
+                    <a href="https://www.instagram.com/altonanorthsc/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
                 </div>
             </div>
-        </div>
 
-        <div class="max-w-3xl mx-auto px-8">
-            <div class="h-px bg-white/20"></div>
-        </div>
-
-        <div class="py-10 px-4 sm:px-6 lg:px-8">
-            <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-start gap-8 md:gap-12">
-                <div class="md:w-1/3 shrink-0">
-                    <p class="font-body text-xs text-white/50" style="line-height: 1.7;">
-                        Copyright &copy; 2026 Altona North Soccer Club. All rights reserved. Do not duplicate or redistribute in any form.
-                    </p>
-                    <p class="font-heading text-[10px] font-bold tracking-[0.18em] text-white/40 uppercase mt-4">
-                        Site by <a href="https://suterasites.com.au" target="_blank" rel="noopener noreferrer" class="text-white/70 hover:text-accent-500 transition-colors duration-200 underline underline-offset-2 decoration-white/20 hover:decoration-accent-500">Sutera Sites</a>
-                    </p>
+            <!-- Lower Footer: Copyright + Links -->
+            <div class="footer__lower">
+                <div class="footer__legal">
+                    <p class="footer__copy">Copyright &copy; 2026 Altona North Soccer Club. All rights reserved. Do not duplicate or redistribute in any form.</p>
+                    <p class="footer__credit">Site by <a href="https://suterasites.com.au" target="_blank" rel="noopener noreferrer">Sutera Sites</a></p>
                 </div>
 
-                <nav aria-label="Footer navigation" class="flex-1 grid grid-cols-2 sm:grid-cols-3 gap-y-3 gap-x-8">
-                    <a href="the-club.html" class="font-heading text-xs font-bold tracking-[0.12em] text-white/80 uppercase hover:text-white focus-visible:text-white transition-colors duration-200">About the Club</a>
-                    <a href="privacy.html" class="font-heading text-xs font-bold tracking-[0.12em] text-white/80 uppercase hover:text-white focus-visible:text-white transition-colors duration-200">Privacy Policy</a>
-                    <a href="index.html#sponsors" class="font-heading text-xs font-bold tracking-[0.12em] text-white/80 uppercase hover:text-white focus-visible:text-white transition-colors duration-200">Sponsors</a>
-                    <a href="index.html#programs" class="font-heading text-xs font-bold tracking-[0.12em] text-white/80 uppercase hover:text-white focus-visible:text-white transition-colors duration-200">Programs</a>
-                    <a href="people.html" class="font-heading text-xs font-bold tracking-[0.12em] text-white/80 uppercase hover:text-white focus-visible:text-white transition-colors duration-200">Our People</a>
-                    
-                    <a href="get-involved.html#contact" class="font-heading text-xs font-bold tracking-[0.12em] text-white/80 uppercase hover:text-white focus-visible:text-white transition-colors duration-200">Contact</a>
-                    <a href="#" class="font-heading text-xs font-bold tracking-[0.12em] text-white/80 uppercase hover:text-white focus-visible:text-white transition-colors duration-200">Accessibility</a>
-                    <a href="fixtures.html" class="font-heading text-xs font-bold tracking-[0.12em] text-white/80 uppercase hover:text-white focus-visible:text-white transition-colors duration-200">Fixtures</a>
+                <nav class="footer__nav" aria-label="Footer navigation">
+                    <a href="the-club.html" class="uline">About the Club</a>
+                    <a href="privacy.html" class="uline">Privacy Policy</a>
+                    <a href="index.html#sponsors" class="uline">Sponsors</a>
+                    <a href="index.html#programs" class="uline">Programs</a>
+                    <a href="people.html" class="uline">Our People</a>
+                    <a href="get-involved.html#contact" class="uline">Contact</a>
+                    <a href="#" class="uline">Accessibility</a>
+                    <a href="fixtures.html" class="uline">Fixtures</a>
                 </nav>
             </div>
         </div>
@@ -958,98 +1162,6 @@
 
     <!-- Scripts -->
     <script>
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const mobileMenuClose = document.getElementById('mobileMenuClose');
-        const mobileMenuBackdrop = document.getElementById('mobileMenuBackdrop');
-
-        function openMobileMenu() {
-            mobileMenu.classList.add('open');
-            mobileMenuBackdrop.style.opacity = '1';
-            mobileMenuBackdrop.style.pointerEvents = 'auto';
-            mobileMenuBtn.setAttribute('aria-expanded', 'true');
-        }
-        function closeMobileMenu() {
-            mobileMenu.classList.remove('open');
-            mobileMenuBackdrop.style.opacity = '0';
-            mobileMenuBackdrop.style.pointerEvents = 'none';
-            mobileMenuBtn.setAttribute('aria-expanded', 'false');
-        }
-        mobileMenuBtn.addEventListener('click', openMobileMenu);
-        mobileMenuClose.addEventListener('click', closeMobileMenu);
-        mobileMenuBackdrop.addEventListener('click', closeMobileMenu);
-        mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMobileMenu));
-
-        // Mega Menu
-        const megaTriggers = document.querySelectorAll('.mega-menu-trigger');
-        const megaPanels = document.querySelectorAll('.mega-menu-panel');
-        let megaTimeout;
-
-        function openMegaMenu(name) {
-            closeAllMegaMenus();
-            const trigger = document.querySelector(`[data-mega="${name}"]`);
-            const panel = document.querySelector(`[data-panel="${name}"]`);
-            if (trigger && panel) {
-                trigger.classList.add('active');
-                panel.classList.add('open');
-                const btn = trigger.querySelector('button');
-                if (btn) btn.setAttribute('aria-expanded', 'true');
-            }
-        }
-        function closeAllMegaMenus() {
-            megaTriggers.forEach(t => t.classList.remove('active'));
-            megaPanels.forEach(p => p.classList.remove('open'));
-            megaTriggers.forEach(t => {
-                const btn = t.querySelector('button');
-                if (btn) btn.setAttribute('aria-expanded', 'false');
-            });
-        }
-        megaTriggers.forEach(trigger => {
-            const name = trigger.dataset.mega;
-            trigger.addEventListener('mouseenter', () => {
-                clearTimeout(megaTimeout);
-                openMegaMenu(name);
-            });
-            trigger.addEventListener('mouseleave', () => {
-                megaTimeout = setTimeout(() => {
-                    const panel = document.querySelector(`[data-panel="${name}"]`);
-                    if (panel && !panel.matches(':hover')) closeAllMegaMenus();
-                }, 150);
-            });
-            const btn = trigger.querySelector('button');
-            if (btn) {
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const panel = document.querySelector(`[data-panel="${name}"]`);
-                    if (panel && panel.classList.contains('open')) closeAllMegaMenus();
-                    else openMegaMenu(name);
-                });
-            }
-        });
-        megaPanels.forEach(panel => {
-            panel.addEventListener('mouseenter', () => clearTimeout(megaTimeout));
-            panel.addEventListener('mouseleave', () => { megaTimeout = setTimeout(closeAllMegaMenus, 150); });
-        });
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.mega-menu-trigger') && !e.target.closest('.mega-menu-panel')) closeAllMegaMenus();
-        });
-        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAllMegaMenus(); });
-
-        // Mobile Accordion
-        document.querySelectorAll('.mobile-accordion-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const name = btn.dataset.accordion;
-                const content = document.querySelector(`[data-accordion-content="${name}"]`);
-                const isOpen = content.classList.contains('open');
-                document.querySelectorAll('.mobile-accordion-content').forEach(c => c.classList.remove('open'));
-                document.querySelectorAll('.mobile-accordion-btn').forEach(b => b.classList.remove('open'));
-                if (!isOpen) {
-                    content.classList.add('open');
-                    btn.classList.add('open');
-                }
-            });
-        });
-
         // Honours board tabs
         document.querySelectorAll('.honours-tab').forEach(tab => {
             tab.addEventListener('click', () => {
@@ -1068,15 +1180,88 @@
         }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-        // Hide navbar on scroll down
-        let lastScrollY = window.scrollY;
+    </script>
+    <script>
+    // Site nav: mega panels, mobile drawer, and a bar that tucks away on the way down
+    (() => {
         const nav = document.getElementById('mainNav');
-        window.addEventListener('scroll', () => {
-            const currentScrollY = window.scrollY;
-            if (currentScrollY > lastScrollY && currentScrollY > 100) nav.classList.add('nav-hidden');
-            else nav.classList.remove('nav-hidden');
-            lastScrollY = currentScrollY;
+        const triggers = [...nav.querySelectorAll('[data-panel]')];
+        let openName = null;
+        let closeTimer = null;
+
+        function setPanel(name) {
+            clearTimeout(closeTimer);
+            openName = name;
+            triggers.forEach((li) => {
+                const on = li.dataset.panel === name;
+                li.querySelector('[aria-haspopup]').setAttribute('aria-expanded', on ? 'true' : 'false');
+                const panel = document.getElementById('panel-' + li.dataset.panel);
+                panel.classList.toggle('is-open', on);
+                panel.inert = !on;
+            });
+            nav.classList.toggle('is-open', !!name);
+        }
+        function closeSoon() {
+            clearTimeout(closeTimer);
+            closeTimer = setTimeout(() => setPanel(null), 140);
+        }
+
+        triggers.forEach((li) => {
+            li.addEventListener('mouseenter', () => setPanel(li.dataset.panel));
+            li.addEventListener('focusin', () => setPanel(li.dataset.panel));
+            const btn = li.querySelector('button');
+            if (btn) btn.addEventListener('click', () => setPanel(openName === li.dataset.panel ? null : li.dataset.panel));
         });
+        nav.querySelectorAll('.nav__group > li:not([data-panel])').forEach((li) => {
+            li.addEventListener('mouseenter', () => setPanel(null));
+            li.addEventListener('focusin', () => setPanel(null));
+        });
+        nav.addEventListener('mouseleave', closeSoon);
+        nav.addEventListener('mouseenter', () => clearTimeout(closeTimer));
+        nav.addEventListener('focusout', (e) => { if (!nav.contains(e.relatedTarget)) setPanel(null); });
+        document.addEventListener('keydown', (e) => {
+            if (e.key !== 'Escape' || !openName) return;
+            const trigger = nav.querySelector(`[data-panel="${openName}"] [aria-haspopup]`);
+            setPanel(null);
+            trigger.focus();
+        });
+
+        // ---------- Mobile drawer ----------
+        const drawer = document.getElementById('mobileMenu');
+        const openBtn = document.getElementById('mobileMenuBtn');
+        const closeBtn = document.getElementById('mobileMenuClose');
+
+        function setDrawer(open) {
+            drawer.classList.toggle('is-open', open);
+            drawer.inert = !open;
+            document.body.classList.toggle('menu-open', open);
+            openBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            (open ? closeBtn : openBtn).focus();
+        }
+        openBtn.addEventListener('click', () => setDrawer(true));
+        closeBtn.addEventListener('click', () => setDrawer(false));
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && drawer.classList.contains('is-open')) setDrawer(false); });
+
+        drawer.querySelectorAll('[aria-controls]').forEach((btn) => {
+            btn.addEventListener('click', () => {
+                const open = btn.getAttribute('aria-expanded') !== 'true';
+                btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+                document.getElementById(btn.getAttribute('aria-controls')).hidden = !open;
+            });
+        });
+
+        // ---------- Scroll: solid once the page moves, hides going down, returns going up ----------
+        let lastY = window.scrollY;
+        function onScroll() {
+            const y = window.scrollY;
+            nav.classList.toggle('is-scrolled', y > 10);
+            nav.classList.toggle('is-hidden', y > lastY && y > 240 && !nav.classList.contains('is-open'));
+            lastY = y;
+        }
+        window.addEventListener('scroll', onScroll, { passive: true });
+        nav.addEventListener('focusin', () => nav.classList.remove('is-hidden'));
+        onScroll();
+    })();
     </script>
 </body>
 </html>
